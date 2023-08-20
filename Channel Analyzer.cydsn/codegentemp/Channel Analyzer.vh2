@@ -1,0 +1,2040 @@
+--
+--	Conversion of Channel Analyzer.v to vh2:
+--
+--	Cypress Semiconductor - WARP Version 6.3 IR 41
+--	Sat Aug 19 21:35:27 2023
+--
+
+USE cypress.cypress.all;
+USE cypress.rtlpkg.all;
+ENTITY top_RTL IS
+ATTRIBUTE part_name of top_RTL:TYPE IS "cpsoc3";
+END top_RTL;
+--------------------------------------------------------
+ARCHITECTURE R_T_L OF top_RTL IS
+TERMINAL \ANALYZER_ADC:muxoutPlus\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_0\ : bit;
+TERMINAL \ANALYZER_ADC:muxoutMinus\ : bit;
+TERMINAL \ANALYZER_ADC:vinNeg_0\ : bit;
+TERMINAL \ANALYZER_ADC:Net_339_0\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_0\ : bit;
+TERMINAL \ANALYZER_ADC:Net_340_0\ : bit;
+TERMINAL \ANALYZER_ADC:Net_21_0\ : bit;
+SIGNAL \ANALYZER_ADC:Net_40\ : bit;
+SIGNAL \ANALYZER_ADC:Net_41\ : bit;
+SIGNAL \ANALYZER_ADC:Net_42\ : bit;
+SIGNAL \ANALYZER_ADC:Net_43\ : bit;
+SIGNAL \ANALYZER_ADC:st_sel_1\ : bit;
+SIGNAL \ANALYZER_ADC:st_sel_0\ : bit;
+SIGNAL \ANALYZER_ADC:sarClock\ : bit;
+SIGNAL Net_48 : bit;
+SIGNAL \ANALYZER_ADC:Net_415\ : bit;
+SIGNAL Net_49 : bit;
+TERMINAL \ANALYZER_ADC:Net_408\ : bit;
+TERMINAL \ANALYZER_ADC:Net_102\ : bit;
+SIGNAL \ANALYZER_ADC:Net_423\ : bit;
+SIGNAL \ANALYZER_ADC:Net_29\ : bit;
+TERMINAL Net_42 : bit;
+SIGNAL \ANALYZER_ADC:Net_34\ : bit;
+SIGNAL \ANALYZER_ADC:Net_33\ : bit;
+SIGNAL \ANALYZER_ADC:Net_428\ : bit;
+TERMINAL \ANALYZER_ADC:vref\ : bit;
+SIGNAL Net_31 : bit;
+SIGNAL Net_33 : bit;
+SIGNAL Net_35 : bit;
+SIGNAL Net_30 : bit;
+SIGNAL Net_34_11 : bit;
+SIGNAL Net_34_10 : bit;
+SIGNAL Net_34_9 : bit;
+SIGNAL Net_34_8 : bit;
+SIGNAL Net_34_7 : bit;
+SIGNAL Net_34_6 : bit;
+SIGNAL Net_34_5 : bit;
+SIGNAL Net_34_4 : bit;
+SIGNAL Net_34_3 : bit;
+SIGNAL Net_34_2 : bit;
+SIGNAL Net_34_1 : bit;
+SIGNAL Net_34_0 : bit;
+SIGNAL Net_32_3 : bit;
+SIGNAL Net_32_2 : bit;
+SIGNAL Net_32_1 : bit;
+SIGNAL Net_32_0 : bit;
+TERMINAL \ANALYZER_ADC:Net_107\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_1\ : bit;
+TERMINAL \ANALYZER_ADC:Net_110\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_2\ : bit;
+TERMINAL \ANALYZER_ADC:Net_113\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_3\ : bit;
+TERMINAL \ANALYZER_ADC:Net_115\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_4\ : bit;
+TERMINAL \ANALYZER_ADC:Net_117\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_5\ : bit;
+TERMINAL \ANALYZER_ADC:Net_119\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_6\ : bit;
+TERMINAL \ANALYZER_ADC:Net_121\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_7\ : bit;
+TERMINAL \ANALYZER_ADC:Net_123\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_8\ : bit;
+TERMINAL \ANALYZER_ADC:Net_125\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_9\ : bit;
+TERMINAL \ANALYZER_ADC:Net_127\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_10\ : bit;
+TERMINAL \ANALYZER_ADC:Net_129\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_11\ : bit;
+TERMINAL \ANALYZER_ADC:Net_131\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_12\ : bit;
+TERMINAL \ANALYZER_ADC:Net_133\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_13\ : bit;
+TERMINAL \ANALYZER_ADC:Net_135\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_14\ : bit;
+TERMINAL \ANALYZER_ADC:Net_137\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_15\ : bit;
+TERMINAL \ANALYZER_ADC:Net_139\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_16\ : bit;
+TERMINAL \ANALYZER_ADC:Net_142\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_17\ : bit;
+TERMINAL \ANALYZER_ADC:Net_144\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_18\ : bit;
+TERMINAL \ANALYZER_ADC:Net_146\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_19\ : bit;
+TERMINAL \ANALYZER_ADC:Net_148\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_20\ : bit;
+TERMINAL \ANALYZER_ADC:Net_150\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_21\ : bit;
+TERMINAL \ANALYZER_ADC:Net_152\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_22\ : bit;
+TERMINAL \ANALYZER_ADC:Net_154\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_23\ : bit;
+TERMINAL \ANALYZER_ADC:Net_156\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_24\ : bit;
+TERMINAL \ANALYZER_ADC:Net_158\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_25\ : bit;
+TERMINAL \ANALYZER_ADC:Net_160\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_26\ : bit;
+TERMINAL \ANALYZER_ADC:Net_162\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_27\ : bit;
+TERMINAL \ANALYZER_ADC:Net_164\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_28\ : bit;
+TERMINAL \ANALYZER_ADC:Net_166\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_29\ : bit;
+TERMINAL \ANALYZER_ADC:Net_168\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_30\ : bit;
+TERMINAL \ANALYZER_ADC:Net_170\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_31\ : bit;
+TERMINAL \ANALYZER_ADC:Net_172\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_32\ : bit;
+TERMINAL \ANALYZER_ADC:Net_180\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_33\ : bit;
+TERMINAL \ANALYZER_ADC:Net_181\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_34\ : bit;
+TERMINAL \ANALYZER_ADC:Net_182\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_35\ : bit;
+TERMINAL \ANALYZER_ADC:Net_183\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_36\ : bit;
+TERMINAL \ANALYZER_ADC:Net_184\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_37\ : bit;
+TERMINAL \ANALYZER_ADC:Net_185\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_38\ : bit;
+TERMINAL \ANALYZER_ADC:Net_186\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_39\ : bit;
+TERMINAL \ANALYZER_ADC:Net_187\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_40\ : bit;
+TERMINAL \ANALYZER_ADC:Net_188\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_41\ : bit;
+TERMINAL \ANALYZER_ADC:Net_189\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_42\ : bit;
+TERMINAL \ANALYZER_ADC:Net_190\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_43\ : bit;
+TERMINAL \ANALYZER_ADC:Net_191\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_44\ : bit;
+TERMINAL \ANALYZER_ADC:Net_192\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_45\ : bit;
+TERMINAL \ANALYZER_ADC:Net_193\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_46\ : bit;
+TERMINAL \ANALYZER_ADC:Net_194\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_47\ : bit;
+TERMINAL \ANALYZER_ADC:Net_195\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_48\ : bit;
+TERMINAL \ANALYZER_ADC:Net_196\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_49\ : bit;
+TERMINAL \ANALYZER_ADC:Net_197\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_50\ : bit;
+TERMINAL \ANALYZER_ADC:Net_198\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_51\ : bit;
+TERMINAL \ANALYZER_ADC:Net_199\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_52\ : bit;
+TERMINAL \ANALYZER_ADC:Net_200\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_53\ : bit;
+TERMINAL \ANALYZER_ADC:Net_201\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_54\ : bit;
+TERMINAL \ANALYZER_ADC:Net_202\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_55\ : bit;
+TERMINAL \ANALYZER_ADC:Net_203\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_56\ : bit;
+TERMINAL \ANALYZER_ADC:Net_204\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_57\ : bit;
+TERMINAL \ANALYZER_ADC:Net_205\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_58\ : bit;
+TERMINAL \ANALYZER_ADC:Net_206\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_59\ : bit;
+TERMINAL \ANALYZER_ADC:Net_207\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_60\ : bit;
+TERMINAL \ANALYZER_ADC:Net_208\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_61\ : bit;
+TERMINAL \ANALYZER_ADC:Net_209\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_62\ : bit;
+TERMINAL \ANALYZER_ADC:Net_210\ : bit;
+TERMINAL \ANALYZER_ADC:vinPlus_63\ : bit;
+TERMINAL \ANALYZER_ADC:Net_211\ : bit;
+TERMINAL \ANALYZER_ADC:Net_213\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_1\ : bit;
+TERMINAL \ANALYZER_ADC:Net_218\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_2\ : bit;
+TERMINAL \ANALYZER_ADC:Net_220\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_3\ : bit;
+TERMINAL \ANALYZER_ADC:Net_222\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_4\ : bit;
+TERMINAL \ANALYZER_ADC:Net_224\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_5\ : bit;
+TERMINAL \ANALYZER_ADC:Net_226\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_6\ : bit;
+TERMINAL \ANALYZER_ADC:Net_228\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_7\ : bit;
+TERMINAL \ANALYZER_ADC:Net_230\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_8\ : bit;
+TERMINAL \ANALYZER_ADC:Net_232\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_9\ : bit;
+TERMINAL \ANALYZER_ADC:Net_234\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_10\ : bit;
+TERMINAL \ANALYZER_ADC:Net_236\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_11\ : bit;
+TERMINAL \ANALYZER_ADC:Net_238\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_12\ : bit;
+TERMINAL \ANALYZER_ADC:Net_240\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_13\ : bit;
+TERMINAL \ANALYZER_ADC:Net_242\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_14\ : bit;
+TERMINAL \ANALYZER_ADC:Net_244\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_15\ : bit;
+TERMINAL \ANALYZER_ADC:Net_246\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_16\ : bit;
+TERMINAL \ANALYZER_ADC:Net_248\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_17\ : bit;
+TERMINAL \ANALYZER_ADC:Net_250\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_18\ : bit;
+TERMINAL \ANALYZER_ADC:Net_252\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_19\ : bit;
+TERMINAL \ANALYZER_ADC:Net_254\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_20\ : bit;
+TERMINAL \ANALYZER_ADC:Net_256\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_21\ : bit;
+TERMINAL \ANALYZER_ADC:Net_258\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_22\ : bit;
+TERMINAL \ANALYZER_ADC:Net_260\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_23\ : bit;
+TERMINAL \ANALYZER_ADC:Net_262\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_24\ : bit;
+TERMINAL \ANALYZER_ADC:Net_264\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_25\ : bit;
+TERMINAL \ANALYZER_ADC:Net_266\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_26\ : bit;
+TERMINAL \ANALYZER_ADC:Net_268\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_27\ : bit;
+TERMINAL \ANALYZER_ADC:Net_270\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_28\ : bit;
+TERMINAL \ANALYZER_ADC:Net_272\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_29\ : bit;
+TERMINAL \ANALYZER_ADC:Net_274\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_30\ : bit;
+TERMINAL \ANALYZER_ADC:Net_276\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_31\ : bit;
+TERMINAL \ANALYZER_ADC:Net_278\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_32\ : bit;
+TERMINAL \ANALYZER_ADC:Net_285\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_33\ : bit;
+TERMINAL \ANALYZER_ADC:Net_286\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_34\ : bit;
+TERMINAL \ANALYZER_ADC:Net_287\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_35\ : bit;
+TERMINAL \ANALYZER_ADC:Net_288\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_36\ : bit;
+TERMINAL \ANALYZER_ADC:Net_289\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_37\ : bit;
+TERMINAL \ANALYZER_ADC:Net_290\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_38\ : bit;
+TERMINAL \ANALYZER_ADC:Net_291\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_39\ : bit;
+TERMINAL \ANALYZER_ADC:Net_292\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_40\ : bit;
+TERMINAL \ANALYZER_ADC:Net_293\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_41\ : bit;
+TERMINAL \ANALYZER_ADC:Net_294\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_42\ : bit;
+TERMINAL \ANALYZER_ADC:Net_295\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_43\ : bit;
+TERMINAL \ANALYZER_ADC:Net_296\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_44\ : bit;
+TERMINAL \ANALYZER_ADC:Net_297\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_45\ : bit;
+TERMINAL \ANALYZER_ADC:Net_298\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_46\ : bit;
+TERMINAL \ANALYZER_ADC:Net_299\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_47\ : bit;
+TERMINAL \ANALYZER_ADC:Net_300\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_48\ : bit;
+TERMINAL \ANALYZER_ADC:Net_301\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_49\ : bit;
+TERMINAL \ANALYZER_ADC:Net_302\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_50\ : bit;
+TERMINAL \ANALYZER_ADC:Net_303\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_51\ : bit;
+TERMINAL \ANALYZER_ADC:Net_304\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_52\ : bit;
+TERMINAL \ANALYZER_ADC:Net_305\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_53\ : bit;
+TERMINAL \ANALYZER_ADC:Net_306\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_54\ : bit;
+TERMINAL \ANALYZER_ADC:Net_307\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_55\ : bit;
+TERMINAL \ANALYZER_ADC:Net_308\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_56\ : bit;
+TERMINAL \ANALYZER_ADC:Net_309\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_57\ : bit;
+TERMINAL \ANALYZER_ADC:Net_310\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_58\ : bit;
+TERMINAL \ANALYZER_ADC:Net_311\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_59\ : bit;
+TERMINAL \ANALYZER_ADC:Net_312\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_60\ : bit;
+TERMINAL \ANALYZER_ADC:Net_313\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_61\ : bit;
+TERMINAL \ANALYZER_ADC:Net_314\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_62\ : bit;
+TERMINAL \ANALYZER_ADC:Net_315\ : bit;
+TERMINAL \ANALYZER_ADC:vinMinus_63\ : bit;
+TERMINAL \ANALYZER_ADC:Net_316\ : bit;
+TERMINAL \ANALYZER_ADC:Net_331\ : bit;
+TERMINAL \ANALYZER_ADC:vinNeg_1\ : bit;
+TERMINAL \ANALYZER_ADC:Net_345\ : bit;
+TERMINAL \ANALYZER_ADC:vinNeg_2\ : bit;
+TERMINAL \ANALYZER_ADC:Net_347\ : bit;
+TERMINAL \ANALYZER_ADC:vinNeg_3\ : bit;
+TERMINAL \ANALYZER_ADC:Net_349\ : bit;
+TERMINAL \ANALYZER_ADC:vrefBus_0\ : bit;
+TERMINAL \ANALYZER_ADC:Net_456\ : bit;
+TERMINAL \ANALYZER_ADC:vrefBus_1\ : bit;
+TERMINAL \ANALYZER_ADC:Net_457\ : bit;
+TERMINAL \ANALYZER_ADC:vrefBus_2\ : bit;
+TERMINAL \ANALYZER_ADC:Net_458\ : bit;
+TERMINAL \ANALYZER_ADC:vrefBus_3\ : bit;
+TERMINAL \ANALYZER_ADC:Net_459\ : bit;
+TERMINAL \ANALYZER_ADC:Net_1448\ : bit;
+SIGNAL Net_36 : bit;
+TERMINAL Net_37_0 : bit;
+TERMINAL Net_37_1 : bit;
+TERMINAL \ANALYZER_ADC:Net_1379\ : bit;
+TERMINAL \ANALYZER_ADC:Net_1385\ : bit;
+TERMINAL \ANALYZER_ADC:Net_1388\ : bit;
+TERMINAL \ANALYZER_ADC:Net_1382\ : bit;
+TERMINAL \ANALYZER_ADC:Net_105\ : bit;
+TERMINAL Net_39 : bit;
+TERMINAL Net_38 : bit;
+SIGNAL one : bit;
+SIGNAL zero : bit;
+SIGNAL tmpFB_0__INPUT_PIN_net_0 : bit;
+SIGNAL tmpIO_0__INPUT_PIN_net_0 : bit;
+TERMINAL tmpSIOVREF__INPUT_PIN_net_0 : bit;
+SIGNAL Net_223 : bit;
+SIGNAL Net_105 : bit;
+SIGNAL tmpFB_0__OUTPUT_PIN_net_0 : bit;
+TERMINAL Net_106 : bit;
+SIGNAL tmpIO_0__OUTPUT_PIN_net_0 : bit;
+TERMINAL tmpSIOVREF__OUTPUT_PIN_net_0 : bit;
+SIGNAL tmpFB_0__STATUS_LED_net_0 : bit;
+SIGNAL tmpIO_0__STATUS_LED_net_0 : bit;
+TERMINAL tmpSIOVREF__STATUS_LED_net_0 : bit;
+SIGNAL \ANALIZER_PWM:swap\ : bit;
+SIGNAL \ANALIZER_PWM:count\ : bit;
+SIGNAL \ANALIZER_PWM:reload\ : bit;
+SIGNAL \ANALIZER_PWM:kill\ : bit;
+SIGNAL \ANALIZER_PWM:start\ : bit;
+SIGNAL Net_233 : bit;
+SIGNAL Net_224 : bit;
+SIGNAL Net_228 : bit;
+SIGNAL Net_229 : bit;
+SIGNAL Net_226 : bit;
+SIGNAL \ANALYZER_VDAC:Net_1\ : bit;
+TERMINAL \ANALYZER_VDAC:ref_drive\ : bit;
+TERMINAL \ANALYZER_VDAC:Net_3\ : bit;
+TERMINAL \ANALYZER_VDAC:ct_vout\ : bit;
+TERMINAL \ANALYZER_VDAC:ct_vout_sw\ : bit;
+SIGNAL \ANALYZER_VDAC:strobe\ : bit;
+SIGNAL Net_222 : bit;
+TERMINAL \ANALYZER_VDAC:ct_vout_buf\ : bit;
+TERMINAL \ANALYZER_VDAC:Net_16\ : bit;
+TERMINAL \ANALYZER_VDAC:Net_9\ : bit;
+TERMINAL \ANALYZER_VDAC:Net_10\ : bit;
+TERMINAL \ANALYZER_VDAC:Net_42\ : bit;
+SIGNAL \ANALYZER_VDAC:Net_44\ : bit;
+TERMINAL Net_108 : bit;
+SIGNAL Net_313 : bit;
+SIGNAL Net_312 : bit;
+SIGNAL \ANALYZER_UART:clock_wire\ : bit;
+SIGNAL Net_335 : bit;
+SIGNAL \ANALYZER_UART:Net_22\ : bit;
+SIGNAL \ANALYZER_UART:Net_23\ : bit;
+SIGNAL \ANALYZER_UART:Net_847\ : bit;
+SIGNAL \ANALYZER_UART:tx_wire\ : bit;
+SIGNAL \ANALYZER_UART:tmpFB_0__tx_net_0\ : bit;
+SIGNAL \ANALYZER_UART:tmpIO_0__tx_net_0\ : bit;
+TERMINAL \ANALYZER_UART:tmpSIOVREF__tx_net_0\ : bit;
+SIGNAL \ANALYZER_UART:Net_1172\ : bit;
+SIGNAL \ANALYZER_UART:tmpIO_0__rx_net_0\ : bit;
+TERMINAL \ANALYZER_UART:tmpSIOVREF__rx_net_0\ : bit;
+SIGNAL \ANALYZER_UART:rx_wire\ : bit;
+SIGNAL \ANALYZER_UART:cts_wire\ : bit;
+SIGNAL \ANALYZER_UART:rts_wire\ : bit;
+SIGNAL \ANALYZER_UART:tx_en_wire\ : bit;
+SIGNAL \ANALYZER_UART:Net_145\ : bit;
+SIGNAL \ANALYZER_UART:Net_146\ : bit;
+SIGNAL \ANALYZER_UART:Net_154\ : bit;
+SIGNAL \ANALYZER_UART:Net_155_3\ : bit;
+SIGNAL \ANALYZER_UART:Net_155_2\ : bit;
+SIGNAL \ANALYZER_UART:Net_155_1\ : bit;
+SIGNAL \ANALYZER_UART:Net_155_0\ : bit;
+SIGNAL \ANALYZER_UART:Net_156\ : bit;
+SIGNAL \ANALYZER_UART:Net_157\ : bit;
+SIGNAL \ANALYZER_UART:intr_wire\ : bit;
+SIGNAL Net_342 : bit;
+SIGNAL Net_339 : bit;
+SIGNAL \ANALYZER_UART:Net_161\ : bit;
+SIGNAL Net_334 : bit;
+SIGNAL Net_338 : bit;
+SIGNAL Net_341 : bit;
+SIGNAL Net_343 : bit;
+SIGNAL Net_344 : bit;
+SIGNAL Net_275 : bit;
+SIGNAL Net_276 : bit;
+TERMINAL \OP0:Net_18\ : bit;
+TERMINAL \OP0:Net_14\ : bit;
+TERMINAL Net_356 : bit;
+TERMINAL \OP0:Net_9\ : bit;
+SIGNAL \OP0:Net_5\ : bit;
+TERMINAL Net_358 : bit;
+TERMINAL Net_357 : bit;
+TERMINAL \OP1:Net_18\ : bit;
+TERMINAL \OP1:Net_14\ : bit;
+TERMINAL Net_360 : bit;
+TERMINAL \OP1:Net_9\ : bit;
+SIGNAL \OP1:Net_5\ : bit;
+TERMINAL Net_362 : bit;
+TERMINAL Net_361 : bit;
+SIGNAL tmpFB_0__OP1_INP_net_0 : bit;
+SIGNAL tmpIO_0__OP1_INP_net_0 : bit;
+TERMINAL tmpSIOVREF__OP1_INP_net_0 : bit;
+SIGNAL tmpFB_0__OP1_INN_net_0 : bit;
+SIGNAL tmpIO_0__OP1_INN_net_0 : bit;
+TERMINAL tmpSIOVREF__OP1_INN_net_0 : bit;
+SIGNAL tmpFB_0__OP0_INP_net_0 : bit;
+SIGNAL tmpIO_0__OP0_INP_net_0 : bit;
+TERMINAL tmpSIOVREF__OP0_INP_net_0 : bit;
+SIGNAL tmpFB_0__OP0_INN_net_0 : bit;
+SIGNAL tmpIO_0__OP0_INN_net_0 : bit;
+TERMINAL tmpSIOVREF__OP0_INN_net_0 : bit;
+SIGNAL tmpFB_0__OP1_OUT_net_0 : bit;
+SIGNAL tmpIO_0__OP1_OUT_net_0 : bit;
+TERMINAL tmpSIOVREF__OP1_OUT_net_0 : bit;
+SIGNAL tmpFB_0__OP0_OUT_net_0 : bit;
+SIGNAL tmpIO_0__OP0_OUT_net_0 : bit;
+TERMINAL tmpSIOVREF__OP0_OUT_net_0 : bit;
+BEGIN
+
+one <=  ('1') ;
+
+zero <=  ('0') ;
+
+\ANALYZER_ADC:vplusMux_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:muxoutPlus\,
+		signal2=>\ANALYZER_ADC:vinPlus_0\);
+\ANALYZER_ADC:vminusMux_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:muxoutMinus\,
+		signal2=>\ANALYZER_ADC:vinNeg_0\);
+\ANALYZER_ADC:vinPlusConnect:bus_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>(\ANALYZER_ADC:vinPlus_0\),
+		signal2=>(\ANALYZER_ADC:Net_339_0\));
+\ANALYZER_ADC:vinMinusConnect:bus_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>(\ANALYZER_ADC:vinMinus_0\),
+		signal2=>(\ANALYZER_ADC:Net_340_0\));
+\ANALYZER_ADC:vinNegConnect:bus_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>(\ANALYZER_ADC:vinNeg_0\),
+		signal2=>(\ANALYZER_ADC:Net_21_0\));
+\ANALYZER_ADC:extVrefMux_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:Net_408\,
+		signal2=>\ANALYZER_ADC:Net_102\);
+\ANALYZER_ADC:IRQ\:cy_mxs40_isr_v1_0
+	GENERIC MAP(cy_registers=>"",
+		deepsleep_required=>'0',
+		int_type=>"10")
+	PORT MAP(int_signal=>\ANALYZER_ADC:Net_423\);
+\ANALYZER_ADC:vinPlusMux_0_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_0\,
+		signal2=>Net_42);
+\ANALYZER_ADC:SAR\:cy_mxs40_sar_v1_0
+	GENERIC MAP(cy_registers=>"",
+		edge_trigger=>'1')
+	PORT MAP(vplus=>\ANALYZER_ADC:muxoutPlus\,
+		vminus=>\ANALYZER_ADC:muxoutMinus\,
+		vref=>\ANALYZER_ADC:vref\,
+		ext_vref=>\ANALYZER_ADC:Net_408\,
+		dsi_sar_sample_done=>Net_31,
+		dsi_sar_chan_id_valid=>Net_33,
+		dsi_sar_data_valid=>Net_35,
+		tr_sar_out=>Net_30,
+		dsi_sar_data=>(Net_34_11, Net_34_10, Net_34_9, Net_34_8,
+			Net_34_7, Net_34_6, Net_34_5, Net_34_4,
+			Net_34_3, Net_34_2, Net_34_1, Net_34_0),
+		dsi_sar_chan_id=>(Net_32_3, Net_32_2, Net_32_1, Net_32_0),
+		dsi_sar_cfg_st_sel=>(zero, zero),
+		dsi_sar_cfg_average=>zero,
+		dsi_sar_cfg_differential=>zero,
+		dsi_sar_sw_negvref=>zero,
+		dsi_sar_data_hilo_sel=>zero,
+		tr_sar_in=>Net_49,
+		clock=>Net_48,
+		interrupt=>\ANALYZER_ADC:Net_423\);
+\ANALYZER_ADC:cy_analog_noconnect_133\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_107\);
+\ANALYZER_ADC:vinPlusMux_1_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_1\,
+		signal2=>\ANALYZER_ADC:Net_110\);
+\ANALYZER_ADC:cy_analog_noconnect_134\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_110\);
+\ANALYZER_ADC:vinPlusMux_2_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_2\,
+		signal2=>\ANALYZER_ADC:Net_113\);
+\ANALYZER_ADC:cy_analog_noconnect_135\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_113\);
+\ANALYZER_ADC:vinPlusMux_3_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_3\,
+		signal2=>\ANALYZER_ADC:Net_115\);
+\ANALYZER_ADC:cy_analog_noconnect_136\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_115\);
+\ANALYZER_ADC:vinPlusMux_4_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_4\,
+		signal2=>\ANALYZER_ADC:Net_117\);
+\ANALYZER_ADC:cy_analog_noconnect_137\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_117\);
+\ANALYZER_ADC:vinPlusMux_5_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_5\,
+		signal2=>\ANALYZER_ADC:Net_119\);
+\ANALYZER_ADC:cy_analog_noconnect_138\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_119\);
+\ANALYZER_ADC:vinPlusMux_6_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_6\,
+		signal2=>\ANALYZER_ADC:Net_121\);
+\ANALYZER_ADC:cy_analog_noconnect_139\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_121\);
+\ANALYZER_ADC:vinPlusMux_7_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_7\,
+		signal2=>\ANALYZER_ADC:Net_123\);
+\ANALYZER_ADC:cy_analog_noconnect_140\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_123\);
+\ANALYZER_ADC:vinPlusMux_8_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_8\,
+		signal2=>\ANALYZER_ADC:Net_125\);
+\ANALYZER_ADC:cy_analog_noconnect_141\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_125\);
+\ANALYZER_ADC:vinPlusMux_9_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_9\,
+		signal2=>\ANALYZER_ADC:Net_127\);
+\ANALYZER_ADC:cy_analog_noconnect_142\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_127\);
+\ANALYZER_ADC:vinPlusMux_10_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_10\,
+		signal2=>\ANALYZER_ADC:Net_129\);
+\ANALYZER_ADC:cy_analog_noconnect_143\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_129\);
+\ANALYZER_ADC:vinPlusMux_11_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_11\,
+		signal2=>\ANALYZER_ADC:Net_131\);
+\ANALYZER_ADC:cy_analog_noconnect_144\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_131\);
+\ANALYZER_ADC:vinPlusMux_12_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_12\,
+		signal2=>\ANALYZER_ADC:Net_133\);
+\ANALYZER_ADC:cy_analog_noconnect_145\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_133\);
+\ANALYZER_ADC:vinPlusMux_13_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_13\,
+		signal2=>\ANALYZER_ADC:Net_135\);
+\ANALYZER_ADC:cy_analog_noconnect_146\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_135\);
+\ANALYZER_ADC:vinPlusMux_14_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_14\,
+		signal2=>\ANALYZER_ADC:Net_137\);
+\ANALYZER_ADC:cy_analog_noconnect_147\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_137\);
+\ANALYZER_ADC:vinPlusMux_15_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_15\,
+		signal2=>\ANALYZER_ADC:Net_139\);
+\ANALYZER_ADC:cy_analog_noconnect_148\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_139\);
+\ANALYZER_ADC:vinPlusMux_16_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_16\,
+		signal2=>\ANALYZER_ADC:Net_142\);
+\ANALYZER_ADC:cy_analog_noconnect_149\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_142\);
+\ANALYZER_ADC:vinPlusMux_17_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_17\,
+		signal2=>\ANALYZER_ADC:Net_144\);
+\ANALYZER_ADC:cy_analog_noconnect_150\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_144\);
+\ANALYZER_ADC:vinPlusMux_18_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_18\,
+		signal2=>\ANALYZER_ADC:Net_146\);
+\ANALYZER_ADC:cy_analog_noconnect_151\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_146\);
+\ANALYZER_ADC:vinPlusMux_19_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_19\,
+		signal2=>\ANALYZER_ADC:Net_148\);
+\ANALYZER_ADC:cy_analog_noconnect_152\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_148\);
+\ANALYZER_ADC:vinPlusMux_20_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_20\,
+		signal2=>\ANALYZER_ADC:Net_150\);
+\ANALYZER_ADC:cy_analog_noconnect_153\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_150\);
+\ANALYZER_ADC:vinPlusMux_21_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_21\,
+		signal2=>\ANALYZER_ADC:Net_152\);
+\ANALYZER_ADC:cy_analog_noconnect_154\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_152\);
+\ANALYZER_ADC:vinPlusMux_22_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_22\,
+		signal2=>\ANALYZER_ADC:Net_154\);
+\ANALYZER_ADC:cy_analog_noconnect_155\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_154\);
+\ANALYZER_ADC:vinPlusMux_23_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_23\,
+		signal2=>\ANALYZER_ADC:Net_156\);
+\ANALYZER_ADC:cy_analog_noconnect_156\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_156\);
+\ANALYZER_ADC:vinPlusMux_24_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_24\,
+		signal2=>\ANALYZER_ADC:Net_158\);
+\ANALYZER_ADC:cy_analog_noconnect_157\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_158\);
+\ANALYZER_ADC:vinPlusMux_25_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_25\,
+		signal2=>\ANALYZER_ADC:Net_160\);
+\ANALYZER_ADC:cy_analog_noconnect_158\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_160\);
+\ANALYZER_ADC:vinPlusMux_26_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_26\,
+		signal2=>\ANALYZER_ADC:Net_162\);
+\ANALYZER_ADC:cy_analog_noconnect_159\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_162\);
+\ANALYZER_ADC:vinPlusMux_27_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_27\,
+		signal2=>\ANALYZER_ADC:Net_164\);
+\ANALYZER_ADC:cy_analog_noconnect_160\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_164\);
+\ANALYZER_ADC:vinPlusMux_28_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_28\,
+		signal2=>\ANALYZER_ADC:Net_166\);
+\ANALYZER_ADC:cy_analog_noconnect_161\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_166\);
+\ANALYZER_ADC:vinPlusMux_29_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_29\,
+		signal2=>\ANALYZER_ADC:Net_168\);
+\ANALYZER_ADC:cy_analog_noconnect_162\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_168\);
+\ANALYZER_ADC:vinPlusMux_30_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_30\,
+		signal2=>\ANALYZER_ADC:Net_170\);
+\ANALYZER_ADC:cy_analog_noconnect_163\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_170\);
+\ANALYZER_ADC:vinPlusMux_31_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_31\,
+		signal2=>\ANALYZER_ADC:Net_172\);
+\ANALYZER_ADC:cy_analog_noconnect_164\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_172\);
+\ANALYZER_ADC:vinPlusMux_32_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_32\,
+		signal2=>\ANALYZER_ADC:Net_180\);
+\ANALYZER_ADC:cy_analog_noconnect_165\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_180\);
+\ANALYZER_ADC:vinPlusMux_33_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_33\,
+		signal2=>\ANALYZER_ADC:Net_181\);
+\ANALYZER_ADC:cy_analog_noconnect_166\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_181\);
+\ANALYZER_ADC:vinPlusMux_34_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_34\,
+		signal2=>\ANALYZER_ADC:Net_182\);
+\ANALYZER_ADC:cy_analog_noconnect_167\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_182\);
+\ANALYZER_ADC:vinPlusMux_35_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_35\,
+		signal2=>\ANALYZER_ADC:Net_183\);
+\ANALYZER_ADC:cy_analog_noconnect_168\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_183\);
+\ANALYZER_ADC:vinPlusMux_36_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_36\,
+		signal2=>\ANALYZER_ADC:Net_184\);
+\ANALYZER_ADC:cy_analog_noconnect_169\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_184\);
+\ANALYZER_ADC:vinPlusMux_37_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_37\,
+		signal2=>\ANALYZER_ADC:Net_185\);
+\ANALYZER_ADC:cy_analog_noconnect_170\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_185\);
+\ANALYZER_ADC:vinPlusMux_38_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_38\,
+		signal2=>\ANALYZER_ADC:Net_186\);
+\ANALYZER_ADC:cy_analog_noconnect_171\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_186\);
+\ANALYZER_ADC:vinPlusMux_39_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_39\,
+		signal2=>\ANALYZER_ADC:Net_187\);
+\ANALYZER_ADC:cy_analog_noconnect_172\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_187\);
+\ANALYZER_ADC:vinPlusMux_40_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_40\,
+		signal2=>\ANALYZER_ADC:Net_188\);
+\ANALYZER_ADC:cy_analog_noconnect_173\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_188\);
+\ANALYZER_ADC:vinPlusMux_41_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_41\,
+		signal2=>\ANALYZER_ADC:Net_189\);
+\ANALYZER_ADC:cy_analog_noconnect_174\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_189\);
+\ANALYZER_ADC:vinPlusMux_42_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_42\,
+		signal2=>\ANALYZER_ADC:Net_190\);
+\ANALYZER_ADC:cy_analog_noconnect_175\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_190\);
+\ANALYZER_ADC:vinPlusMux_43_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_43\,
+		signal2=>\ANALYZER_ADC:Net_191\);
+\ANALYZER_ADC:cy_analog_noconnect_176\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_191\);
+\ANALYZER_ADC:vinPlusMux_44_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_44\,
+		signal2=>\ANALYZER_ADC:Net_192\);
+\ANALYZER_ADC:cy_analog_noconnect_177\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_192\);
+\ANALYZER_ADC:vinPlusMux_45_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_45\,
+		signal2=>\ANALYZER_ADC:Net_193\);
+\ANALYZER_ADC:cy_analog_noconnect_178\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_193\);
+\ANALYZER_ADC:vinPlusMux_46_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_46\,
+		signal2=>\ANALYZER_ADC:Net_194\);
+\ANALYZER_ADC:cy_analog_noconnect_179\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_194\);
+\ANALYZER_ADC:vinPlusMux_47_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_47\,
+		signal2=>\ANALYZER_ADC:Net_195\);
+\ANALYZER_ADC:cy_analog_noconnect_180\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_195\);
+\ANALYZER_ADC:vinPlusMux_48_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_48\,
+		signal2=>\ANALYZER_ADC:Net_196\);
+\ANALYZER_ADC:cy_analog_noconnect_181\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_196\);
+\ANALYZER_ADC:vinPlusMux_49_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_49\,
+		signal2=>\ANALYZER_ADC:Net_197\);
+\ANALYZER_ADC:cy_analog_noconnect_182\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_197\);
+\ANALYZER_ADC:vinPlusMux_50_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_50\,
+		signal2=>\ANALYZER_ADC:Net_198\);
+\ANALYZER_ADC:cy_analog_noconnect_183\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_198\);
+\ANALYZER_ADC:vinPlusMux_51_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_51\,
+		signal2=>\ANALYZER_ADC:Net_199\);
+\ANALYZER_ADC:cy_analog_noconnect_184\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_199\);
+\ANALYZER_ADC:vinPlusMux_52_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_52\,
+		signal2=>\ANALYZER_ADC:Net_200\);
+\ANALYZER_ADC:cy_analog_noconnect_185\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_200\);
+\ANALYZER_ADC:vinPlusMux_53_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_53\,
+		signal2=>\ANALYZER_ADC:Net_201\);
+\ANALYZER_ADC:cy_analog_noconnect_186\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_201\);
+\ANALYZER_ADC:vinPlusMux_54_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_54\,
+		signal2=>\ANALYZER_ADC:Net_202\);
+\ANALYZER_ADC:cy_analog_noconnect_187\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_202\);
+\ANALYZER_ADC:vinPlusMux_55_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_55\,
+		signal2=>\ANALYZER_ADC:Net_203\);
+\ANALYZER_ADC:cy_analog_noconnect_188\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_203\);
+\ANALYZER_ADC:vinPlusMux_56_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_56\,
+		signal2=>\ANALYZER_ADC:Net_204\);
+\ANALYZER_ADC:cy_analog_noconnect_189\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_204\);
+\ANALYZER_ADC:vinPlusMux_57_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_57\,
+		signal2=>\ANALYZER_ADC:Net_205\);
+\ANALYZER_ADC:cy_analog_noconnect_190\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_205\);
+\ANALYZER_ADC:vinPlusMux_58_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_58\,
+		signal2=>\ANALYZER_ADC:Net_206\);
+\ANALYZER_ADC:cy_analog_noconnect_191\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_206\);
+\ANALYZER_ADC:vinPlusMux_59_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_59\,
+		signal2=>\ANALYZER_ADC:Net_207\);
+\ANALYZER_ADC:cy_analog_noconnect_192\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_207\);
+\ANALYZER_ADC:vinPlusMux_60_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_60\,
+		signal2=>\ANALYZER_ADC:Net_208\);
+\ANALYZER_ADC:cy_analog_noconnect_193\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_208\);
+\ANALYZER_ADC:vinPlusMux_61_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_61\,
+		signal2=>\ANALYZER_ADC:Net_209\);
+\ANALYZER_ADC:cy_analog_noconnect_194\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_209\);
+\ANALYZER_ADC:vinPlusMux_62_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_62\,
+		signal2=>\ANALYZER_ADC:Net_210\);
+\ANALYZER_ADC:cy_analog_noconnect_195\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_210\);
+\ANALYZER_ADC:vinPlusMux_63_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinPlus_63\,
+		signal2=>\ANALYZER_ADC:Net_211\);
+\ANALYZER_ADC:cy_analog_noconnect_196\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_211\);
+\ANALYZER_ADC:vinMinusMux_0_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_0\,
+		signal2=>\ANALYZER_ADC:Net_213\);
+\ANALYZER_ADC:cy_analog_noconnect_1\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_213\);
+\ANALYZER_ADC:vinMinusMux_1_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_1\,
+		signal2=>\ANALYZER_ADC:Net_218\);
+\ANALYZER_ADC:cy_analog_noconnect_2\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_218\);
+\ANALYZER_ADC:vinMinusMux_2_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_2\,
+		signal2=>\ANALYZER_ADC:Net_220\);
+\ANALYZER_ADC:cy_analog_noconnect_3\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_220\);
+\ANALYZER_ADC:vinMinusMux_3_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_3\,
+		signal2=>\ANALYZER_ADC:Net_222\);
+\ANALYZER_ADC:cy_analog_noconnect_4\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_222\);
+\ANALYZER_ADC:vinMinusMux_4_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_4\,
+		signal2=>\ANALYZER_ADC:Net_224\);
+\ANALYZER_ADC:cy_analog_noconnect_5\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_224\);
+\ANALYZER_ADC:vinMinusMux_5_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_5\,
+		signal2=>\ANALYZER_ADC:Net_226\);
+\ANALYZER_ADC:cy_analog_noconnect_6\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_226\);
+\ANALYZER_ADC:vinMinusMux_6_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_6\,
+		signal2=>\ANALYZER_ADC:Net_228\);
+\ANALYZER_ADC:cy_analog_noconnect_7\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_228\);
+\ANALYZER_ADC:vinMinusMux_7_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_7\,
+		signal2=>\ANALYZER_ADC:Net_230\);
+\ANALYZER_ADC:cy_analog_noconnect_8\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_230\);
+\ANALYZER_ADC:vinMinusMux_8_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_8\,
+		signal2=>\ANALYZER_ADC:Net_232\);
+\ANALYZER_ADC:cy_analog_noconnect_9\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_232\);
+\ANALYZER_ADC:vinMinusMux_9_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_9\,
+		signal2=>\ANALYZER_ADC:Net_234\);
+\ANALYZER_ADC:cy_analog_noconnect_10\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_234\);
+\ANALYZER_ADC:vinMinusMux_10_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_10\,
+		signal2=>\ANALYZER_ADC:Net_236\);
+\ANALYZER_ADC:cy_analog_noconnect_11\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_236\);
+\ANALYZER_ADC:vinMinusMux_11_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_11\,
+		signal2=>\ANALYZER_ADC:Net_238\);
+\ANALYZER_ADC:cy_analog_noconnect_12\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_238\);
+\ANALYZER_ADC:vinMinusMux_12_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_12\,
+		signal2=>\ANALYZER_ADC:Net_240\);
+\ANALYZER_ADC:cy_analog_noconnect_13\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_240\);
+\ANALYZER_ADC:vinMinusMux_13_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_13\,
+		signal2=>\ANALYZER_ADC:Net_242\);
+\ANALYZER_ADC:cy_analog_noconnect_14\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_242\);
+\ANALYZER_ADC:vinMinusMux_14_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_14\,
+		signal2=>\ANALYZER_ADC:Net_244\);
+\ANALYZER_ADC:cy_analog_noconnect_15\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_244\);
+\ANALYZER_ADC:vinMinusMux_15_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_15\,
+		signal2=>\ANALYZER_ADC:Net_246\);
+\ANALYZER_ADC:cy_analog_noconnect_16\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_246\);
+\ANALYZER_ADC:vinMinusMux_16_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_16\,
+		signal2=>\ANALYZER_ADC:Net_248\);
+\ANALYZER_ADC:cy_analog_noconnect_17\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_248\);
+\ANALYZER_ADC:vinMinusMux_17_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_17\,
+		signal2=>\ANALYZER_ADC:Net_250\);
+\ANALYZER_ADC:cy_analog_noconnect_18\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_250\);
+\ANALYZER_ADC:vinMinusMux_18_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_18\,
+		signal2=>\ANALYZER_ADC:Net_252\);
+\ANALYZER_ADC:cy_analog_noconnect_19\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_252\);
+\ANALYZER_ADC:vinMinusMux_19_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_19\,
+		signal2=>\ANALYZER_ADC:Net_254\);
+\ANALYZER_ADC:cy_analog_noconnect_20\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_254\);
+\ANALYZER_ADC:vinMinusMux_20_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_20\,
+		signal2=>\ANALYZER_ADC:Net_256\);
+\ANALYZER_ADC:cy_analog_noconnect_21\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_256\);
+\ANALYZER_ADC:vinMinusMux_21_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_21\,
+		signal2=>\ANALYZER_ADC:Net_258\);
+\ANALYZER_ADC:cy_analog_noconnect_22\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_258\);
+\ANALYZER_ADC:vinMinusMux_22_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_22\,
+		signal2=>\ANALYZER_ADC:Net_260\);
+\ANALYZER_ADC:cy_analog_noconnect_23\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_260\);
+\ANALYZER_ADC:vinMinusMux_23_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_23\,
+		signal2=>\ANALYZER_ADC:Net_262\);
+\ANALYZER_ADC:cy_analog_noconnect_24\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_262\);
+\ANALYZER_ADC:vinMinusMux_24_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_24\,
+		signal2=>\ANALYZER_ADC:Net_264\);
+\ANALYZER_ADC:cy_analog_noconnect_25\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_264\);
+\ANALYZER_ADC:vinMinusMux_25_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_25\,
+		signal2=>\ANALYZER_ADC:Net_266\);
+\ANALYZER_ADC:cy_analog_noconnect_26\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_266\);
+\ANALYZER_ADC:vinMinusMux_26_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_26\,
+		signal2=>\ANALYZER_ADC:Net_268\);
+\ANALYZER_ADC:cy_analog_noconnect_27\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_268\);
+\ANALYZER_ADC:vinMinusMux_27_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_27\,
+		signal2=>\ANALYZER_ADC:Net_270\);
+\ANALYZER_ADC:cy_analog_noconnect_28\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_270\);
+\ANALYZER_ADC:vinMinusMux_28_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_28\,
+		signal2=>\ANALYZER_ADC:Net_272\);
+\ANALYZER_ADC:cy_analog_noconnect_29\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_272\);
+\ANALYZER_ADC:vinMinusMux_29_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_29\,
+		signal2=>\ANALYZER_ADC:Net_274\);
+\ANALYZER_ADC:cy_analog_noconnect_30\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_274\);
+\ANALYZER_ADC:vinMinusMux_30_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_30\,
+		signal2=>\ANALYZER_ADC:Net_276\);
+\ANALYZER_ADC:cy_analog_noconnect_31\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_276\);
+\ANALYZER_ADC:vinMinusMux_31_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_31\,
+		signal2=>\ANALYZER_ADC:Net_278\);
+\ANALYZER_ADC:cy_analog_noconnect_32\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_278\);
+\ANALYZER_ADC:vinMinusMux_32_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_32\,
+		signal2=>\ANALYZER_ADC:Net_285\);
+\ANALYZER_ADC:cy_analog_noconnect_33\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_285\);
+\ANALYZER_ADC:vinMinusMux_33_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_33\,
+		signal2=>\ANALYZER_ADC:Net_286\);
+\ANALYZER_ADC:cy_analog_noconnect_34\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_286\);
+\ANALYZER_ADC:vinMinusMux_34_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_34\,
+		signal2=>\ANALYZER_ADC:Net_287\);
+\ANALYZER_ADC:cy_analog_noconnect_35\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_287\);
+\ANALYZER_ADC:vinMinusMux_35_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_35\,
+		signal2=>\ANALYZER_ADC:Net_288\);
+\ANALYZER_ADC:cy_analog_noconnect_36\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_288\);
+\ANALYZER_ADC:vinMinusMux_36_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_36\,
+		signal2=>\ANALYZER_ADC:Net_289\);
+\ANALYZER_ADC:cy_analog_noconnect_37\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_289\);
+\ANALYZER_ADC:vinMinusMux_37_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_37\,
+		signal2=>\ANALYZER_ADC:Net_290\);
+\ANALYZER_ADC:cy_analog_noconnect_38\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_290\);
+\ANALYZER_ADC:vinMinusMux_38_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_38\,
+		signal2=>\ANALYZER_ADC:Net_291\);
+\ANALYZER_ADC:cy_analog_noconnect_39\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_291\);
+\ANALYZER_ADC:vinMinusMux_39_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_39\,
+		signal2=>\ANALYZER_ADC:Net_292\);
+\ANALYZER_ADC:cy_analog_noconnect_40\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_292\);
+\ANALYZER_ADC:vinMinusMux_40_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_40\,
+		signal2=>\ANALYZER_ADC:Net_293\);
+\ANALYZER_ADC:cy_analog_noconnect_41\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_293\);
+\ANALYZER_ADC:vinMinusMux_41_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_41\,
+		signal2=>\ANALYZER_ADC:Net_294\);
+\ANALYZER_ADC:cy_analog_noconnect_42\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_294\);
+\ANALYZER_ADC:vinMinusMux_42_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_42\,
+		signal2=>\ANALYZER_ADC:Net_295\);
+\ANALYZER_ADC:cy_analog_noconnect_43\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_295\);
+\ANALYZER_ADC:vinMinusMux_43_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_43\,
+		signal2=>\ANALYZER_ADC:Net_296\);
+\ANALYZER_ADC:cy_analog_noconnect_44\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_296\);
+\ANALYZER_ADC:vinMinusMux_44_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_44\,
+		signal2=>\ANALYZER_ADC:Net_297\);
+\ANALYZER_ADC:cy_analog_noconnect_45\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_297\);
+\ANALYZER_ADC:vinMinusMux_45_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_45\,
+		signal2=>\ANALYZER_ADC:Net_298\);
+\ANALYZER_ADC:cy_analog_noconnect_46\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_298\);
+\ANALYZER_ADC:vinMinusMux_46_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_46\,
+		signal2=>\ANALYZER_ADC:Net_299\);
+\ANALYZER_ADC:cy_analog_noconnect_47\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_299\);
+\ANALYZER_ADC:vinMinusMux_47_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_47\,
+		signal2=>\ANALYZER_ADC:Net_300\);
+\ANALYZER_ADC:cy_analog_noconnect_48\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_300\);
+\ANALYZER_ADC:vinMinusMux_48_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_48\,
+		signal2=>\ANALYZER_ADC:Net_301\);
+\ANALYZER_ADC:cy_analog_noconnect_49\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_301\);
+\ANALYZER_ADC:vinMinusMux_49_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_49\,
+		signal2=>\ANALYZER_ADC:Net_302\);
+\ANALYZER_ADC:cy_analog_noconnect_50\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_302\);
+\ANALYZER_ADC:vinMinusMux_50_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_50\,
+		signal2=>\ANALYZER_ADC:Net_303\);
+\ANALYZER_ADC:cy_analog_noconnect_51\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_303\);
+\ANALYZER_ADC:vinMinusMux_51_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_51\,
+		signal2=>\ANALYZER_ADC:Net_304\);
+\ANALYZER_ADC:cy_analog_noconnect_52\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_304\);
+\ANALYZER_ADC:vinMinusMux_52_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_52\,
+		signal2=>\ANALYZER_ADC:Net_305\);
+\ANALYZER_ADC:cy_analog_noconnect_53\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_305\);
+\ANALYZER_ADC:vinMinusMux_53_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_53\,
+		signal2=>\ANALYZER_ADC:Net_306\);
+\ANALYZER_ADC:cy_analog_noconnect_54\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_306\);
+\ANALYZER_ADC:vinMinusMux_54_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_54\,
+		signal2=>\ANALYZER_ADC:Net_307\);
+\ANALYZER_ADC:cy_analog_noconnect_55\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_307\);
+\ANALYZER_ADC:vinMinusMux_55_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_55\,
+		signal2=>\ANALYZER_ADC:Net_308\);
+\ANALYZER_ADC:cy_analog_noconnect_56\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_308\);
+\ANALYZER_ADC:vinMinusMux_56_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_56\,
+		signal2=>\ANALYZER_ADC:Net_309\);
+\ANALYZER_ADC:cy_analog_noconnect_57\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_309\);
+\ANALYZER_ADC:vinMinusMux_57_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_57\,
+		signal2=>\ANALYZER_ADC:Net_310\);
+\ANALYZER_ADC:cy_analog_noconnect_58\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_310\);
+\ANALYZER_ADC:vinMinusMux_58_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_58\,
+		signal2=>\ANALYZER_ADC:Net_311\);
+\ANALYZER_ADC:cy_analog_noconnect_59\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_311\);
+\ANALYZER_ADC:vinMinusMux_59_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_59\,
+		signal2=>\ANALYZER_ADC:Net_312\);
+\ANALYZER_ADC:cy_analog_noconnect_60\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_312\);
+\ANALYZER_ADC:vinMinusMux_60_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_60\,
+		signal2=>\ANALYZER_ADC:Net_313\);
+\ANALYZER_ADC:cy_analog_noconnect_61\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_313\);
+\ANALYZER_ADC:vinMinusMux_61_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_61\,
+		signal2=>\ANALYZER_ADC:Net_314\);
+\ANALYZER_ADC:cy_analog_noconnect_62\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_314\);
+\ANALYZER_ADC:vinMinusMux_62_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_62\,
+		signal2=>\ANALYZER_ADC:Net_315\);
+\ANALYZER_ADC:cy_analog_noconnect_63\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_315\);
+\ANALYZER_ADC:vinMinusMux_63_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinMinus_63\,
+		signal2=>\ANALYZER_ADC:Net_316\);
+\ANALYZER_ADC:cy_analog_noconnect_64\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_316\);
+\ANALYZER_ADC:vinNegMux_0_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinNeg_0\,
+		signal2=>\ANALYZER_ADC:Net_331\);
+\ANALYZER_ADC:cy_analog_noconnect_65\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_331\);
+\ANALYZER_ADC:vinNegMux_1_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinNeg_1\,
+		signal2=>\ANALYZER_ADC:Net_345\);
+\ANALYZER_ADC:cy_analog_noconnect_66\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_345\);
+\ANALYZER_ADC:vinNegMux_2_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinNeg_2\,
+		signal2=>\ANALYZER_ADC:Net_347\);
+\ANALYZER_ADC:cy_analog_noconnect_67\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_347\);
+\ANALYZER_ADC:vinNegMux_3_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vinNeg_3\,
+		signal2=>\ANALYZER_ADC:Net_349\);
+\ANALYZER_ADC:cy_analog_noconnect_68\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_349\);
+\ANALYZER_ADC:vrefMux_0_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vrefBus_0\,
+		signal2=>\ANALYZER_ADC:Net_456\);
+\ANALYZER_ADC:cy_analog_noconnect_71\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_456\);
+\ANALYZER_ADC:vrefMux_1_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vrefBus_1\,
+		signal2=>\ANALYZER_ADC:Net_457\);
+\ANALYZER_ADC:cy_analog_noconnect_72\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_457\);
+\ANALYZER_ADC:vrefMux_2_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vrefBus_2\,
+		signal2=>\ANALYZER_ADC:Net_458\);
+\ANALYZER_ADC:cy_analog_noconnect_73\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_458\);
+\ANALYZER_ADC:vrefMux_3_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vrefBus_3\,
+		signal2=>\ANALYZER_ADC:Net_459\);
+\ANALYZER_ADC:cy_analog_noconnect_74\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_459\);
+\ANALYZER_ADC:vrefMuxRemoved_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_ADC:vref\,
+		signal2=>\ANALYZER_ADC:Net_1448\);
+\ANALYZER_ADC:cy_analog_noconnect_87\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_1448\);
+\ANALYZER_ADC:cy_analog_noconnect_fvint\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>Net_37_0);
+\ANALYZER_ADC:cy_analog_noconnect_fvint_1\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>Net_37_1);
+\ANALYZER_ADC:vRef_4\:cy_vref_v1_0
+	GENERIC MAP(guid=>"6E0C5DC9-D531-4D01-9B49-536487FE4A82",
+		name=>"Bandgap Reference",
+		autoenable=>'1',
+		ignoresleep=>'0')
+	PORT MAP(vout=>\ANALYZER_ADC:Net_1379\);
+\ANALYZER_ADC:vRef_6\:cy_vref_v1_0
+	GENERIC MAP(guid=>"6E0C5DC9-D531-4D01-9B49-536487FE4A82",
+		name=>"Bandgap Reference",
+		autoenable=>'1',
+		ignoresleep=>'0')
+	PORT MAP(vout=>\ANALYZER_ADC:Net_1385\);
+\ANALYZER_ADC:vRef_7\:cy_vref_v1_0
+	GENERIC MAP(guid=>"6E0C5DC9-D531-4D01-9B49-536487FE4A82",
+		name=>"Bandgap Reference",
+		autoenable=>'1',
+		ignoresleep=>'0')
+	PORT MAP(vout=>\ANALYZER_ADC:Net_1388\);
+\ANALYZER_ADC:vRef_5\:cy_vref_v1_0
+	GENERIC MAP(guid=>"6E0C5DC9-D531-4D01-9B49-536487FE4A82",
+		name=>"Bandgap Reference",
+		autoenable=>'1',
+		ignoresleep=>'0')
+	PORT MAP(vout=>\ANALYZER_ADC:Net_1382\);
+\ANALYZER_ADC:vRef_8\:cy_vref_v1_0
+	GENERIC MAP(guid=>"A74A229D-E18B-4A00-BEEC-CCDCB446AC07 ",
+		name=>"",
+		autoenable=>'1',
+		ignoresleep=>'0')
+	PORT MAP(vout=>\ANALYZER_ADC:Net_102\);
+\ANALYZER_ADC:cy_analog_noconnect_69\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_ADC:Net_105\);
+\ANALYZER_ADC:vagnd__cy_connect_v1_0\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>Net_39,
+		signal2=>Net_38);
+INPUT_PIN:cy_mxs40_gpio_v1_0
+	GENERIC MAP(cy_registers=>"",
+		width=>1,
+		sio_grp_cnt=>0,
+		id=>"0113321b-4a37-46f6-8407-2f8646c68756",
+		drive_mode=>"0",
+		ibuf_enabled=>"0",
+		init_dr_st=>"1",
+		input_sync=>"0",
+		intr_mode=>"0",
+		io_voltage=>"",
+		output_conn=>"0",
+		oe_conn=>"0",
+		output_sync=>"0",
+		oe_sync=>"0",
+		drive_strength=>"0",
+		max_frequency=>"100",
+		output_current_cap=>"8",
+		i2c_mode=>"0",
+		pin_aliases=>"",
+		pin_mode=>"A",
+		slew_rate=>"0",
+		vtrip=>"0",
+		use_annotation=>"0",
+		hotswap_needed=>"0")
+	PORT MAP(oe=>(one),
+		y=>(zero),
+		fb=>(tmpFB_0__INPUT_PIN_net_0),
+		analog=>Net_42,
+		io=>(tmpIO_0__INPUT_PIN_net_0),
+		annotation=>(open),
+		siovref=>(tmpSIOVREF__INPUT_PIN_net_0));
+ADC_CLK:cy_clock_v1_0
+	GENERIC MAP(cy_registers=>"",
+		id=>"6fc4a1ed-bc8b-4ac9-a14a-42418e48396d",
+		source_clock_id=>"2FB4EC85-8328-4C5A-9ED9-8B63060178EB",
+		divisor=>5,
+		period=>"0",
+		is_direct=>'0',
+		is_digital=>'0')
+	PORT MAP(clock_out=>Net_48,
+		dig_domain_out=>open);
+PWM_CLK:cy_clock_v1_0
+	GENERIC MAP(cy_registers=>"",
+		id=>"d7df4010-4c61-40d1-bbcf-c54c8fb6925f",
+		source_clock_id=>"2FB4EC85-8328-4C5A-9ED9-8B63060178EB",
+		divisor=>5,
+		period=>"0",
+		is_direct=>'0',
+		is_digital=>'0')
+	PORT MAP(clock_out=>Net_223,
+		dig_domain_out=>open);
+VDAC_CLK:cy_clock_v1_0
+	GENERIC MAP(cy_registers=>"",
+		id=>"648b8cac-fe5c-4000-8d81-31833ecb430d",
+		source_clock_id=>"2FB4EC85-8328-4C5A-9ED9-8B63060178EB",
+		divisor=>100,
+		period=>"0",
+		is_direct=>'0',
+		is_digital=>'0')
+	PORT MAP(clock_out=>Net_105,
+		dig_domain_out=>open);
+OUTPUT_PIN:cy_mxs40_gpio_v1_0
+	GENERIC MAP(cy_registers=>"",
+		width=>1,
+		sio_grp_cnt=>0,
+		id=>"1b4fb608-0d35-4557-828d-ca3d03189795",
+		drive_mode=>"0",
+		ibuf_enabled=>"0",
+		init_dr_st=>"1",
+		input_sync=>"0",
+		intr_mode=>"0",
+		io_voltage=>"",
+		output_conn=>"0",
+		oe_conn=>"0",
+		output_sync=>"0",
+		oe_sync=>"0",
+		drive_strength=>"0",
+		max_frequency=>"100",
+		output_current_cap=>"8",
+		i2c_mode=>"0",
+		pin_aliases=>"",
+		pin_mode=>"A",
+		slew_rate=>"0",
+		vtrip=>"0",
+		use_annotation=>"0",
+		hotswap_needed=>"0")
+	PORT MAP(oe=>(one),
+		y=>(zero),
+		fb=>(tmpFB_0__OUTPUT_PIN_net_0),
+		analog=>Net_106,
+		io=>(tmpIO_0__OUTPUT_PIN_net_0),
+		annotation=>(open),
+		siovref=>(tmpSIOVREF__OUTPUT_PIN_net_0));
+STATUS_LED:cy_mxs40_gpio_v1_0
+	GENERIC MAP(cy_registers=>"",
+		width=>1,
+		sio_grp_cnt=>0,
+		id=>"a61270bc-07ec-447d-ac9e-34cfe85c30e9",
+		drive_mode=>"6",
+		ibuf_enabled=>"0",
+		init_dr_st=>"0",
+		input_sync=>"0",
+		intr_mode=>"0",
+		io_voltage=>"",
+		output_conn=>"0",
+		oe_conn=>"0",
+		output_sync=>"0",
+		oe_sync=>"0",
+		drive_strength=>"0",
+		max_frequency=>"100",
+		output_current_cap=>"8",
+		i2c_mode=>"0",
+		pin_aliases=>"",
+		pin_mode=>"O",
+		slew_rate=>"0",
+		vtrip=>"0",
+		use_annotation=>"0",
+		hotswap_needed=>"0")
+	PORT MAP(oe=>(one),
+		y=>(zero),
+		fb=>(tmpFB_0__STATUS_LED_net_0),
+		analog=>(open),
+		io=>(tmpIO_0__STATUS_LED_net_0),
+		annotation=>(open),
+		siovref=>(tmpSIOVREF__STATUS_LED_net_0));
+\ANALIZER_PWM:TCPWM\:cy_mxs40_tcpwm_v1_0
+	GENERIC MAP(cy_registers=>"",
+		width=>32,
+		exact_width=>'0')
+	PORT MAP(clock=>Net_223,
+		capture=>zero,
+		count=>one,
+		reload=>zero,
+		stop=>zero,
+		start=>zero,
+		tr_underflow=>Net_233,
+		tr_compare_match=>Net_224,
+		tr_overflow=>Net_228,
+		line_compl=>Net_229,
+		line=>Net_49,
+		interrupt=>Net_226);
+\ANALYZER_VDAC:CTDAC\:cy_mxs40_ctdac_v1_0
+	GENERIC MAP(cy_registers=>"")
+	PORT MAP(clock=>Net_105,
+		ctdrefdrive=>\ANALYZER_VDAC:ref_drive\,
+		ctdrefsense=>\ANALYZER_VDAC:Net_3\,
+		ctdvout=>\ANALYZER_VDAC:ct_vout\,
+		ctdvoutsw=>\ANALYZER_VDAC:ct_vout_sw\,
+		dsi_ctdac_strobe=>zero,
+		tr_ctdac_empty=>Net_222);
+\ANALYZER_VDAC:cy_analog_virtualmux_1_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>Net_106,
+		signal2=>\ANALYZER_VDAC:ct_vout_sw\);
+\ANALYZER_VDAC:cy_analog_virtualmux_3_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_VDAC:ct_vout_buf\,
+		signal2=>\ANALYZER_VDAC:Net_16\);
+\ANALYZER_VDAC:cy_analog_noconnect_2\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_VDAC:Net_9\);
+\ANALYZER_VDAC:cy_analog_virtualmux_2_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ANALYZER_VDAC:Net_10\,
+		signal2=>\ANALYZER_VDAC:Net_42\);
+\ANALYZER_VDAC:cy_analog_noconnect_3\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_VDAC:Net_42\);
+\ANALYZER_VDAC:cy_analog_noconnect_4\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ANALYZER_VDAC:Net_3\);
+\ANALYZER_VDAC:vref_out__cy_connect_v1_0\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>Net_108,
+		signal2=>\ANALYZER_VDAC:ref_drive\);
+\VDAC_DMA:DW\:cy_mxs40_dw_v1_0
+	GENERIC MAP(cy_registers=>"",
+		priority=>"01")
+	PORT MAP(tr_in=>Net_222,
+		tr_out=>Net_313,
+		interrupt=>Net_312);
+\ANALYZER_UART:tx\:cy_mxs40_gpio_v1_0
+	GENERIC MAP(cy_registers=>"",
+		width=>1,
+		sio_grp_cnt=>0,
+		id=>"57a359fd-76e1-4076-8293-b516584de144/65f3af6c-759b-4ccb-8c66-5c95ba1f5f4f",
+		drive_mode=>"6",
+		ibuf_enabled=>"0",
+		init_dr_st=>"1",
+		input_sync=>"0",
+		intr_mode=>"0",
+		io_voltage=>"",
+		output_conn=>"1",
+		oe_conn=>"0",
+		output_sync=>"0",
+		oe_sync=>"0",
+		drive_strength=>"0",
+		max_frequency=>"100",
+		output_current_cap=>"8",
+		i2c_mode=>"0",
+		pin_aliases=>"",
+		pin_mode=>"O",
+		slew_rate=>"0",
+		vtrip=>"0",
+		use_annotation=>"0",
+		hotswap_needed=>"0")
+	PORT MAP(oe=>(one),
+		y=>\ANALYZER_UART:tx_wire\,
+		fb=>(\ANALYZER_UART:tmpFB_0__tx_net_0\),
+		analog=>(open),
+		io=>(\ANALYZER_UART:tmpIO_0__tx_net_0\),
+		annotation=>(open),
+		siovref=>(\ANALYZER_UART:tmpSIOVREF__tx_net_0\));
+\ANALYZER_UART:rx\:cy_mxs40_gpio_v1_0
+	GENERIC MAP(cy_registers=>"",
+		width=>1,
+		sio_grp_cnt=>0,
+		id=>"57a359fd-76e1-4076-8293-b516584de144/b7e8018e-1ef7-49c0-b5a5-61641a03e31c",
+		drive_mode=>"0",
+		ibuf_enabled=>"1",
+		init_dr_st=>"1",
+		input_sync=>"0",
+		intr_mode=>"0",
+		io_voltage=>"",
+		output_conn=>"0",
+		oe_conn=>"0",
+		output_sync=>"0",
+		oe_sync=>"0",
+		drive_strength=>"0",
+		max_frequency=>"100",
+		output_current_cap=>"8",
+		i2c_mode=>"0",
+		pin_aliases=>"",
+		pin_mode=>"I",
+		slew_rate=>"0",
+		vtrip=>"0",
+		use_annotation=>"0",
+		hotswap_needed=>"0")
+	PORT MAP(oe=>(one),
+		y=>(zero),
+		fb=>\ANALYZER_UART:Net_1172\,
+		analog=>(open),
+		io=>(\ANALYZER_UART:tmpIO_0__rx_net_0\),
+		annotation=>(open),
+		siovref=>(\ANALYZER_UART:tmpSIOVREF__rx_net_0\));
+\ANALYZER_UART:SCB\:cy_mxs40_scb_v1_10
+	GENERIC MAP(cy_registers=>"",
+		requires_io_preconfigure=>'0',
+		mode=>2,
+		master=>'0')
+	PORT MAP(clock=>Net_335,
+		uart_rx=>\ANALYZER_UART:Net_1172\,
+		uart_tx=>\ANALYZER_UART:tx_wire\,
+		uart_rts=>\ANALYZER_UART:rts_wire\,
+		uart_cts=>zero,
+		uart_tx_en=>\ANALYZER_UART:tx_en_wire\,
+		i2c_scl=>\ANALYZER_UART:Net_145\,
+		i2c_sda=>\ANALYZER_UART:Net_146\,
+		spi_clk_m=>\ANALYZER_UART:Net_154\,
+		spi_clk_s=>zero,
+		spi_select_m=>(\ANALYZER_UART:Net_155_3\, \ANALYZER_UART:Net_155_2\, \ANALYZER_UART:Net_155_1\, \ANALYZER_UART:Net_155_0\),
+		spi_select_s=>zero,
+		spi_mosi_m=>\ANALYZER_UART:Net_156\,
+		spi_miso_m=>zero,
+		spi_mosi_s=>zero,
+		spi_miso_s=>\ANALYZER_UART:Net_157\,
+		interrupt=>Net_334,
+		tr_tx_req=>Net_342,
+		tr_rx_req=>Net_339,
+		tr_i2c_scl_filtered=>\ANALYZER_UART:Net_161\);
+UART_CLK:cy_clock_v1_0
+	GENERIC MAP(cy_registers=>"",
+		id=>"c7626576-676e-4e26-a145-40751fd78f6e",
+		source_clock_id=>"2FB4EC85-8328-4C5A-9ED9-8B63060178EB",
+		divisor=>5,
+		period=>"0",
+		is_direct=>'0',
+		is_digital=>'0')
+	PORT MAP(clock_out=>Net_335,
+		dig_domain_out=>open);
+\ADC_DMA:DW\:cy_mxs40_dw_v1_0
+	GENERIC MAP(cy_registers=>"",
+		priority=>"00")
+	PORT MAP(tr_in=>Net_30,
+		tr_out=>Net_275,
+		interrupt=>Net_276);
+UART_INTERRUPT:cy_mxs40_isr_v1_0
+	GENERIC MAP(cy_registers=>"",
+		deepsleep_required=>'0',
+		int_type=>"01")
+	PORT MAP(int_signal=>Net_334);
+\OP0:cy_mxs40_opamp\:cy_mxs40_opamp_v1_0
+	GENERIC MAP(cy_registers=>"",
+		has_resistor=>'0',
+		deepsleep_available=>'0',
+		needs_dsab=>'0')
+	PORT MAP(out_1x=>\OP0:Net_18\,
+		out_10x=>\OP0:Net_14\,
+		vplus=>Net_356,
+		vminus=>\OP0:Net_9\,
+		ctb_dsi_comp=>\OP0:Net_5\);
+\OP0:cy_analog_virtualmux_1_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\OP0:Net_9\,
+		signal2=>Net_358);
+\OP0:cy_analog_virtualmux_2_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>Net_357,
+		signal2=>\OP0:Net_14\);
+\OP1:cy_mxs40_opamp\:cy_mxs40_opamp_v1_0
+	GENERIC MAP(cy_registers=>"",
+		has_resistor=>'0',
+		deepsleep_available=>'0',
+		needs_dsab=>'0')
+	PORT MAP(out_1x=>\OP1:Net_18\,
+		out_10x=>\OP1:Net_14\,
+		vplus=>Net_360,
+		vminus=>\OP1:Net_9\,
+		ctb_dsi_comp=>\OP1:Net_5\);
+\OP1:cy_analog_virtualmux_1_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\OP1:Net_9\,
+		signal2=>Net_362);
+\OP1:cy_analog_virtualmux_2_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>Net_361,
+		signal2=>\OP1:Net_14\);
+OP1_INP:cy_mxs40_gpio_v1_0
+	GENERIC MAP(cy_registers=>"",
+		width=>1,
+		sio_grp_cnt=>0,
+		id=>"d620aba9-7b48-49b5-893d-68c085fd729f",
+		drive_mode=>"0",
+		ibuf_enabled=>"0",
+		init_dr_st=>"1",
+		input_sync=>"0",
+		intr_mode=>"0",
+		io_voltage=>"",
+		output_conn=>"0",
+		oe_conn=>"0",
+		output_sync=>"0",
+		oe_sync=>"0",
+		drive_strength=>"0",
+		max_frequency=>"100",
+		output_current_cap=>"8",
+		i2c_mode=>"0",
+		pin_aliases=>"",
+		pin_mode=>"A",
+		slew_rate=>"0",
+		vtrip=>"0",
+		use_annotation=>"0",
+		hotswap_needed=>"0")
+	PORT MAP(oe=>(one),
+		y=>(zero),
+		fb=>(tmpFB_0__OP1_INP_net_0),
+		analog=>Net_360,
+		io=>(tmpIO_0__OP1_INP_net_0),
+		annotation=>(open),
+		siovref=>(tmpSIOVREF__OP1_INP_net_0));
+OP1_INN:cy_mxs40_gpio_v1_0
+	GENERIC MAP(cy_registers=>"",
+		width=>1,
+		sio_grp_cnt=>0,
+		id=>"5910b87a-73e8-4846-be9a-23700d0eaeb9",
+		drive_mode=>"0",
+		ibuf_enabled=>"0",
+		init_dr_st=>"1",
+		input_sync=>"0",
+		intr_mode=>"0",
+		io_voltage=>"",
+		output_conn=>"0",
+		oe_conn=>"0",
+		output_sync=>"0",
+		oe_sync=>"0",
+		drive_strength=>"0",
+		max_frequency=>"100",
+		output_current_cap=>"8",
+		i2c_mode=>"0",
+		pin_aliases=>"",
+		pin_mode=>"A",
+		slew_rate=>"0",
+		vtrip=>"0",
+		use_annotation=>"0",
+		hotswap_needed=>"0")
+	PORT MAP(oe=>(one),
+		y=>(zero),
+		fb=>(tmpFB_0__OP1_INN_net_0),
+		analog=>Net_362,
+		io=>(tmpIO_0__OP1_INN_net_0),
+		annotation=>(open),
+		siovref=>(tmpSIOVREF__OP1_INN_net_0));
+OP0_INP:cy_mxs40_gpio_v1_0
+	GENERIC MAP(cy_registers=>"",
+		width=>1,
+		sio_grp_cnt=>0,
+		id=>"60a7ff93-1598-4967-848b-ce1a3a4de4e3",
+		drive_mode=>"0",
+		ibuf_enabled=>"0",
+		init_dr_st=>"1",
+		input_sync=>"0",
+		intr_mode=>"0",
+		io_voltage=>"",
+		output_conn=>"0",
+		oe_conn=>"0",
+		output_sync=>"0",
+		oe_sync=>"0",
+		drive_strength=>"0",
+		max_frequency=>"100",
+		output_current_cap=>"8",
+		i2c_mode=>"0",
+		pin_aliases=>"",
+		pin_mode=>"A",
+		slew_rate=>"0",
+		vtrip=>"0",
+		use_annotation=>"0",
+		hotswap_needed=>"0")
+	PORT MAP(oe=>(one),
+		y=>(zero),
+		fb=>(tmpFB_0__OP0_INP_net_0),
+		analog=>Net_356,
+		io=>(tmpIO_0__OP0_INP_net_0),
+		annotation=>(open),
+		siovref=>(tmpSIOVREF__OP0_INP_net_0));
+OP0_INN:cy_mxs40_gpio_v1_0
+	GENERIC MAP(cy_registers=>"",
+		width=>1,
+		sio_grp_cnt=>0,
+		id=>"924ae551-385c-462d-ba91-438198c3670d",
+		drive_mode=>"0",
+		ibuf_enabled=>"0",
+		init_dr_st=>"1",
+		input_sync=>"0",
+		intr_mode=>"0",
+		io_voltage=>"",
+		output_conn=>"0",
+		oe_conn=>"0",
+		output_sync=>"0",
+		oe_sync=>"0",
+		drive_strength=>"0",
+		max_frequency=>"100",
+		output_current_cap=>"8",
+		i2c_mode=>"0",
+		pin_aliases=>"",
+		pin_mode=>"A",
+		slew_rate=>"0",
+		vtrip=>"0",
+		use_annotation=>"0",
+		hotswap_needed=>"0")
+	PORT MAP(oe=>(one),
+		y=>(zero),
+		fb=>(tmpFB_0__OP0_INN_net_0),
+		analog=>Net_358,
+		io=>(tmpIO_0__OP0_INN_net_0),
+		annotation=>(open),
+		siovref=>(tmpSIOVREF__OP0_INN_net_0));
+OP1_OUT:cy_mxs40_gpio_v1_0
+	GENERIC MAP(cy_registers=>"",
+		width=>1,
+		sio_grp_cnt=>0,
+		id=>"a329edd4-d248-4f10-8cb7-9023fc1e750d",
+		drive_mode=>"0",
+		ibuf_enabled=>"0",
+		init_dr_st=>"1",
+		input_sync=>"0",
+		intr_mode=>"0",
+		io_voltage=>"",
+		output_conn=>"0",
+		oe_conn=>"0",
+		output_sync=>"0",
+		oe_sync=>"0",
+		drive_strength=>"0",
+		max_frequency=>"100",
+		output_current_cap=>"8",
+		i2c_mode=>"0",
+		pin_aliases=>"",
+		pin_mode=>"A",
+		slew_rate=>"0",
+		vtrip=>"0",
+		use_annotation=>"0",
+		hotswap_needed=>"0")
+	PORT MAP(oe=>(one),
+		y=>(zero),
+		fb=>(tmpFB_0__OP1_OUT_net_0),
+		analog=>Net_361,
+		io=>(tmpIO_0__OP1_OUT_net_0),
+		annotation=>(open),
+		siovref=>(tmpSIOVREF__OP1_OUT_net_0));
+OP0_OUT:cy_mxs40_gpio_v1_0
+	GENERIC MAP(cy_registers=>"",
+		width=>1,
+		sio_grp_cnt=>0,
+		id=>"c9c62766-0623-4f92-bca3-7ecff18c9e73",
+		drive_mode=>"0",
+		ibuf_enabled=>"0",
+		init_dr_st=>"1",
+		input_sync=>"0",
+		intr_mode=>"0",
+		io_voltage=>"",
+		output_conn=>"0",
+		oe_conn=>"0",
+		output_sync=>"0",
+		oe_sync=>"0",
+		drive_strength=>"0",
+		max_frequency=>"100",
+		output_current_cap=>"8",
+		i2c_mode=>"0",
+		pin_aliases=>"",
+		pin_mode=>"A",
+		slew_rate=>"0",
+		vtrip=>"0",
+		use_annotation=>"0",
+		hotswap_needed=>"0")
+	PORT MAP(oe=>(one),
+		y=>(zero),
+		fb=>(tmpFB_0__OP0_OUT_net_0),
+		analog=>Net_357,
+		io=>(tmpIO_0__OP0_OUT_net_0),
+		annotation=>(open),
+		siovref=>(tmpSIOVREF__OP0_OUT_net_0));
+
+END R_T_L;

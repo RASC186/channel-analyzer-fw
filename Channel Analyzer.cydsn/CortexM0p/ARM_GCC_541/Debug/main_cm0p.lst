@@ -1,0 +1,3518 @@
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0plus
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main_cm0p.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.main,"ax",%progbits
+  20              		.align	2
+  21              		.global	main
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	main, %function
+  25              	main:
+  26              	.LFB721:
+  27              		.file 1 "main_cm0p.c"
+   1:main_cm0p.c   **** /* ========================================
+   2:main_cm0p.c   ****  *
+   3:main_cm0p.c   ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main_cm0p.c   ****  * All Rights Reserved
+   5:main_cm0p.c   ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main_cm0p.c   ****  *
+   7:main_cm0p.c   ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main_cm0p.c   ****  * WHICH IS THE PROPERTY OF your company.
+   9:main_cm0p.c   ****  *
+  10:main_cm0p.c   ****  * ========================================
+  11:main_cm0p.c   **** */
+  12:main_cm0p.c   **** #include "project.h"
+  13:main_cm0p.c   **** 
+  14:main_cm0p.c   **** int main(void)
+  15:main_cm0p.c   **** {
+  28              		.loc 1 15 0
+  29              		.cfi_startproc
+  30              		@ Volatile: function does not return.
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 10B5     		push	{r4, lr}
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 4, -8
+  36              		.cfi_offset 14, -4
+  37              	.LBB4:
+  38              	.LBB5:
+  39              		.file 2 "Generated_Source\\PSoC6\\pdl\\cmsis/include/cmsis_gcc.h"
+   1:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /**************************************************************************//**
+   2:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * @file     cmsis_gcc.h
+   3:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * @brief    CMSIS compiler GCC header file
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 2
+
+
+   4:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * @version  V5.0.3
+   5:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * @date     16. January 2018
+   6:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  ******************************************************************************/
+   7:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /*
+   8:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * Copyright (c) 2009-2017 ARM Limited. All rights reserved.
+   9:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  *
+  10:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * SPDX-License-Identifier: Apache-2.0
+  11:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  *
+  12:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * Licensed under the Apache License, Version 2.0 (the License); you may
+  13:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * not use this file except in compliance with the License.
+  14:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * You may obtain a copy of the License at
+  15:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  *
+  16:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * www.apache.org/licenses/LICENSE-2.0
+  17:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  *
+  18:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * Unless required by applicable law or agreed to in writing, software
+  19:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * distributed under the License is distributed on an AS IS BASIS, WITHOUT
+  20:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  21:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * See the License for the specific language governing permissions and
+  22:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * limitations under the License.
+  23:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  */
+  24:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+  25:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef __CMSIS_GCC_H
+  26:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #define __CMSIS_GCC_H
+  27:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+  28:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /* ignore some GCC warnings */
+  29:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #pragma GCC diagnostic push
+  30:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wsign-conversion"
+  31:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wconversion"
+  32:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wunused-parameter"
+  33:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+  34:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /* Fallback for __has_builtin */
+  35:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef __has_builtin
+  36:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __has_builtin(x) (0)
+  37:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  38:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+  39:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /* CMSIS compiler specific defines */
+  40:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __ASM
+  41:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __ASM                                  __asm
+  42:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  43:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __INLINE
+  44:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __INLINE                               inline
+  45:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  46:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __STATIC_INLINE
+  47:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __STATIC_INLINE                        static inline
+  48:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  49:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __STATIC_FORCEINLINE                 
+  50:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __STATIC_FORCEINLINE                   __attribute__((always_inline)) static inline
+  51:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif                                           
+  52:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __NO_RETURN
+  53:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __NO_RETURN                            __attribute__((__noreturn__))
+  54:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  55:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __USED
+  56:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __USED                                 __attribute__((used))
+  57:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  58:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __WEAK
+  59:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __WEAK                                 __attribute__((weak))
+  60:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 3
+
+
+  61:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __PACKED
+  62:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __PACKED                               __attribute__((packed, aligned(1)))
+  63:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  64:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __PACKED_STRUCT
+  65:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __PACKED_STRUCT                        struct __attribute__((packed, aligned(1)))
+  66:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  67:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __PACKED_UNION
+  68:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __PACKED_UNION                         union __attribute__((packed, aligned(1)))
+  69:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  70:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32        /* deprecated */
+  71:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  72:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  73:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  74:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   struct __attribute__((packed)) T_UINT32 { uint32_t v; };
+  75:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  76:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32(x)                  (((struct T_UINT32 *)(x))->v)
+  77:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  78:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_WRITE
+  79:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  80:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  81:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  82:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_WRITE { uint16_t v; };
+  83:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  84:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_WRITE(addr, val)    (void)((((struct T_UINT16_WRITE *)(void *)(addr))-
+  85:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  86:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_READ
+  87:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  88:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  89:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  90:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_READ { uint16_t v; };
+  91:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  92:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_READ(addr)          (((const struct T_UINT16_READ *)(const void *)(add
+  93:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  94:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32_WRITE
+  95:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  96:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  97:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  98:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_WRITE { uint32_t v; };
+  99:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+ 100:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_WRITE(addr, val)    (void)((((struct T_UINT32_WRITE *)(void *)(addr))-
+ 101:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+ 102:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32_READ
+ 103:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+ 104:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+ 105:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+ 106:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_READ { uint32_t v; };
+ 107:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+ 108:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_READ(addr)          (((const struct T_UINT32_READ *)(const void *)(add
+ 109:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+ 110:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __ALIGNED
+ 111:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __ALIGNED(x)                           __attribute__((aligned(x)))
+ 112:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+ 113:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __RESTRICT
+ 114:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __RESTRICT                             __restrict
+ 115:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+ 116:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+ 117:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 4
+
+
+ 118:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /* ###########################  Core Function Access  ########################### */
+ 119:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /** \ingroup  CMSIS_Core_FunctionInterface
+ 120:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****     \defgroup CMSIS_Core_RegAccFunctions CMSIS Core Register Access Functions
+ 121:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   @{
+ 122:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  */
+ 123:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+ 124:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /**
+ 125:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   \brief   Enable IRQ Interrupts
+ 126:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   \details Enables IRQ interrupts by clearing the I-bit in the CPSR.
+ 127:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
+ 128:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  */
+ 129:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __enable_irq(void)
+ 130:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** {
+ 131:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   __ASM volatile ("cpsie i" : : : "memory");
+  40              		.loc 2 131 0
+  41              		.syntax divided
+  42              	@ 131 "Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h" 1
+  43 0002 62B6     		cpsie i
+  44              	@ 0 "" 2
+  45              		.thumb
+  46              		.syntax unified
+  47              	.LBE5:
+  48              	.LBE4:
+  16:main_cm0p.c   ****     __enable_irq(); /* Enable global interrupts. */
+  17:main_cm0p.c   ****     /* Enable CM4.  CY_CORTEX_M4_APPL_ADDR must be updated if CM4 memory layout is changed. */
+  18:main_cm0p.c   ****     Cy_SysEnableCM4(CY_CORTEX_M4_APPL_ADDR); 
+  49              		.loc 1 18 0
+  50 0004 0148     		ldr	r0, .L3
+  51 0006 FFF7FEFF 		bl	Cy_SysEnableCM4
+  52              	.LVL0:
+  53              	.L2:
+  54 000a FEE7     		b	.L2
+  55              	.L4:
+  56              		.align	2
+  57              	.L3:
+  58 000c 00000810 		.word	268959744
+  59              		.cfi_endproc
+  60              	.LFE721:
+  61              		.size	main, .-main
+  62              		.text
+  63              	.Letext0:
+  64              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+  65              		.file 4 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+  66              		.file 5 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/device/cy_device.h"
+  67              		.file 6 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/sysclk/cy_sysclk.h"
+  68              		.file 7 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/ctdac/cy_ctdac.h"
+  69              		.file 8 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/sar/cy_sar.h"
+  70              		.file 9 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/scb/cy_scb_uart.h"
+  71              		.file 10 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/tcpwm/cy_tcpwm_pwm.h"
+  72              		.file 11 "Generated_Source\\PSoC6/ANALYZER_ADC.h"
+  73              		.file 12 "Generated_Source\\PSoC6/ANALIZER_PWM.h"
+  74              		.file 13 "Generated_Source\\PSoC6/ANALYZER_VDAC.h"
+  75              		.file 14 "Generated_Source\\PSoC6/ANALYZER_UART.h"
+  76              		.file 15 "./system_psoc6.h"
+  77              		.section	.debug_info,"",%progbits
+  78              	.Ldebug_info0:
+  79 0000 E80B0000 		.4byte	0xbe8
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 5
+
+
+  80 0004 0400     		.2byte	0x4
+  81 0006 00000000 		.4byte	.Ldebug_abbrev0
+  82 000a 04       		.byte	0x4
+  83 000b 01       		.uleb128 0x1
+  84 000c E40B0000 		.4byte	.LASF239
+  85 0010 0C       		.byte	0xc
+  86 0011 CD000000 		.4byte	.LASF240
+  87 0015 6C060000 		.4byte	.LASF241
+  88 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  89 001d 00000000 		.4byte	0
+  90 0021 00000000 		.4byte	.Ldebug_line0
+  91 0025 02       		.uleb128 0x2
+  92 0026 02       		.byte	0x2
+  93 0027 05       		.byte	0x5
+  94 0028 D10A0000 		.4byte	.LASF0
+  95 002c 02       		.uleb128 0x2
+  96 002d 01       		.byte	0x1
+  97 002e 08       		.byte	0x8
+  98 002f 8D0A0000 		.4byte	.LASF1
+  99 0033 02       		.uleb128 0x2
+ 100 0034 01       		.byte	0x1
+ 101 0035 06       		.byte	0x6
+ 102 0036 CF020000 		.4byte	.LASF2
+ 103 003a 03       		.uleb128 0x3
+ 104 003b CE0B0000 		.4byte	.LASF3
+ 105 003f 03       		.byte	0x3
+ 106 0040 1D       		.byte	0x1d
+ 107 0041 2C000000 		.4byte	0x2c
+ 108 0045 03       		.uleb128 0x3
+ 109 0046 12050000 		.4byte	.LASF4
+ 110 004a 03       		.byte	0x3
+ 111 004b 29       		.byte	0x29
+ 112 004c 25000000 		.4byte	0x25
+ 113 0050 03       		.uleb128 0x3
+ 114 0051 B90C0000 		.4byte	.LASF5
+ 115 0055 03       		.byte	0x3
+ 116 0056 2B       		.byte	0x2b
+ 117 0057 5B000000 		.4byte	0x5b
+ 118 005b 02       		.uleb128 0x2
+ 119 005c 02       		.byte	0x2
+ 120 005d 07       		.byte	0x7
+ 121 005e AA040000 		.4byte	.LASF6
+ 122 0062 03       		.uleb128 0x3
+ 123 0063 F00C0000 		.4byte	.LASF7
+ 124 0067 03       		.byte	0x3
+ 125 0068 3F       		.byte	0x3f
+ 126 0069 6D000000 		.4byte	0x6d
+ 127 006d 02       		.uleb128 0x2
+ 128 006e 04       		.byte	0x4
+ 129 006f 05       		.byte	0x5
+ 130 0070 D5030000 		.4byte	.LASF8
+ 131 0074 03       		.uleb128 0x3
+ 132 0075 DC040000 		.4byte	.LASF9
+ 133 0079 03       		.byte	0x3
+ 134 007a 41       		.byte	0x41
+ 135 007b 7F000000 		.4byte	0x7f
+ 136 007f 02       		.uleb128 0x2
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 6
+
+
+ 137 0080 04       		.byte	0x4
+ 138 0081 07       		.byte	0x7
+ 139 0082 C7050000 		.4byte	.LASF10
+ 140 0086 02       		.uleb128 0x2
+ 141 0087 08       		.byte	0x8
+ 142 0088 05       		.byte	0x5
+ 143 0089 C1020000 		.4byte	.LASF11
+ 144 008d 02       		.uleb128 0x2
+ 145 008e 08       		.byte	0x8
+ 146 008f 07       		.byte	0x7
+ 147 0090 A9010000 		.4byte	.LASF12
+ 148 0094 04       		.uleb128 0x4
+ 149 0095 04       		.byte	0x4
+ 150 0096 05       		.byte	0x5
+ 151 0097 696E7400 		.ascii	"int\000"
+ 152 009b 02       		.uleb128 0x2
+ 153 009c 04       		.byte	0x4
+ 154 009d 07       		.byte	0x7
+ 155 009e 8B050000 		.4byte	.LASF13
+ 156 00a2 03       		.uleb128 0x3
+ 157 00a3 CC0E0000 		.4byte	.LASF14
+ 158 00a7 04       		.byte	0x4
+ 159 00a8 18       		.byte	0x18
+ 160 00a9 3A000000 		.4byte	0x3a
+ 161 00ad 03       		.uleb128 0x3
+ 162 00ae A5020000 		.4byte	.LASF15
+ 163 00b2 04       		.byte	0x4
+ 164 00b3 20       		.byte	0x20
+ 165 00b4 45000000 		.4byte	0x45
+ 166 00b8 03       		.uleb128 0x3
+ 167 00b9 6E070000 		.4byte	.LASF16
+ 168 00bd 04       		.byte	0x4
+ 169 00be 24       		.byte	0x24
+ 170 00bf 50000000 		.4byte	0x50
+ 171 00c3 03       		.uleb128 0x3
+ 172 00c4 850A0000 		.4byte	.LASF17
+ 173 00c8 04       		.byte	0x4
+ 174 00c9 2C       		.byte	0x2c
+ 175 00ca 62000000 		.4byte	0x62
+ 176 00ce 03       		.uleb128 0x3
+ 177 00cf A30B0000 		.4byte	.LASF18
+ 178 00d3 04       		.byte	0x4
+ 179 00d4 30       		.byte	0x30
+ 180 00d5 74000000 		.4byte	0x74
+ 181 00d9 02       		.uleb128 0x2
+ 182 00da 04       		.byte	0x4
+ 183 00db 07       		.byte	0x7
+ 184 00dc 98050000 		.4byte	.LASF19
+ 185 00e0 05       		.uleb128 0x5
+ 186 00e1 CE000000 		.4byte	0xce
+ 187 00e5 02       		.uleb128 0x2
+ 188 00e6 08       		.byte	0x8
+ 189 00e7 04       		.byte	0x4
+ 190 00e8 850C0000 		.4byte	.LASF20
+ 191 00ec 06       		.uleb128 0x6
+ 192 00ed B8       		.byte	0xb8
+ 193 00ee 05       		.byte	0x5
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 7
+
+
+ 194 00ef 34       		.byte	0x34
+ 195 00f0 FD040000 		.4byte	0x4fd
+ 196 00f4 07       		.uleb128 0x7
+ 197 00f5 57010000 		.4byte	.LASF21
+ 198 00f9 05       		.byte	0x5
+ 199 00fa 37       		.byte	0x37
+ 200 00fb CE000000 		.4byte	0xce
+ 201 00ff 00       		.byte	0
+ 202 0100 07       		.uleb128 0x7
+ 203 0101 D1040000 		.4byte	.LASF22
+ 204 0105 05       		.byte	0x5
+ 205 0106 38       		.byte	0x38
+ 206 0107 CE000000 		.4byte	0xce
+ 207 010b 04       		.byte	0x4
+ 208 010c 07       		.uleb128 0x7
+ 209 010d 19040000 		.4byte	.LASF23
+ 210 0111 05       		.byte	0x5
+ 211 0112 39       		.byte	0x39
+ 212 0113 CE000000 		.4byte	0xce
+ 213 0117 08       		.byte	0x8
+ 214 0118 07       		.uleb128 0x7
+ 215 0119 5E0A0000 		.4byte	.LASF24
+ 216 011d 05       		.byte	0x5
+ 217 011e 3A       		.byte	0x3a
+ 218 011f CE000000 		.4byte	0xce
+ 219 0123 0C       		.byte	0xc
+ 220 0124 07       		.uleb128 0x7
+ 221 0125 89090000 		.4byte	.LASF25
+ 222 0129 05       		.byte	0x5
+ 223 012a 3B       		.byte	0x3b
+ 224 012b CE000000 		.4byte	0xce
+ 225 012f 10       		.byte	0x10
+ 226 0130 07       		.uleb128 0x7
+ 227 0131 69030000 		.4byte	.LASF26
+ 228 0135 05       		.byte	0x5
+ 229 0136 3C       		.byte	0x3c
+ 230 0137 CE000000 		.4byte	0xce
+ 231 013b 14       		.byte	0x14
+ 232 013c 07       		.uleb128 0x7
+ 233 013d 34060000 		.4byte	.LASF27
+ 234 0141 05       		.byte	0x5
+ 235 0142 3D       		.byte	0x3d
+ 236 0143 CE000000 		.4byte	0xce
+ 237 0147 18       		.byte	0x18
+ 238 0148 07       		.uleb128 0x7
+ 239 0149 9F080000 		.4byte	.LASF28
+ 240 014d 05       		.byte	0x5
+ 241 014e 3E       		.byte	0x3e
+ 242 014f CE000000 		.4byte	0xce
+ 243 0153 1C       		.byte	0x1c
+ 244 0154 07       		.uleb128 0x7
+ 245 0155 B90F0000 		.4byte	.LASF29
+ 246 0159 05       		.byte	0x5
+ 247 015a 3F       		.byte	0x3f
+ 248 015b CE000000 		.4byte	0xce
+ 249 015f 20       		.byte	0x20
+ 250 0160 07       		.uleb128 0x7
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 8
+
+
+ 251 0161 A0090000 		.4byte	.LASF30
+ 252 0165 05       		.byte	0x5
+ 253 0166 40       		.byte	0x40
+ 254 0167 CE000000 		.4byte	0xce
+ 255 016b 24       		.byte	0x24
+ 256 016c 07       		.uleb128 0x7
+ 257 016d 39080000 		.4byte	.LASF31
+ 258 0171 05       		.byte	0x5
+ 259 0172 43       		.byte	0x43
+ 260 0173 A2000000 		.4byte	0xa2
+ 261 0177 28       		.byte	0x28
+ 262 0178 07       		.uleb128 0x7
+ 263 0179 A9000000 		.4byte	.LASF32
+ 264 017d 05       		.byte	0x5
+ 265 017e 44       		.byte	0x44
+ 266 017f A2000000 		.4byte	0xa2
+ 267 0183 29       		.byte	0x29
+ 268 0184 07       		.uleb128 0x7
+ 269 0185 AF0F0000 		.4byte	.LASF33
+ 270 0189 05       		.byte	0x5
+ 271 018a 45       		.byte	0x45
+ 272 018b A2000000 		.4byte	0xa2
+ 273 018f 2A       		.byte	0x2a
+ 274 0190 07       		.uleb128 0x7
+ 275 0191 92090000 		.4byte	.LASF34
+ 276 0195 05       		.byte	0x5
+ 277 0196 46       		.byte	0x46
+ 278 0197 A2000000 		.4byte	0xa2
+ 279 019b 2B       		.byte	0x2b
+ 280 019c 07       		.uleb128 0x7
+ 281 019d 62070000 		.4byte	.LASF35
+ 282 01a1 05       		.byte	0x5
+ 283 01a2 47       		.byte	0x47
+ 284 01a3 A2000000 		.4byte	0xa2
+ 285 01a7 2C       		.byte	0x2c
+ 286 01a8 07       		.uleb128 0x7
+ 287 01a9 FA0C0000 		.4byte	.LASF36
+ 288 01ad 05       		.byte	0x5
+ 289 01ae 48       		.byte	0x48
+ 290 01af A2000000 		.4byte	0xa2
+ 291 01b3 2D       		.byte	0x2d
+ 292 01b4 07       		.uleb128 0x7
+ 293 01b5 3A030000 		.4byte	.LASF37
+ 294 01b9 05       		.byte	0x5
+ 295 01ba 49       		.byte	0x49
+ 296 01bb A2000000 		.4byte	0xa2
+ 297 01bf 2E       		.byte	0x2e
+ 298 01c0 07       		.uleb128 0x7
+ 299 01c1 46080000 		.4byte	.LASF38
+ 300 01c5 05       		.byte	0x5
+ 301 01c6 4A       		.byte	0x4a
+ 302 01c7 A2000000 		.4byte	0xa2
+ 303 01cb 2F       		.byte	0x2f
+ 304 01cc 07       		.uleb128 0x7
+ 305 01cd 58090000 		.4byte	.LASF39
+ 306 01d1 05       		.byte	0x5
+ 307 01d2 4B       		.byte	0x4b
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 9
+
+
+ 308 01d3 A2000000 		.4byte	0xa2
+ 309 01d7 30       		.byte	0x30
+ 310 01d8 07       		.uleb128 0x7
+ 311 01d9 1E060000 		.4byte	.LASF40
+ 312 01dd 05       		.byte	0x5
+ 313 01de 4E       		.byte	0x4e
+ 314 01df A2000000 		.4byte	0xa2
+ 315 01e3 31       		.byte	0x31
+ 316 01e4 07       		.uleb128 0x7
+ 317 01e5 F4000000 		.4byte	.LASF41
+ 318 01e9 05       		.byte	0x5
+ 319 01ea 4F       		.byte	0x4f
+ 320 01eb A2000000 		.4byte	0xa2
+ 321 01ef 32       		.byte	0x32
+ 322 01f0 07       		.uleb128 0x7
+ 323 01f1 65050000 		.4byte	.LASF42
+ 324 01f5 05       		.byte	0x5
+ 325 01f6 50       		.byte	0x50
+ 326 01f7 A2000000 		.4byte	0xa2
+ 327 01fb 33       		.byte	0x33
+ 328 01fc 07       		.uleb128 0x7
+ 329 01fd A8080000 		.4byte	.LASF43
+ 330 0201 05       		.byte	0x5
+ 331 0202 51       		.byte	0x51
+ 332 0203 A2000000 		.4byte	0xa2
+ 333 0207 34       		.byte	0x34
+ 334 0208 07       		.uleb128 0x7
+ 335 0209 B60D0000 		.4byte	.LASF44
+ 336 020d 05       		.byte	0x5
+ 337 020e 52       		.byte	0x52
+ 338 020f AD000000 		.4byte	0xad
+ 339 0213 36       		.byte	0x36
+ 340 0214 07       		.uleb128 0x7
+ 341 0215 4B040000 		.4byte	.LASF45
+ 342 0219 05       		.byte	0x5
+ 343 021a 53       		.byte	0x53
+ 344 021b AD000000 		.4byte	0xad
+ 345 021f 38       		.byte	0x38
+ 346 0220 07       		.uleb128 0x7
+ 347 0221 810E0000 		.4byte	.LASF46
+ 348 0225 05       		.byte	0x5
+ 349 0226 54       		.byte	0x54
+ 350 0227 AD000000 		.4byte	0xad
+ 351 022b 3A       		.byte	0x3a
+ 352 022c 07       		.uleb128 0x7
+ 353 022d 5A030000 		.4byte	.LASF47
+ 354 0231 05       		.byte	0x5
+ 355 0232 55       		.byte	0x55
+ 356 0233 A2000000 		.4byte	0xa2
+ 357 0237 3C       		.byte	0x3c
+ 358 0238 07       		.uleb128 0x7
+ 359 0239 72040000 		.4byte	.LASF48
+ 360 023d 05       		.byte	0x5
+ 361 023e 56       		.byte	0x56
+ 362 023f A2000000 		.4byte	0xa2
+ 363 0243 3D       		.byte	0x3d
+ 364 0244 07       		.uleb128 0x7
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 10
+
+
+ 365 0245 730B0000 		.4byte	.LASF49
+ 366 0249 05       		.byte	0x5
+ 367 024a 57       		.byte	0x57
+ 368 024b A2000000 		.4byte	0xa2
+ 369 024f 3E       		.byte	0x3e
+ 370 0250 07       		.uleb128 0x7
+ 371 0251 B7000000 		.4byte	.LASF50
+ 372 0255 05       		.byte	0x5
+ 373 0256 58       		.byte	0x58
+ 374 0257 A2000000 		.4byte	0xa2
+ 375 025b 3F       		.byte	0x3f
+ 376 025c 07       		.uleb128 0x7
+ 377 025d AB090000 		.4byte	.LASF51
+ 378 0261 05       		.byte	0x5
+ 379 0262 59       		.byte	0x59
+ 380 0263 A2000000 		.4byte	0xa2
+ 381 0267 40       		.byte	0x40
+ 382 0268 07       		.uleb128 0x7
+ 383 0269 8C0D0000 		.4byte	.LASF52
+ 384 026d 05       		.byte	0x5
+ 385 026e 5A       		.byte	0x5a
+ 386 026f A2000000 		.4byte	0xa2
+ 387 0273 41       		.byte	0x41
+ 388 0274 07       		.uleb128 0x7
+ 389 0275 3D060000 		.4byte	.LASF53
+ 390 0279 05       		.byte	0x5
+ 391 027a 5B       		.byte	0x5b
+ 392 027b A2000000 		.4byte	0xa2
+ 393 027f 42       		.byte	0x42
+ 394 0280 07       		.uleb128 0x7
+ 395 0281 75090000 		.4byte	.LASF54
+ 396 0285 05       		.byte	0x5
+ 397 0286 5C       		.byte	0x5c
+ 398 0287 A2000000 		.4byte	0xa2
+ 399 028b 43       		.byte	0x43
+ 400 028c 07       		.uleb128 0x7
+ 401 028d 22040000 		.4byte	.LASF55
+ 402 0291 05       		.byte	0x5
+ 403 0292 5D       		.byte	0x5d
+ 404 0293 A2000000 		.4byte	0xa2
+ 405 0297 44       		.byte	0x44
+ 406 0298 07       		.uleb128 0x7
+ 407 0299 00000000 		.4byte	.LASF56
+ 408 029d 05       		.byte	0x5
+ 409 029e 5E       		.byte	0x5e
+ 410 029f CE000000 		.4byte	0xce
+ 411 02a3 48       		.byte	0x48
+ 412 02a4 07       		.uleb128 0x7
+ 413 02a5 F3030000 		.4byte	.LASF57
+ 414 02a9 05       		.byte	0x5
+ 415 02aa 5F       		.byte	0x5f
+ 416 02ab CE000000 		.4byte	0xce
+ 417 02af 4C       		.byte	0x4c
+ 418 02b0 07       		.uleb128 0x7
+ 419 02b1 F2010000 		.4byte	.LASF58
+ 420 02b5 05       		.byte	0x5
+ 421 02b6 60       		.byte	0x60
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 11
+
+
+ 422 02b7 A2000000 		.4byte	0xa2
+ 423 02bb 50       		.byte	0x50
+ 424 02bc 07       		.uleb128 0x7
+ 425 02bd 68020000 		.4byte	.LASF59
+ 426 02c1 05       		.byte	0x5
+ 427 02c2 61       		.byte	0x61
+ 428 02c3 A2000000 		.4byte	0xa2
+ 429 02c7 51       		.byte	0x51
+ 430 02c8 07       		.uleb128 0x7
+ 431 02c9 B10E0000 		.4byte	.LASF60
+ 432 02cd 05       		.byte	0x5
+ 433 02ce 62       		.byte	0x62
+ 434 02cf A2000000 		.4byte	0xa2
+ 435 02d3 52       		.byte	0x52
+ 436 02d4 07       		.uleb128 0x7
+ 437 02d5 280D0000 		.4byte	.LASF61
+ 438 02d9 05       		.byte	0x5
+ 439 02da 63       		.byte	0x63
+ 440 02db A2000000 		.4byte	0xa2
+ 441 02df 53       		.byte	0x53
+ 442 02e0 07       		.uleb128 0x7
+ 443 02e1 810B0000 		.4byte	.LASF62
+ 444 02e5 05       		.byte	0x5
+ 445 02e6 64       		.byte	0x64
+ 446 02e7 A2000000 		.4byte	0xa2
+ 447 02eb 54       		.byte	0x54
+ 448 02ec 07       		.uleb128 0x7
+ 449 02ed 91020000 		.4byte	.LASF63
+ 450 02f1 05       		.byte	0x5
+ 451 02f2 65       		.byte	0x65
+ 452 02f3 A2000000 		.4byte	0xa2
+ 453 02f7 55       		.byte	0x55
+ 454 02f8 07       		.uleb128 0x7
+ 455 02f9 B3050000 		.4byte	.LASF64
+ 456 02fd 05       		.byte	0x5
+ 457 02fe 66       		.byte	0x66
+ 458 02ff A2000000 		.4byte	0xa2
+ 459 0303 56       		.byte	0x56
+ 460 0304 07       		.uleb128 0x7
+ 461 0305 0A060000 		.4byte	.LASF65
+ 462 0309 05       		.byte	0x5
+ 463 030a 67       		.byte	0x67
+ 464 030b A2000000 		.4byte	0xa2
+ 465 030f 57       		.byte	0x57
+ 466 0310 07       		.uleb128 0x7
+ 467 0311 51000000 		.4byte	.LASF66
+ 468 0315 05       		.byte	0x5
+ 469 0316 68       		.byte	0x68
+ 470 0317 A2000000 		.4byte	0xa2
+ 471 031b 58       		.byte	0x58
+ 472 031c 07       		.uleb128 0x7
+ 473 031d B10A0000 		.4byte	.LASF67
+ 474 0321 05       		.byte	0x5
+ 475 0322 69       		.byte	0x69
+ 476 0323 A2000000 		.4byte	0xa2
+ 477 0327 59       		.byte	0x59
+ 478 0328 07       		.uleb128 0x7
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 12
+
+
+ 479 0329 94080000 		.4byte	.LASF68
+ 480 032d 05       		.byte	0x5
+ 481 032e 6E       		.byte	0x6e
+ 482 032f B8000000 		.4byte	0xb8
+ 483 0333 5A       		.byte	0x5a
+ 484 0334 07       		.uleb128 0x7
+ 485 0335 830D0000 		.4byte	.LASF69
+ 486 0339 05       		.byte	0x5
+ 487 033a 6F       		.byte	0x6f
+ 488 033b B8000000 		.4byte	0xb8
+ 489 033f 5C       		.byte	0x5c
+ 490 0340 07       		.uleb128 0x7
+ 491 0341 61010000 		.4byte	.LASF70
+ 492 0345 05       		.byte	0x5
+ 493 0346 70       		.byte	0x70
+ 494 0347 A2000000 		.4byte	0xa2
+ 495 034b 5E       		.byte	0x5e
+ 496 034c 07       		.uleb128 0x7
+ 497 034d 230A0000 		.4byte	.LASF71
+ 498 0351 05       		.byte	0x5
+ 499 0352 71       		.byte	0x71
+ 500 0353 A2000000 		.4byte	0xa2
+ 501 0357 5F       		.byte	0x5f
+ 502 0358 07       		.uleb128 0x7
+ 503 0359 64090000 		.4byte	.LASF72
+ 504 035d 05       		.byte	0x5
+ 505 035e 72       		.byte	0x72
+ 506 035f A2000000 		.4byte	0xa2
+ 507 0363 60       		.byte	0x60
+ 508 0364 07       		.uleb128 0x7
+ 509 0365 E2090000 		.4byte	.LASF73
+ 510 0369 05       		.byte	0x5
+ 511 036a 73       		.byte	0x73
+ 512 036b CE000000 		.4byte	0xce
+ 513 036f 64       		.byte	0x64
+ 514 0370 07       		.uleb128 0x7
+ 515 0371 EE0A0000 		.4byte	.LASF74
+ 516 0375 05       		.byte	0x5
+ 517 0376 76       		.byte	0x76
+ 518 0377 B8000000 		.4byte	0xb8
+ 519 037b 68       		.byte	0x68
+ 520 037c 07       		.uleb128 0x7
+ 521 037d A1050000 		.4byte	.LASF75
+ 522 0381 05       		.byte	0x5
+ 523 0382 77       		.byte	0x77
+ 524 0383 B8000000 		.4byte	0xb8
+ 525 0387 6A       		.byte	0x6a
+ 526 0388 07       		.uleb128 0x7
+ 527 0389 C4060000 		.4byte	.LASF76
+ 528 038d 05       		.byte	0x5
+ 529 038e 78       		.byte	0x78
+ 530 038f B8000000 		.4byte	0xb8
+ 531 0393 6C       		.byte	0x6c
+ 532 0394 07       		.uleb128 0x7
+ 533 0395 2E070000 		.4byte	.LASF77
+ 534 0399 05       		.byte	0x5
+ 535 039a 79       		.byte	0x79
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 13
+
+
+ 536 039b B8000000 		.4byte	0xb8
+ 537 039f 6E       		.byte	0x6e
+ 538 03a0 07       		.uleb128 0x7
+ 539 03a1 2C0B0000 		.4byte	.LASF78
+ 540 03a5 05       		.byte	0x5
+ 541 03a6 7B       		.byte	0x7b
+ 542 03a7 A2000000 		.4byte	0xa2
+ 543 03ab 70       		.byte	0x70
+ 544 03ac 07       		.uleb128 0x7
+ 545 03ad DB020000 		.4byte	.LASF79
+ 546 03b1 05       		.byte	0x5
+ 547 03b2 7C       		.byte	0x7c
+ 548 03b3 A2000000 		.4byte	0xa2
+ 549 03b7 71       		.byte	0x71
+ 550 03b8 07       		.uleb128 0x7
+ 551 03b9 C10F0000 		.4byte	.LASF80
+ 552 03bd 05       		.byte	0x5
+ 553 03be 7D       		.byte	0x7d
+ 554 03bf A2000000 		.4byte	0xa2
+ 555 03c3 72       		.byte	0x72
+ 556 03c4 07       		.uleb128 0x7
+ 557 03c5 C6080000 		.4byte	.LASF81
+ 558 03c9 05       		.byte	0x5
+ 559 03ca 7E       		.byte	0x7e
+ 560 03cb A2000000 		.4byte	0xa2
+ 561 03cf 73       		.byte	0x73
+ 562 03d0 07       		.uleb128 0x7
+ 563 03d1 910B0000 		.4byte	.LASF82
+ 564 03d5 05       		.byte	0x5
+ 565 03d6 80       		.byte	0x80
+ 566 03d7 B8000000 		.4byte	0xb8
+ 567 03db 74       		.byte	0x74
+ 568 03dc 07       		.uleb128 0x7
+ 569 03dd DD0C0000 		.4byte	.LASF83
+ 570 03e1 05       		.byte	0x5
+ 571 03e2 81       		.byte	0x81
+ 572 03e3 B8000000 		.4byte	0xb8
+ 573 03e7 76       		.byte	0x76
+ 574 03e8 07       		.uleb128 0x7
+ 575 03e9 D9070000 		.4byte	.LASF84
+ 576 03ed 05       		.byte	0x5
+ 577 03ee 82       		.byte	0x82
+ 578 03ef B8000000 		.4byte	0xb8
+ 579 03f3 78       		.byte	0x78
+ 580 03f4 07       		.uleb128 0x7
+ 581 03f5 1E010000 		.4byte	.LASF85
+ 582 03f9 05       		.byte	0x5
+ 583 03fa 83       		.byte	0x83
+ 584 03fb B8000000 		.4byte	0xb8
+ 585 03ff 7A       		.byte	0x7a
+ 586 0400 07       		.uleb128 0x7
+ 587 0401 E90E0000 		.4byte	.LASF86
+ 588 0405 05       		.byte	0x5
+ 589 0406 86       		.byte	0x86
+ 590 0407 A2000000 		.4byte	0xa2
+ 591 040b 7C       		.byte	0x7c
+ 592 040c 07       		.uleb128 0x7
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 14
+
+
+ 593 040d F30D0000 		.4byte	.LASF87
+ 594 0411 05       		.byte	0x5
+ 595 0412 87       		.byte	0x87
+ 596 0413 A2000000 		.4byte	0xa2
+ 597 0417 7D       		.byte	0x7d
+ 598 0418 07       		.uleb128 0x7
+ 599 0419 510E0000 		.4byte	.LASF88
+ 600 041d 05       		.byte	0x5
+ 601 041e 88       		.byte	0x88
+ 602 041f A2000000 		.4byte	0xa2
+ 603 0423 7E       		.byte	0x7e
+ 604 0424 07       		.uleb128 0x7
+ 605 0425 BD040000 		.4byte	.LASF89
+ 606 0429 05       		.byte	0x5
+ 607 042a 89       		.byte	0x89
+ 608 042b A2000000 		.4byte	0xa2
+ 609 042f 7F       		.byte	0x7f
+ 610 0430 07       		.uleb128 0x7
+ 611 0431 51050000 		.4byte	.LASF90
+ 612 0435 05       		.byte	0x5
+ 613 0436 8A       		.byte	0x8a
+ 614 0437 A2000000 		.4byte	0xa2
+ 615 043b 80       		.byte	0x80
+ 616 043c 07       		.uleb128 0x7
+ 617 043d DC0D0000 		.4byte	.LASF91
+ 618 0441 05       		.byte	0x5
+ 619 0442 8D       		.byte	0x8d
+ 620 0443 CE000000 		.4byte	0xce
+ 621 0447 84       		.byte	0x84
+ 622 0448 07       		.uleb128 0x7
+ 623 0449 33010000 		.4byte	.LASF92
+ 624 044d 05       		.byte	0x5
+ 625 044e 8E       		.byte	0x8e
+ 626 044f CE000000 		.4byte	0xce
+ 627 0453 88       		.byte	0x88
+ 628 0454 07       		.uleb128 0x7
+ 629 0455 D40E0000 		.4byte	.LASF93
+ 630 0459 05       		.byte	0x5
+ 631 045a 8F       		.byte	0x8f
+ 632 045b CE000000 		.4byte	0xce
+ 633 045f 8C       		.byte	0x8c
+ 634 0460 07       		.uleb128 0x7
+ 635 0461 52080000 		.4byte	.LASF94
+ 636 0465 05       		.byte	0x5
+ 637 0466 90       		.byte	0x90
+ 638 0467 CE000000 		.4byte	0xce
+ 639 046b 90       		.byte	0x90
+ 640 046c 07       		.uleb128 0x7
+ 641 046d AA070000 		.4byte	.LASF95
+ 642 0471 05       		.byte	0x5
+ 643 0472 91       		.byte	0x91
+ 644 0473 CE000000 		.4byte	0xce
+ 645 0477 94       		.byte	0x94
+ 646 0478 07       		.uleb128 0x7
+ 647 0479 18080000 		.4byte	.LASF96
+ 648 047d 05       		.byte	0x5
+ 649 047e 92       		.byte	0x92
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 15
+
+
+ 650 047f CE000000 		.4byte	0xce
+ 651 0483 98       		.byte	0x98
+ 652 0484 07       		.uleb128 0x7
+ 653 0485 590F0000 		.4byte	.LASF97
+ 654 0489 05       		.byte	0x5
+ 655 048a 93       		.byte	0x93
+ 656 048b CE000000 		.4byte	0xce
+ 657 048f 9C       		.byte	0x9c
+ 658 0490 07       		.uleb128 0x7
+ 659 0491 26020000 		.4byte	.LASF98
+ 660 0495 05       		.byte	0x5
+ 661 0496 94       		.byte	0x94
+ 662 0497 CE000000 		.4byte	0xce
+ 663 049b A0       		.byte	0xa0
+ 664 049c 07       		.uleb128 0x7
+ 665 049d 45030000 		.4byte	.LASF99
+ 666 04a1 05       		.byte	0x5
+ 667 04a2 95       		.byte	0x95
+ 668 04a3 B8000000 		.4byte	0xb8
+ 669 04a7 A4       		.byte	0xa4
+ 670 04a8 07       		.uleb128 0x7
+ 671 04a9 AC0B0000 		.4byte	.LASF100
+ 672 04ad 05       		.byte	0x5
+ 673 04ae 96       		.byte	0x96
+ 674 04af B8000000 		.4byte	0xb8
+ 675 04b3 A6       		.byte	0xa6
+ 676 04b4 07       		.uleb128 0x7
+ 677 04b5 FD090000 		.4byte	.LASF101
+ 678 04b9 05       		.byte	0x5
+ 679 04ba 97       		.byte	0x97
+ 680 04bb B8000000 		.4byte	0xb8
+ 681 04bf A8       		.byte	0xa8
+ 682 04c0 07       		.uleb128 0x7
+ 683 04c1 AB0C0000 		.4byte	.LASF102
+ 684 04c5 05       		.byte	0x5
+ 685 04c6 98       		.byte	0x98
+ 686 04c7 B8000000 		.4byte	0xb8
+ 687 04cb AA       		.byte	0xaa
+ 688 04cc 07       		.uleb128 0x7
+ 689 04cd D3060000 		.4byte	.LASF103
+ 690 04d1 05       		.byte	0x5
+ 691 04d2 99       		.byte	0x99
+ 692 04d3 B8000000 		.4byte	0xb8
+ 693 04d7 AC       		.byte	0xac
+ 694 04d8 07       		.uleb128 0x7
+ 695 04d9 0C090000 		.4byte	.LASF104
+ 696 04dd 05       		.byte	0x5
+ 697 04de 9A       		.byte	0x9a
+ 698 04df B8000000 		.4byte	0xb8
+ 699 04e3 AE       		.byte	0xae
+ 700 04e4 07       		.uleb128 0x7
+ 701 04e5 B8090000 		.4byte	.LASF105
+ 702 04e9 05       		.byte	0x5
+ 703 04ea 9D       		.byte	0x9d
+ 704 04eb B8000000 		.4byte	0xb8
+ 705 04ef B0       		.byte	0xb0
+ 706 04f0 07       		.uleb128 0x7
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 16
+
+
+ 707 04f1 95000000 		.4byte	.LASF106
+ 708 04f5 05       		.byte	0x5
+ 709 04f6 9E       		.byte	0x9e
+ 710 04f7 CE000000 		.4byte	0xce
+ 711 04fb B4       		.byte	0xb4
+ 712 04fc 00       		.byte	0
+ 713 04fd 03       		.uleb128 0x3
+ 714 04fe 83070000 		.4byte	.LASF107
+ 715 0502 05       		.byte	0x5
+ 716 0503 9F       		.byte	0x9f
+ 717 0504 EC000000 		.4byte	0xec
+ 718 0508 02       		.uleb128 0x2
+ 719 0509 01       		.byte	0x1
+ 720 050a 08       		.byte	0x8
+ 721 050b 910C0000 		.4byte	.LASF108
+ 722 050f 02       		.uleb128 0x2
+ 723 0510 04       		.byte	0x4
+ 724 0511 04       		.byte	0x4
+ 725 0512 DC090000 		.4byte	.LASF109
+ 726 0516 02       		.uleb128 0x2
+ 727 0517 08       		.byte	0x8
+ 728 0518 04       		.byte	0x4
+ 729 0519 56040000 		.4byte	.LASF110
+ 730 051d 08       		.uleb128 0x8
+ 731 051e 04       		.byte	0x4
+ 732 051f 02       		.uleb128 0x2
+ 733 0520 01       		.byte	0x1
+ 734 0521 02       		.byte	0x2
+ 735 0522 7F0A0000 		.4byte	.LASF111
+ 736 0526 09       		.uleb128 0x9
+ 737 0527 01       		.byte	0x1
+ 738 0528 2C000000 		.4byte	0x2c
+ 739 052c 06       		.byte	0x6
+ 740 052d 2107     		.2byte	0x721
+ 741 052f 4C050000 		.4byte	0x54c
+ 742 0533 0A       		.uleb128 0xa
+ 743 0534 44090000 		.4byte	.LASF112
+ 744 0538 00       		.byte	0
+ 745 0539 0A       		.uleb128 0xa
+ 746 053a 7B0F0000 		.4byte	.LASF113
+ 747 053e 01       		.byte	0x1
+ 748 053f 0A       		.uleb128 0xa
+ 749 0540 4B070000 		.4byte	.LASF114
+ 750 0544 02       		.byte	0x2
+ 751 0545 0A       		.uleb128 0xa
+ 752 0546 DB010000 		.4byte	.LASF115
+ 753 054a 03       		.byte	0x3
+ 754 054b 00       		.byte	0
+ 755 054c 0B       		.uleb128 0xb
+ 756 054d 9B0A0000 		.4byte	.LASF116
+ 757 0551 06       		.byte	0x6
+ 758 0552 2607     		.2byte	0x726
+ 759 0554 26050000 		.4byte	0x526
+ 760 0558 09       		.uleb128 0x9
+ 761 0559 01       		.byte	0x1
+ 762 055a 2C000000 		.4byte	0x2c
+ 763 055e 07       		.byte	0x7
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 17
+
+
+ 764 055f B101     		.2byte	0x1b1
+ 765 0561 84050000 		.4byte	0x584
+ 766 0565 0A       		.uleb128 0xa
+ 767 0566 A3030000 		.4byte	.LASF117
+ 768 056a 00       		.byte	0
+ 769 056b 0A       		.uleb128 0xa
+ 770 056c E7040000 		.4byte	.LASF118
+ 771 0570 01       		.byte	0x1
+ 772 0571 0A       		.uleb128 0xa
+ 773 0572 FE0A0000 		.4byte	.LASF119
+ 774 0576 02       		.byte	0x2
+ 775 0577 0A       		.uleb128 0xa
+ 776 0578 65000000 		.4byte	.LASF120
+ 777 057c 03       		.byte	0x3
+ 778 057d 0A       		.uleb128 0xa
+ 779 057e 640E0000 		.4byte	.LASF121
+ 780 0582 04       		.byte	0x4
+ 781 0583 00       		.byte	0
+ 782 0584 0B       		.uleb128 0xb
+ 783 0585 DE030000 		.4byte	.LASF122
+ 784 0589 07       		.byte	0x7
+ 785 058a B701     		.2byte	0x1b7
+ 786 058c 58050000 		.4byte	0x558
+ 787 0590 09       		.uleb128 0x9
+ 788 0591 04       		.byte	0x4
+ 789 0592 9B000000 		.4byte	0x9b
+ 790 0596 07       		.byte	0x7
+ 791 0597 BC01     		.2byte	0x1bc
+ 792 0599 AD050000 		.4byte	0x5ad
+ 793 059d 0A       		.uleb128 0xa
+ 794 059e C40C0000 		.4byte	.LASF123
+ 795 05a2 00       		.byte	0
+ 796 05a3 0C       		.uleb128 0xc
+ 797 05a4 7A020000 		.4byte	.LASF124
+ 798 05a8 00000001 		.4byte	0x1000000
+ 799 05ac 00       		.byte	0
+ 800 05ad 0B       		.uleb128 0xb
+ 801 05ae C0030000 		.4byte	.LASF125
+ 802 05b2 07       		.byte	0x7
+ 803 05b3 BF01     		.2byte	0x1bf
+ 804 05b5 90050000 		.4byte	0x590
+ 805 05b9 09       		.uleb128 0x9
+ 806 05ba 04       		.byte	0x4
+ 807 05bb 9B000000 		.4byte	0x9b
+ 808 05bf 07       		.byte	0x7
+ 809 05c0 C401     		.2byte	0x1c4
+ 810 05c2 D6050000 		.4byte	0x5d6
+ 811 05c6 0A       		.uleb128 0xa
+ 812 05c7 D9000000 		.4byte	.LASF126
+ 813 05cb 00       		.byte	0
+ 814 05cc 0C       		.uleb128 0xc
+ 815 05cd BF070000 		.4byte	.LASF127
+ 816 05d1 00000040 		.4byte	0x40000000
+ 817 05d5 00       		.byte	0
+ 818 05d6 0B       		.uleb128 0xb
+ 819 05d7 F3080000 		.4byte	.LASF128
+ 820 05db 07       		.byte	0x7
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 18
+
+
+ 821 05dc C701     		.2byte	0x1c7
+ 822 05de B9050000 		.4byte	0x5b9
+ 823 05e2 09       		.uleb128 0x9
+ 824 05e3 04       		.byte	0x4
+ 825 05e4 9B000000 		.4byte	0x9b
+ 826 05e8 07       		.byte	0x7
+ 827 05e9 CC01     		.2byte	0x1cc
+ 828 05eb 1A060000 		.4byte	0x61a
+ 829 05ef 0A       		.uleb128 0xa
+ 830 05f0 70010000 		.4byte	.LASF129
+ 831 05f4 00       		.byte	0
+ 832 05f5 0C       		.uleb128 0xc
+ 833 05f6 DD080000 		.4byte	.LASF130
+ 834 05fa 00004000 		.4byte	0x400000
+ 835 05fe 0C       		.uleb128 0xc
+ 836 05ff 67080000 		.4byte	.LASF131
+ 837 0603 0000C000 		.4byte	0xc00000
+ 838 0607 0C       		.uleb128 0xc
+ 839 0608 420A0000 		.4byte	.LASF132
+ 840 060c 00000008 		.4byte	0x8000000
+ 841 0610 0C       		.uleb128 0xc
+ 842 0611 5D040000 		.4byte	.LASF133
+ 843 0615 00008008 		.4byte	0x8800000
+ 844 0619 00       		.byte	0
+ 845 061a 0B       		.uleb128 0xb
+ 846 061b 090A0000 		.4byte	.LASF134
+ 847 061f 07       		.byte	0x7
+ 848 0620 D401     		.2byte	0x1d4
+ 849 0622 E2050000 		.4byte	0x5e2
+ 850 0626 09       		.uleb128 0x9
+ 851 0627 02       		.byte	0x2
+ 852 0628 5B000000 		.4byte	0x5b
+ 853 062c 07       		.byte	0x7
+ 854 062d DA01     		.2byte	0x1da
+ 855 062f 4F060000 		.4byte	0x64f
+ 856 0633 0A       		.uleb128 0xa
+ 857 0634 4D020000 		.4byte	.LASF135
+ 858 0638 00       		.byte	0
+ 859 0639 0D       		.uleb128 0xd
+ 860 063a 070D0000 		.4byte	.LASF136
+ 861 063e 0001     		.2byte	0x100
+ 862 0640 0D       		.uleb128 0xd
+ 863 0641 120E0000 		.4byte	.LASF137
+ 864 0645 0002     		.2byte	0x200
+ 865 0647 0D       		.uleb128 0xd
+ 866 0648 3A0D0000 		.4byte	.LASF138
+ 867 064c 0003     		.2byte	0x300
+ 868 064e 00       		.byte	0
+ 869 064f 0B       		.uleb128 0xb
+ 870 0650 EC060000 		.4byte	.LASF139
+ 871 0654 07       		.byte	0x7
+ 872 0655 E001     		.2byte	0x1e0
+ 873 0657 26060000 		.4byte	0x626
+ 874 065b 09       		.uleb128 0x9
+ 875 065c 01       		.byte	0x1
+ 876 065d 2C000000 		.4byte	0x2c
+ 877 0661 07       		.byte	0x7
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 19
+
+
+ 878 0662 E701     		.2byte	0x1e7
+ 879 0664 75060000 		.4byte	0x675
+ 880 0668 0A       		.uleb128 0xa
+ 881 0669 28090000 		.4byte	.LASF140
+ 882 066d 00       		.byte	0
+ 883 066e 0A       		.uleb128 0xa
+ 884 066f 01040000 		.4byte	.LASF141
+ 885 0673 01       		.byte	0x1
+ 886 0674 00       		.byte	0
+ 887 0675 0B       		.uleb128 0xb
+ 888 0676 86010000 		.4byte	.LASF142
+ 889 067a 07       		.byte	0x7
+ 890 067b EA01     		.2byte	0x1ea
+ 891 067d 5B060000 		.4byte	0x65b
+ 892 0681 09       		.uleb128 0x9
+ 893 0682 01       		.byte	0x1
+ 894 0683 2C000000 		.4byte	0x2c
+ 895 0687 07       		.byte	0x7
+ 896 0688 F101     		.2byte	0x1f1
+ 897 068a 9B060000 		.4byte	0x69b
+ 898 068e 0A       		.uleb128 0xa
+ 899 068f 03020000 		.4byte	.LASF143
+ 900 0693 00       		.byte	0
+ 901 0694 0A       		.uleb128 0xa
+ 902 0695 12000000 		.4byte	.LASF144
+ 903 0699 01       		.byte	0x1
+ 904 069a 00       		.byte	0
+ 905 069b 0B       		.uleb128 0xb
+ 906 069c F70F0000 		.4byte	.LASF145
+ 907 06a0 07       		.byte	0x7
+ 908 06a1 F401     		.2byte	0x1f4
+ 909 06a3 81060000 		.4byte	0x681
+ 910 06a7 0E       		.uleb128 0xe
+ 911 06a8 34       		.byte	0x34
+ 912 06a9 07       		.byte	0x7
+ 913 06aa 1702     		.2byte	0x217
+ 914 06ac 81070000 		.4byte	0x781
+ 915 06b0 0F       		.uleb128 0xf
+ 916 06b1 9F010000 		.4byte	.LASF146
+ 917 06b5 07       		.byte	0x7
+ 918 06b6 1902     		.2byte	0x219
+ 919 06b8 75060000 		.4byte	0x675
+ 920 06bc 00       		.byte	0
+ 921 06bd 0F       		.uleb128 0xf
+ 922 06be 25050000 		.4byte	.LASF147
+ 923 06c2 07       		.byte	0x7
+ 924 06c3 1A02     		.2byte	0x21a
+ 925 06c5 AD050000 		.4byte	0x5ad
+ 926 06c9 04       		.byte	0x4
+ 927 06ca 0F       		.uleb128 0xf
+ 928 06cb 29060000 		.4byte	.LASF148
+ 929 06cf 07       		.byte	0x7
+ 930 06d0 1B02     		.2byte	0x21b
+ 931 06d2 84050000 		.4byte	0x584
+ 932 06d6 08       		.byte	0x8
+ 933 06d7 0F       		.uleb128 0xf
+ 934 06d8 0B080000 		.4byte	.LASF149
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 20
+
+
+ 935 06dc 07       		.byte	0x7
+ 936 06dd 1C02     		.2byte	0x21c
+ 937 06df 4F060000 		.4byte	0x64f
+ 938 06e3 0A       		.byte	0xa
+ 939 06e4 0F       		.uleb128 0xf
+ 940 06e5 9C0D0000 		.4byte	.LASF150
+ 941 06e9 07       		.byte	0x7
+ 942 06ea 1D02     		.2byte	0x21d
+ 943 06ec 1A060000 		.4byte	0x61a
+ 944 06f0 0C       		.byte	0xc
+ 945 06f1 0F       		.uleb128 0xf
+ 946 06f2 960E0000 		.4byte	.LASF151
+ 947 06f6 07       		.byte	0x7
+ 948 06f7 1E02     		.2byte	0x21e
+ 949 06f9 9B060000 		.4byte	0x69b
+ 950 06fd 10       		.byte	0x10
+ 951 06fe 0F       		.uleb128 0xf
+ 952 06ff A10C0000 		.4byte	.LASF152
+ 953 0703 07       		.byte	0x7
+ 954 0704 1F02     		.2byte	0x21f
+ 955 0706 D6050000 		.4byte	0x5d6
+ 956 070a 14       		.byte	0x14
+ 957 070b 0F       		.uleb128 0xf
+ 958 070c 13100000 		.4byte	.LASF153
+ 959 0710 07       		.byte	0x7
+ 960 0711 2002     		.2byte	0x220
+ 961 0713 CE000000 		.4byte	0xce
+ 962 0717 18       		.byte	0x18
+ 963 0718 0F       		.uleb128 0xf
+ 964 0719 30050000 		.4byte	.LASF154
+ 965 071d 07       		.byte	0x7
+ 966 071e 2102     		.2byte	0x221
+ 967 0720 C3000000 		.4byte	0xc3
+ 968 0724 1C       		.byte	0x1c
+ 969 0725 0F       		.uleb128 0xf
+ 970 0726 C3000000 		.4byte	.LASF155
+ 971 072a 07       		.byte	0x7
+ 972 072b 2202     		.2byte	0x222
+ 973 072d C3000000 		.4byte	0xc3
+ 974 0731 20       		.byte	0x20
+ 975 0732 0F       		.uleb128 0xf
+ 976 0733 680D0000 		.4byte	.LASF156
+ 977 0737 07       		.byte	0x7
+ 978 0738 2302     		.2byte	0x223
+ 979 073a 1F050000 		.4byte	0x51f
+ 980 073e 24       		.byte	0x24
+ 981 073f 0F       		.uleb128 0xf
+ 982 0740 49060000 		.4byte	.LASF157
+ 983 0744 07       		.byte	0x7
+ 984 0745 2602     		.2byte	0x226
+ 985 0747 1F050000 		.4byte	0x51f
+ 986 074b 25       		.byte	0x25
+ 987 074c 0F       		.uleb128 0xf
+ 988 074d C50A0000 		.4byte	.LASF158
+ 989 0751 07       		.byte	0x7
+ 990 0752 2702     		.2byte	0x227
+ 991 0754 4C050000 		.4byte	0x54c
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 21
+
+
+ 992 0758 26       		.byte	0x26
+ 993 0759 0F       		.uleb128 0xf
+ 994 075a 42020000 		.4byte	.LASF159
+ 995 075e 07       		.byte	0x7
+ 996 075f 2802     		.2byte	0x228
+ 997 0761 CE000000 		.4byte	0xce
+ 998 0765 28       		.byte	0x28
+ 999 0766 0F       		.uleb128 0xf
+ 1000 0767 02010000 		.4byte	.LASF160
+ 1001 076b 07       		.byte	0x7
+ 1002 076c 2902     		.2byte	0x229
+ 1003 076e CE000000 		.4byte	0xce
+ 1004 0772 2C       		.byte	0x2c
+ 1005 0773 0F       		.uleb128 0xf
+ 1006 0774 83080000 		.4byte	.LASF161
+ 1007 0778 07       		.byte	0x7
+ 1008 0779 2A02     		.2byte	0x22a
+ 1009 077b CE000000 		.4byte	0xce
+ 1010 077f 30       		.byte	0x30
+ 1011 0780 00       		.byte	0
+ 1012 0781 0B       		.uleb128 0xb
+ 1013 0782 24030000 		.4byte	.LASF162
+ 1014 0786 07       		.byte	0x7
+ 1015 0787 2B02     		.2byte	0x22b
+ 1016 0789 A7060000 		.4byte	0x6a7
+ 1017 078d 09       		.uleb128 0x9
+ 1018 078e 01       		.byte	0x1
+ 1019 078f 2C000000 		.4byte	0x2c
+ 1020 0793 08       		.byte	0x8
+ 1021 0794 1304     		.2byte	0x413
+ 1022 0796 B3070000 		.4byte	0x7b3
+ 1023 079a 0A       		.uleb128 0xa
+ 1024 079b 8B030000 		.4byte	.LASF163
+ 1025 079f 00       		.byte	0
+ 1026 07a0 0A       		.uleb128 0xa
+ 1027 07a1 660A0000 		.4byte	.LASF164
+ 1028 07a5 01       		.byte	0x1
+ 1029 07a6 0A       		.uleb128 0xa
+ 1030 07a7 33040000 		.4byte	.LASF165
+ 1031 07ab 02       		.byte	0x2
+ 1032 07ac 0A       		.uleb128 0xa
+ 1033 07ad 280F0000 		.4byte	.LASF166
+ 1034 07b1 03       		.byte	0x3
+ 1035 07b2 00       		.byte	0
+ 1036 07b3 0B       		.uleb128 0xb
+ 1037 07b4 01030000 		.4byte	.LASF167
+ 1038 07b8 08       		.byte	0x8
+ 1039 07b9 1804     		.2byte	0x418
+ 1040 07bb 8D070000 		.4byte	0x78d
+ 1041 07bf 0E       		.uleb128 0xe
+ 1042 07c0 78       		.byte	0x78
+ 1043 07c1 08       		.byte	0x8
+ 1044 07c2 0205     		.2byte	0x502
+ 1045 07c4 8C080000 		.4byte	0x88c
+ 1046 07c8 0F       		.uleb128 0xf
+ 1047 07c9 550D0000 		.4byte	.LASF168
+ 1048 07cd 08       		.byte	0x8
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 22
+
+
+ 1049 07ce 0405     		.2byte	0x504
+ 1050 07d0 CE000000 		.4byte	0xce
+ 1051 07d4 00       		.byte	0
+ 1052 07d5 0F       		.uleb128 0xf
+ 1053 07d6 C10E0000 		.4byte	.LASF169
+ 1054 07da 08       		.byte	0x8
+ 1055 07db 0505     		.2byte	0x505
+ 1056 07dd CE000000 		.4byte	0xce
+ 1057 07e1 04       		.byte	0x4
+ 1058 07e2 0F       		.uleb128 0xf
+ 1059 07e3 9D040000 		.4byte	.LASF170
+ 1060 07e7 08       		.byte	0x8
+ 1061 07e8 0605     		.2byte	0x506
+ 1062 07ea CE000000 		.4byte	0xce
+ 1063 07ee 08       		.byte	0x8
+ 1064 07ef 0F       		.uleb128 0xf
+ 1065 07f0 B9080000 		.4byte	.LASF171
+ 1066 07f4 08       		.byte	0x8
+ 1067 07f5 0705     		.2byte	0x507
+ 1068 07f7 CE000000 		.4byte	0xce
+ 1069 07fb 0C       		.byte	0xc
+ 1070 07fc 0F       		.uleb128 0xf
+ 1071 07fd E1060000 		.4byte	.LASF172
+ 1072 0801 08       		.byte	0x8
+ 1073 0802 0805     		.2byte	0x508
+ 1074 0804 CE000000 		.4byte	0xce
+ 1075 0808 10       		.byte	0x10
+ 1076 0809 0F       		.uleb128 0xf
+ 1077 080a 470E0000 		.4byte	.LASF173
+ 1078 080e 08       		.byte	0x8
+ 1079 080f 0905     		.2byte	0x509
+ 1080 0811 B3070000 		.4byte	0x7b3
+ 1081 0815 14       		.byte	0x14
+ 1082 0816 0F       		.uleb128 0xf
+ 1083 0817 570A0000 		.4byte	.LASF174
+ 1084 081b 08       		.byte	0x8
+ 1085 081c 0A05     		.2byte	0x50a
+ 1086 081e CE000000 		.4byte	0xce
+ 1087 0822 18       		.byte	0x18
+ 1088 0823 0F       		.uleb128 0xf
+ 1089 0824 93070000 		.4byte	.LASF175
+ 1090 0828 08       		.byte	0x8
+ 1091 0829 0B05     		.2byte	0x50b
+ 1092 082b 8C080000 		.4byte	0x88c
+ 1093 082f 1C       		.byte	0x1c
+ 1094 0830 0F       		.uleb128 0xf
+ 1095 0831 E50A0000 		.4byte	.LASF176
+ 1096 0835 08       		.byte	0x8
+ 1097 0836 0C05     		.2byte	0x50c
+ 1098 0838 CE000000 		.4byte	0xce
+ 1099 083c 5C       		.byte	0x5c
+ 1100 083d 0F       		.uleb128 0xf
+ 1101 083e 12010000 		.4byte	.LASF177
+ 1102 0842 08       		.byte	0x8
+ 1103 0843 0D05     		.2byte	0x50d
+ 1104 0845 CE000000 		.4byte	0xce
+ 1105 0849 60       		.byte	0x60
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 23
+
+
+ 1106 084a 0F       		.uleb128 0xf
+ 1107 084b C6090000 		.4byte	.LASF178
+ 1108 084f 08       		.byte	0x8
+ 1109 0850 0E05     		.2byte	0x50e
+ 1110 0852 CE000000 		.4byte	0xce
+ 1111 0856 64       		.byte	0x64
+ 1112 0857 0F       		.uleb128 0xf
+ 1113 0858 DB0A0000 		.4byte	.LASF179
+ 1114 085c 08       		.byte	0x8
+ 1115 085d 0F05     		.2byte	0x50f
+ 1116 085f CE000000 		.4byte	0xce
+ 1117 0863 68       		.byte	0x68
+ 1118 0864 0F       		.uleb128 0xf
+ 1119 0865 9F0F0000 		.4byte	.LASF180
+ 1120 0869 08       		.byte	0x8
+ 1121 086a 1005     		.2byte	0x510
+ 1122 086c CE000000 		.4byte	0xce
+ 1123 0870 6C       		.byte	0x6c
+ 1124 0871 0F       		.uleb128 0xf
+ 1125 0872 1A090000 		.4byte	.LASF181
+ 1126 0876 08       		.byte	0x8
+ 1127 0877 1105     		.2byte	0x511
+ 1128 0879 1F050000 		.4byte	0x51f
+ 1129 087d 70       		.byte	0x70
+ 1130 087e 0F       		.uleb128 0xf
+ 1131 087f D80B0000 		.4byte	.LASF182
+ 1132 0883 08       		.byte	0x8
+ 1133 0884 1205     		.2byte	0x512
+ 1134 0886 CE000000 		.4byte	0xce
+ 1135 088a 74       		.byte	0x74
+ 1136 088b 00       		.byte	0
+ 1137 088c 10       		.uleb128 0x10
+ 1138 088d CE000000 		.4byte	0xce
+ 1139 0891 9C080000 		.4byte	0x89c
+ 1140 0895 11       		.uleb128 0x11
+ 1141 0896 D9000000 		.4byte	0xd9
+ 1142 089a 0F       		.byte	0xf
+ 1143 089b 00       		.byte	0
+ 1144 089c 0B       		.uleb128 0xb
+ 1145 089d AD020000 		.4byte	.LASF183
+ 1146 08a1 08       		.byte	0x8
+ 1147 08a2 1305     		.2byte	0x513
+ 1148 08a4 BF070000 		.4byte	0x7bf
+ 1149 08a8 12       		.uleb128 0x12
+ 1150 08a9 04       		.byte	0x4
+ 1151 08aa AE080000 		.4byte	0x8ae
+ 1152 08ae 13       		.uleb128 0x13
+ 1153 08af B9080000 		.4byte	0x8b9
+ 1154 08b3 14       		.uleb128 0x14
+ 1155 08b4 CE000000 		.4byte	0xce
+ 1156 08b8 00       		.byte	0
+ 1157 08b9 0B       		.uleb128 0xb
+ 1158 08ba EB050000 		.4byte	.LASF184
+ 1159 08be 09       		.byte	0x9
+ 1160 08bf D901     		.2byte	0x1d9
+ 1161 08c1 A8080000 		.4byte	0x8a8
+ 1162 08c5 15       		.uleb128 0x15
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 24
+
+
+ 1163 08c6 D70F0000 		.4byte	.LASF200
+ 1164 08ca 38       		.byte	0x38
+ 1165 08cb 09       		.byte	0x9
+ 1166 08cc 7502     		.2byte	0x275
+ 1167 08ce 89090000 		.4byte	0x989
+ 1168 08d2 0F       		.uleb128 0xf
+ 1169 08d3 55060000 		.4byte	.LASF185
+ 1170 08d7 09       		.byte	0x9
+ 1171 08d8 7802     		.2byte	0x278
+ 1172 08da E0000000 		.4byte	0xe0
+ 1173 08de 00       		.byte	0
+ 1174 08df 0F       		.uleb128 0xf
+ 1175 08e0 80090000 		.4byte	.LASF186
+ 1176 08e4 09       		.byte	0x9
+ 1177 08e5 7902     		.2byte	0x279
+ 1178 08e7 E0000000 		.4byte	0xe0
+ 1179 08eb 04       		.byte	0x4
+ 1180 08ec 0F       		.uleb128 0xf
+ 1181 08ed 1C020000 		.4byte	.LASF187
+ 1182 08f1 09       		.byte	0x9
+ 1183 08f2 7B02     		.2byte	0x27b
+ 1184 08f4 1D050000 		.4byte	0x51d
+ 1185 08f8 08       		.byte	0x8
+ 1186 08f9 0F       		.uleb128 0xf
+ 1187 08fa 5A0D0000 		.4byte	.LASF188
+ 1188 08fe 09       		.byte	0x9
+ 1189 08ff 7C02     		.2byte	0x27c
+ 1190 0901 CE000000 		.4byte	0xce
+ 1191 0905 0C       		.byte	0xc
+ 1192 0906 0F       		.uleb128 0xf
+ 1193 0907 FD070000 		.4byte	.LASF189
+ 1194 090b 09       		.byte	0x9
+ 1195 090c 7D02     		.2byte	0x27d
+ 1196 090e E0000000 		.4byte	0xe0
+ 1197 0912 10       		.byte	0x10
+ 1198 0913 0F       		.uleb128 0xf
+ 1199 0914 420F0000 		.4byte	.LASF190
+ 1200 0918 09       		.byte	0x9
+ 1201 0919 7E02     		.2byte	0x27e
+ 1202 091b E0000000 		.4byte	0xe0
+ 1203 091f 14       		.byte	0x14
+ 1204 0920 0F       		.uleb128 0xf
+ 1205 0921 0C0E0000 		.4byte	.LASF191
+ 1206 0925 09       		.byte	0x9
+ 1207 0926 8002     		.2byte	0x280
+ 1208 0928 1D050000 		.4byte	0x51d
+ 1209 092c 18       		.byte	0x18
+ 1210 092d 0F       		.uleb128 0xf
+ 1211 092e 47000000 		.4byte	.LASF192
+ 1212 0932 09       		.byte	0x9
+ 1213 0933 8102     		.2byte	0x281
+ 1214 0935 CE000000 		.4byte	0xce
+ 1215 0939 1C       		.byte	0x1c
+ 1216 093a 0F       		.uleb128 0xf
+ 1217 093b 1C050000 		.4byte	.LASF193
+ 1218 093f 09       		.byte	0x9
+ 1219 0940 8202     		.2byte	0x282
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 25
+
+
+ 1220 0942 E0000000 		.4byte	0xe0
+ 1221 0946 20       		.byte	0x20
+ 1222 0947 0F       		.uleb128 0xf
+ 1223 0948 3C020000 		.4byte	.LASF194
+ 1224 094c 09       		.byte	0x9
+ 1225 094d 8402     		.2byte	0x284
+ 1226 094f 1D050000 		.4byte	0x51d
+ 1227 0953 24       		.byte	0x24
+ 1228 0954 0F       		.uleb128 0xf
+ 1229 0955 36050000 		.4byte	.LASF195
+ 1230 0959 09       		.byte	0x9
+ 1231 095a 8502     		.2byte	0x285
+ 1232 095c CE000000 		.4byte	0xce
+ 1233 0960 28       		.byte	0x28
+ 1234 0961 0F       		.uleb128 0xf
+ 1235 0962 F0020000 		.4byte	.LASF196
+ 1236 0966 09       		.byte	0x9
+ 1237 0967 8602     		.2byte	0x286
+ 1238 0969 E0000000 		.4byte	0xe0
+ 1239 096d 2C       		.byte	0x2c
+ 1240 096e 0F       		.uleb128 0xf
+ 1241 096f 11070000 		.4byte	.LASF197
+ 1242 0973 09       		.byte	0x9
+ 1243 0974 8B02     		.2byte	0x28b
+ 1244 0976 B9080000 		.4byte	0x8b9
+ 1245 097a 30       		.byte	0x30
+ 1246 097b 0F       		.uleb128 0xf
+ 1247 097c 040E0000 		.4byte	.LASF198
+ 1248 0980 09       		.byte	0x9
+ 1249 0981 8E02     		.2byte	0x28e
+ 1250 0983 CE000000 		.4byte	0xce
+ 1251 0987 34       		.byte	0x34
+ 1252 0988 00       		.byte	0
+ 1253 0989 0B       		.uleb128 0xb
+ 1254 098a 2D000000 		.4byte	.LASF199
+ 1255 098e 09       		.byte	0x9
+ 1256 098f 9102     		.2byte	0x291
+ 1257 0991 C5080000 		.4byte	0x8c5
+ 1258 0995 16       		.uleb128 0x16
+ 1259 0996 73030000 		.4byte	.LASF201
+ 1260 099a 64       		.byte	0x64
+ 1261 099b 0A       		.byte	0xa
+ 1262 099c 2F       		.byte	0x2f
+ 1263 099d CE0A0000 		.4byte	0xace
+ 1264 09a1 07       		.uleb128 0x7
+ 1265 09a2 D4090000 		.4byte	.LASF202
+ 1266 09a6 0A       		.byte	0xa
+ 1267 09a7 31       		.byte	0x31
+ 1268 09a8 CE000000 		.4byte	0xce
+ 1269 09ac 00       		.byte	0
+ 1270 09ad 07       		.uleb128 0x7
+ 1271 09ae 760C0000 		.4byte	.LASF203
+ 1272 09b2 0A       		.byte	0xa
+ 1273 09b3 33       		.byte	0x33
+ 1274 09b4 CE000000 		.4byte	0xce
+ 1275 09b8 04       		.byte	0x4
+ 1276 09b9 07       		.uleb128 0x7
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 26
+
+
+ 1277 09ba 1F0B0000 		.4byte	.LASF204
+ 1278 09be 0A       		.byte	0xa
+ 1279 09bf 34       		.byte	0x34
+ 1280 09c0 CE000000 		.4byte	0xce
+ 1281 09c4 08       		.byte	0x8
+ 1282 09c5 07       		.uleb128 0x7
+ 1283 09c6 EE070000 		.4byte	.LASF205
+ 1284 09ca 0A       		.byte	0xa
+ 1285 09cb 35       		.byte	0x35
+ 1286 09cc CE000000 		.4byte	0xce
+ 1287 09d0 0C       		.byte	0xc
+ 1288 09d1 07       		.uleb128 0x7
+ 1289 09d2 EF0F0000 		.4byte	.LASF206
+ 1290 09d6 0A       		.byte	0xa
+ 1291 09d7 36       		.byte	0x36
+ 1292 09d8 CE000000 		.4byte	0xce
+ 1293 09dc 10       		.byte	0x10
+ 1294 09dd 07       		.uleb128 0x7
+ 1295 09de C30D0000 		.4byte	.LASF207
+ 1296 09e2 0A       		.byte	0xa
+ 1297 09e3 37       		.byte	0x37
+ 1298 09e4 CE000000 		.4byte	0xce
+ 1299 09e8 14       		.byte	0x14
+ 1300 09e9 07       		.uleb128 0x7
+ 1301 09ea CB0D0000 		.4byte	.LASF208
+ 1302 09ee 0A       		.byte	0xa
+ 1303 09ef 38       		.byte	0x38
+ 1304 09f0 CE000000 		.4byte	0xce
+ 1305 09f4 18       		.byte	0x18
+ 1306 09f5 07       		.uleb128 0x7
+ 1307 09f6 580B0000 		.4byte	.LASF209
+ 1308 09fa 0A       		.byte	0xa
+ 1309 09fb 39       		.byte	0x39
+ 1310 09fc 1F050000 		.4byte	0x51f
+ 1311 0a00 1C       		.byte	0x1c
+ 1312 0a01 07       		.uleb128 0x7
+ 1313 0a02 500F0000 		.4byte	.LASF210
+ 1314 0a06 0A       		.byte	0xa
+ 1315 0a07 3A       		.byte	0x3a
+ 1316 0a08 CE000000 		.4byte	0xce
+ 1317 0a0c 20       		.byte	0x20
+ 1318 0a0d 07       		.uleb128 0x7
+ 1319 0a0e D30D0000 		.4byte	.LASF211
+ 1320 0a12 0A       		.byte	0xa
+ 1321 0a13 3B       		.byte	0x3b
+ 1322 0a14 CE000000 		.4byte	0xce
+ 1323 0a18 24       		.byte	0x24
+ 1324 0a19 07       		.uleb128 0x7
+ 1325 0a1a D9050000 		.4byte	.LASF212
+ 1326 0a1e 0A       		.byte	0xa
+ 1327 0a1f 3C       		.byte	0x3c
+ 1328 0a20 1F050000 		.4byte	0x51f
+ 1329 0a24 28       		.byte	0x28
+ 1330 0a25 07       		.uleb128 0x7
+ 1331 0a26 40050000 		.4byte	.LASF213
+ 1332 0a2a 0A       		.byte	0xa
+ 1333 0a2b 3E       		.byte	0x3e
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 27
+
+
+ 1334 0a2c CE000000 		.4byte	0xce
+ 1335 0a30 2C       		.byte	0x2c
+ 1336 0a31 07       		.uleb128 0x7
+ 1337 0a32 C10B0000 		.4byte	.LASF214
+ 1338 0a36 0A       		.byte	0xa
+ 1339 0a37 3F       		.byte	0x3f
+ 1340 0a38 CE000000 		.4byte	0xce
+ 1341 0a3c 30       		.byte	0x30
+ 1342 0a3d 07       		.uleb128 0x7
+ 1343 0a3e A30E0000 		.4byte	.LASF215
+ 1344 0a42 0A       		.byte	0xa
+ 1345 0a43 40       		.byte	0x40
+ 1346 0a44 CE000000 		.4byte	0xce
+ 1347 0a48 34       		.byte	0x34
+ 1348 0a49 07       		.uleb128 0x7
+ 1349 0a4a 390A0000 		.4byte	.LASF216
+ 1350 0a4e 0A       		.byte	0xa
+ 1351 0a4f 41       		.byte	0x41
+ 1352 0a50 CE000000 		.4byte	0xce
+ 1353 0a54 38       		.byte	0x38
+ 1354 0a55 07       		.uleb128 0x7
+ 1355 0a56 5E060000 		.4byte	.LASF217
+ 1356 0a5a 0A       		.byte	0xa
+ 1357 0a5b 42       		.byte	0x42
+ 1358 0a5c CE000000 		.4byte	0xce
+ 1359 0a60 3C       		.byte	0x3c
+ 1360 0a61 07       		.uleb128 0x7
+ 1361 0a62 690B0000 		.4byte	.LASF218
+ 1362 0a66 0A       		.byte	0xa
+ 1363 0a67 44       		.byte	0x44
+ 1364 0a68 CE000000 		.4byte	0xce
+ 1365 0a6c 40       		.byte	0x40
+ 1366 0a6d 07       		.uleb128 0x7
+ 1367 0a6e 180F0000 		.4byte	.LASF219
+ 1368 0a72 0A       		.byte	0xa
+ 1369 0a73 45       		.byte	0x45
+ 1370 0a74 CE000000 		.4byte	0xce
+ 1371 0a78 44       		.byte	0x44
+ 1372 0a79 07       		.uleb128 0x7
+ 1373 0a7a 6F0F0000 		.4byte	.LASF220
+ 1374 0a7e 0A       		.byte	0xa
+ 1375 0a7f 47       		.byte	0x47
+ 1376 0a80 CE000000 		.4byte	0xce
+ 1377 0a84 48       		.byte	0x48
+ 1378 0a85 07       		.uleb128 0x7
+ 1379 0a86 A70D0000 		.4byte	.LASF221
+ 1380 0a8a 0A       		.byte	0xa
+ 1381 0a8b 48       		.byte	0x48
+ 1382 0a8c CE000000 		.4byte	0xce
+ 1383 0a90 4C       		.byte	0x4c
+ 1384 0a91 07       		.uleb128 0x7
+ 1385 0a92 2E080000 		.4byte	.LASF222
+ 1386 0a96 0A       		.byte	0xa
+ 1387 0a97 4A       		.byte	0x4a
+ 1388 0a98 CE000000 		.4byte	0xce
+ 1389 0a9c 50       		.byte	0x50
+ 1390 0a9d 07       		.uleb128 0x7
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 28
+
+
+ 1391 0a9e 03070000 		.4byte	.LASF223
+ 1392 0aa2 0A       		.byte	0xa
+ 1393 0aa3 4B       		.byte	0x4b
+ 1394 0aa4 CE000000 		.4byte	0xce
+ 1395 0aa8 54       		.byte	0x54
+ 1396 0aa9 07       		.uleb128 0x7
+ 1397 0aaa 8B000000 		.4byte	.LASF224
+ 1398 0aae 0A       		.byte	0xa
+ 1399 0aaf 4D       		.byte	0x4d
+ 1400 0ab0 CE000000 		.4byte	0xce
+ 1401 0ab4 58       		.byte	0x58
+ 1402 0ab5 07       		.uleb128 0x7
+ 1403 0ab6 900F0000 		.4byte	.LASF225
+ 1404 0aba 0A       		.byte	0xa
+ 1405 0abb 4E       		.byte	0x4e
+ 1406 0abc CE000000 		.4byte	0xce
+ 1407 0ac0 5C       		.byte	0x5c
+ 1408 0ac1 07       		.uleb128 0x7
+ 1409 0ac2 960C0000 		.4byte	.LASF226
+ 1410 0ac6 0A       		.byte	0xa
+ 1411 0ac7 50       		.byte	0x50
+ 1412 0ac8 CE000000 		.4byte	0xce
+ 1413 0acc 60       		.byte	0x60
+ 1414 0acd 00       		.byte	0
+ 1415 0ace 03       		.uleb128 0x3
+ 1416 0acf FE0E0000 		.4byte	.LASF227
+ 1417 0ad3 0A       		.byte	0xa
+ 1418 0ad4 51       		.byte	0x51
+ 1419 0ad5 95090000 		.4byte	0x995
+ 1420 0ad9 06       		.uleb128 0x6
+ 1421 0ada 10       		.byte	0x10
+ 1422 0adb 0B       		.byte	0xb
+ 1423 0adc 3B       		.byte	0x3b
+ 1424 0add 120B0000 		.4byte	0xb12
+ 1425 0ae1 07       		.uleb128 0x7
+ 1426 0ae2 9E070000 		.4byte	.LASF228
+ 1427 0ae6 0B       		.byte	0xb
+ 1428 0ae7 3D       		.byte	0x3d
+ 1429 0ae8 CE000000 		.4byte	0xce
+ 1430 0aec 00       		.byte	0
+ 1431 0aed 07       		.uleb128 0x7
+ 1432 0aee 77070000 		.4byte	.LASF229
+ 1433 0af2 0B       		.byte	0xb
+ 1434 0af3 3E       		.byte	0x3e
+ 1435 0af4 CE000000 		.4byte	0xce
+ 1436 0af8 04       		.byte	0x4
+ 1437 0af9 07       		.uleb128 0x7
+ 1438 0afa 06050000 		.4byte	.LASF230
+ 1439 0afe 0B       		.byte	0xb
+ 1440 0aff 3F       		.byte	0x3f
+ 1441 0b00 120B0000 		.4byte	0xb12
+ 1442 0b04 08       		.byte	0x8
+ 1443 0b05 07       		.uleb128 0x7
+ 1444 0b06 780D0000 		.4byte	.LASF231
+ 1445 0b0a 0B       		.byte	0xb
+ 1446 0b0b 40       		.byte	0x40
+ 1447 0b0c CE000000 		.4byte	0xce
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 29
+
+
+ 1448 0b10 0C       		.byte	0xc
+ 1449 0b11 00       		.byte	0
+ 1450 0b12 12       		.uleb128 0x12
+ 1451 0b13 04       		.byte	0x4
+ 1452 0b14 180B0000 		.4byte	0xb18
+ 1453 0b18 17       		.uleb128 0x17
+ 1454 0b19 9C080000 		.4byte	0x89c
+ 1455 0b1d 03       		.uleb128 0x3
+ 1456 0b1e 82040000 		.4byte	.LASF232
+ 1457 0b22 0B       		.byte	0xb
+ 1458 0b23 48       		.byte	0x48
+ 1459 0b24 D90A0000 		.4byte	0xad9
+ 1460 0b28 18       		.uleb128 0x18
+ 1461 0b29 4A010000 		.4byte	.LASF242
+ 1462 0b2d 02       		.byte	0x2
+ 1463 0b2e 81       		.byte	0x81
+ 1464 0b2f 03       		.byte	0x3
+ 1465 0b30 19       		.uleb128 0x19
+ 1466 0b31 7D040000 		.4byte	.LASF243
+ 1467 0b35 01       		.byte	0x1
+ 1468 0b36 0E       		.byte	0xe
+ 1469 0b37 94000000 		.4byte	0x94
+ 1470 0b3b 00000000 		.4byte	.LFB721
+ 1471 0b3f 10000000 		.4byte	.LFE721-.LFB721
+ 1472 0b43 01       		.uleb128 0x1
+ 1473 0b44 9C       		.byte	0x9c
+ 1474 0b45 6C0B0000 		.4byte	0xb6c
+ 1475 0b49 1A       		.uleb128 0x1a
+ 1476 0b4a 280B0000 		.4byte	0xb28
+ 1477 0b4e 02000000 		.4byte	.LBB4
+ 1478 0b52 02000000 		.4byte	.LBE4-.LBB4
+ 1479 0b56 01       		.byte	0x1
+ 1480 0b57 10       		.byte	0x10
+ 1481 0b58 1B       		.uleb128 0x1b
+ 1482 0b59 0A000000 		.4byte	.LVL0
+ 1483 0b5d DF0B0000 		.4byte	0xbdf
+ 1484 0b61 1C       		.uleb128 0x1c
+ 1485 0b62 01       		.uleb128 0x1
+ 1486 0b63 50       		.byte	0x50
+ 1487 0b64 05       		.uleb128 0x5
+ 1488 0b65 0C       		.byte	0xc
+ 1489 0b66 00000810 		.4byte	0x10080000
+ 1490 0b6a 00       		.byte	0
+ 1491 0b6b 00       		.byte	0
+ 1492 0b6c 1D       		.uleb128 0x1d
+ 1493 0b6d F3090000 		.4byte	.LASF233
+ 1494 0b71 05       		.byte	0x5
+ 1495 0b72 A7       		.byte	0xa7
+ 1496 0b73 770B0000 		.4byte	0xb77
+ 1497 0b77 12       		.uleb128 0x12
+ 1498 0b78 04       		.byte	0x4
+ 1499 0b79 7D0B0000 		.4byte	0xb7d
+ 1500 0b7d 17       		.uleb128 0x17
+ 1501 0b7e FD040000 		.4byte	0x4fd
+ 1502 0b82 1E       		.uleb128 0x1e
+ 1503 0b83 C0010000 		.4byte	.LASF234
+ 1504 0b87 0B       		.byte	0xb
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 30
+
+
+ 1505 0b88 6001     		.2byte	0x160
+ 1506 0b8a CE000000 		.4byte	0xce
+ 1507 0b8e 10       		.uleb128 0x10
+ 1508 0b8f 9E0B0000 		.4byte	0xb9e
+ 1509 0b93 9E0B0000 		.4byte	0xb9e
+ 1510 0b97 11       		.uleb128 0x11
+ 1511 0b98 D9000000 		.4byte	0xd9
+ 1512 0b9c 00       		.byte	0
+ 1513 0b9d 00       		.byte	0
+ 1514 0b9e 17       		.uleb128 0x17
+ 1515 0b9f 1D0B0000 		.4byte	0xb1d
+ 1516 0ba3 1E       		.uleb128 0x1e
+ 1517 0ba4 400B0000 		.4byte	.LASF235
+ 1518 0ba8 0B       		.byte	0xb
+ 1519 0ba9 6401     		.2byte	0x164
+ 1520 0bab AF0B0000 		.4byte	0xbaf
+ 1521 0baf 17       		.uleb128 0x17
+ 1522 0bb0 8E0B0000 		.4byte	0xb8e
+ 1523 0bb4 1D       		.uleb128 0x1d
+ 1524 0bb5 1A070000 		.4byte	.LASF236
+ 1525 0bb9 0C       		.byte	0xc
+ 1526 0bba 1F       		.byte	0x1f
+ 1527 0bbb BF0B0000 		.4byte	0xbbf
+ 1528 0bbf 17       		.uleb128 0x17
+ 1529 0bc0 CE0A0000 		.4byte	0xace
+ 1530 0bc4 1D       		.uleb128 0x1d
+ 1531 0bc5 71050000 		.4byte	.LASF237
+ 1532 0bc9 0D       		.byte	0xd
+ 1533 0bca 5A       		.byte	0x5a
+ 1534 0bcb CF0B0000 		.4byte	0xbcf
+ 1535 0bcf 17       		.uleb128 0x17
+ 1536 0bd0 81070000 		.4byte	0x781
+ 1537 0bd4 1D       		.uleb128 0x1d
+ 1538 0bd5 310E0000 		.4byte	.LASF238
+ 1539 0bd9 0E       		.byte	0xe
+ 1540 0bda 87       		.byte	0x87
+ 1541 0bdb 89090000 		.4byte	0x989
+ 1542 0bdf 1F       		.uleb128 0x1f
+ 1543 0be0 3B070000 		.4byte	.LASF244
+ 1544 0be4 3B070000 		.4byte	.LASF244
+ 1545 0be8 0F       		.byte	0xf
+ 1546 0be9 2502     		.2byte	0x225
+ 1547 0beb 00       		.byte	0
+ 1548              		.section	.debug_abbrev,"",%progbits
+ 1549              	.Ldebug_abbrev0:
+ 1550 0000 01       		.uleb128 0x1
+ 1551 0001 11       		.uleb128 0x11
+ 1552 0002 01       		.byte	0x1
+ 1553 0003 25       		.uleb128 0x25
+ 1554 0004 0E       		.uleb128 0xe
+ 1555 0005 13       		.uleb128 0x13
+ 1556 0006 0B       		.uleb128 0xb
+ 1557 0007 03       		.uleb128 0x3
+ 1558 0008 0E       		.uleb128 0xe
+ 1559 0009 1B       		.uleb128 0x1b
+ 1560 000a 0E       		.uleb128 0xe
+ 1561 000b 55       		.uleb128 0x55
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 31
+
+
+ 1562 000c 17       		.uleb128 0x17
+ 1563 000d 11       		.uleb128 0x11
+ 1564 000e 01       		.uleb128 0x1
+ 1565 000f 10       		.uleb128 0x10
+ 1566 0010 17       		.uleb128 0x17
+ 1567 0011 00       		.byte	0
+ 1568 0012 00       		.byte	0
+ 1569 0013 02       		.uleb128 0x2
+ 1570 0014 24       		.uleb128 0x24
+ 1571 0015 00       		.byte	0
+ 1572 0016 0B       		.uleb128 0xb
+ 1573 0017 0B       		.uleb128 0xb
+ 1574 0018 3E       		.uleb128 0x3e
+ 1575 0019 0B       		.uleb128 0xb
+ 1576 001a 03       		.uleb128 0x3
+ 1577 001b 0E       		.uleb128 0xe
+ 1578 001c 00       		.byte	0
+ 1579 001d 00       		.byte	0
+ 1580 001e 03       		.uleb128 0x3
+ 1581 001f 16       		.uleb128 0x16
+ 1582 0020 00       		.byte	0
+ 1583 0021 03       		.uleb128 0x3
+ 1584 0022 0E       		.uleb128 0xe
+ 1585 0023 3A       		.uleb128 0x3a
+ 1586 0024 0B       		.uleb128 0xb
+ 1587 0025 3B       		.uleb128 0x3b
+ 1588 0026 0B       		.uleb128 0xb
+ 1589 0027 49       		.uleb128 0x49
+ 1590 0028 13       		.uleb128 0x13
+ 1591 0029 00       		.byte	0
+ 1592 002a 00       		.byte	0
+ 1593 002b 04       		.uleb128 0x4
+ 1594 002c 24       		.uleb128 0x24
+ 1595 002d 00       		.byte	0
+ 1596 002e 0B       		.uleb128 0xb
+ 1597 002f 0B       		.uleb128 0xb
+ 1598 0030 3E       		.uleb128 0x3e
+ 1599 0031 0B       		.uleb128 0xb
+ 1600 0032 03       		.uleb128 0x3
+ 1601 0033 08       		.uleb128 0x8
+ 1602 0034 00       		.byte	0
+ 1603 0035 00       		.byte	0
+ 1604 0036 05       		.uleb128 0x5
+ 1605 0037 35       		.uleb128 0x35
+ 1606 0038 00       		.byte	0
+ 1607 0039 49       		.uleb128 0x49
+ 1608 003a 13       		.uleb128 0x13
+ 1609 003b 00       		.byte	0
+ 1610 003c 00       		.byte	0
+ 1611 003d 06       		.uleb128 0x6
+ 1612 003e 13       		.uleb128 0x13
+ 1613 003f 01       		.byte	0x1
+ 1614 0040 0B       		.uleb128 0xb
+ 1615 0041 0B       		.uleb128 0xb
+ 1616 0042 3A       		.uleb128 0x3a
+ 1617 0043 0B       		.uleb128 0xb
+ 1618 0044 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 32
+
+
+ 1619 0045 0B       		.uleb128 0xb
+ 1620 0046 01       		.uleb128 0x1
+ 1621 0047 13       		.uleb128 0x13
+ 1622 0048 00       		.byte	0
+ 1623 0049 00       		.byte	0
+ 1624 004a 07       		.uleb128 0x7
+ 1625 004b 0D       		.uleb128 0xd
+ 1626 004c 00       		.byte	0
+ 1627 004d 03       		.uleb128 0x3
+ 1628 004e 0E       		.uleb128 0xe
+ 1629 004f 3A       		.uleb128 0x3a
+ 1630 0050 0B       		.uleb128 0xb
+ 1631 0051 3B       		.uleb128 0x3b
+ 1632 0052 0B       		.uleb128 0xb
+ 1633 0053 49       		.uleb128 0x49
+ 1634 0054 13       		.uleb128 0x13
+ 1635 0055 38       		.uleb128 0x38
+ 1636 0056 0B       		.uleb128 0xb
+ 1637 0057 00       		.byte	0
+ 1638 0058 00       		.byte	0
+ 1639 0059 08       		.uleb128 0x8
+ 1640 005a 0F       		.uleb128 0xf
+ 1641 005b 00       		.byte	0
+ 1642 005c 0B       		.uleb128 0xb
+ 1643 005d 0B       		.uleb128 0xb
+ 1644 005e 00       		.byte	0
+ 1645 005f 00       		.byte	0
+ 1646 0060 09       		.uleb128 0x9
+ 1647 0061 04       		.uleb128 0x4
+ 1648 0062 01       		.byte	0x1
+ 1649 0063 0B       		.uleb128 0xb
+ 1650 0064 0B       		.uleb128 0xb
+ 1651 0065 49       		.uleb128 0x49
+ 1652 0066 13       		.uleb128 0x13
+ 1653 0067 3A       		.uleb128 0x3a
+ 1654 0068 0B       		.uleb128 0xb
+ 1655 0069 3B       		.uleb128 0x3b
+ 1656 006a 05       		.uleb128 0x5
+ 1657 006b 01       		.uleb128 0x1
+ 1658 006c 13       		.uleb128 0x13
+ 1659 006d 00       		.byte	0
+ 1660 006e 00       		.byte	0
+ 1661 006f 0A       		.uleb128 0xa
+ 1662 0070 28       		.uleb128 0x28
+ 1663 0071 00       		.byte	0
+ 1664 0072 03       		.uleb128 0x3
+ 1665 0073 0E       		.uleb128 0xe
+ 1666 0074 1C       		.uleb128 0x1c
+ 1667 0075 0B       		.uleb128 0xb
+ 1668 0076 00       		.byte	0
+ 1669 0077 00       		.byte	0
+ 1670 0078 0B       		.uleb128 0xb
+ 1671 0079 16       		.uleb128 0x16
+ 1672 007a 00       		.byte	0
+ 1673 007b 03       		.uleb128 0x3
+ 1674 007c 0E       		.uleb128 0xe
+ 1675 007d 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 33
+
+
+ 1676 007e 0B       		.uleb128 0xb
+ 1677 007f 3B       		.uleb128 0x3b
+ 1678 0080 05       		.uleb128 0x5
+ 1679 0081 49       		.uleb128 0x49
+ 1680 0082 13       		.uleb128 0x13
+ 1681 0083 00       		.byte	0
+ 1682 0084 00       		.byte	0
+ 1683 0085 0C       		.uleb128 0xc
+ 1684 0086 28       		.uleb128 0x28
+ 1685 0087 00       		.byte	0
+ 1686 0088 03       		.uleb128 0x3
+ 1687 0089 0E       		.uleb128 0xe
+ 1688 008a 1C       		.uleb128 0x1c
+ 1689 008b 06       		.uleb128 0x6
+ 1690 008c 00       		.byte	0
+ 1691 008d 00       		.byte	0
+ 1692 008e 0D       		.uleb128 0xd
+ 1693 008f 28       		.uleb128 0x28
+ 1694 0090 00       		.byte	0
+ 1695 0091 03       		.uleb128 0x3
+ 1696 0092 0E       		.uleb128 0xe
+ 1697 0093 1C       		.uleb128 0x1c
+ 1698 0094 05       		.uleb128 0x5
+ 1699 0095 00       		.byte	0
+ 1700 0096 00       		.byte	0
+ 1701 0097 0E       		.uleb128 0xe
+ 1702 0098 13       		.uleb128 0x13
+ 1703 0099 01       		.byte	0x1
+ 1704 009a 0B       		.uleb128 0xb
+ 1705 009b 0B       		.uleb128 0xb
+ 1706 009c 3A       		.uleb128 0x3a
+ 1707 009d 0B       		.uleb128 0xb
+ 1708 009e 3B       		.uleb128 0x3b
+ 1709 009f 05       		.uleb128 0x5
+ 1710 00a0 01       		.uleb128 0x1
+ 1711 00a1 13       		.uleb128 0x13
+ 1712 00a2 00       		.byte	0
+ 1713 00a3 00       		.byte	0
+ 1714 00a4 0F       		.uleb128 0xf
+ 1715 00a5 0D       		.uleb128 0xd
+ 1716 00a6 00       		.byte	0
+ 1717 00a7 03       		.uleb128 0x3
+ 1718 00a8 0E       		.uleb128 0xe
+ 1719 00a9 3A       		.uleb128 0x3a
+ 1720 00aa 0B       		.uleb128 0xb
+ 1721 00ab 3B       		.uleb128 0x3b
+ 1722 00ac 05       		.uleb128 0x5
+ 1723 00ad 49       		.uleb128 0x49
+ 1724 00ae 13       		.uleb128 0x13
+ 1725 00af 38       		.uleb128 0x38
+ 1726 00b0 0B       		.uleb128 0xb
+ 1727 00b1 00       		.byte	0
+ 1728 00b2 00       		.byte	0
+ 1729 00b3 10       		.uleb128 0x10
+ 1730 00b4 01       		.uleb128 0x1
+ 1731 00b5 01       		.byte	0x1
+ 1732 00b6 49       		.uleb128 0x49
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 34
+
+
+ 1733 00b7 13       		.uleb128 0x13
+ 1734 00b8 01       		.uleb128 0x1
+ 1735 00b9 13       		.uleb128 0x13
+ 1736 00ba 00       		.byte	0
+ 1737 00bb 00       		.byte	0
+ 1738 00bc 11       		.uleb128 0x11
+ 1739 00bd 21       		.uleb128 0x21
+ 1740 00be 00       		.byte	0
+ 1741 00bf 49       		.uleb128 0x49
+ 1742 00c0 13       		.uleb128 0x13
+ 1743 00c1 2F       		.uleb128 0x2f
+ 1744 00c2 0B       		.uleb128 0xb
+ 1745 00c3 00       		.byte	0
+ 1746 00c4 00       		.byte	0
+ 1747 00c5 12       		.uleb128 0x12
+ 1748 00c6 0F       		.uleb128 0xf
+ 1749 00c7 00       		.byte	0
+ 1750 00c8 0B       		.uleb128 0xb
+ 1751 00c9 0B       		.uleb128 0xb
+ 1752 00ca 49       		.uleb128 0x49
+ 1753 00cb 13       		.uleb128 0x13
+ 1754 00cc 00       		.byte	0
+ 1755 00cd 00       		.byte	0
+ 1756 00ce 13       		.uleb128 0x13
+ 1757 00cf 15       		.uleb128 0x15
+ 1758 00d0 01       		.byte	0x1
+ 1759 00d1 27       		.uleb128 0x27
+ 1760 00d2 19       		.uleb128 0x19
+ 1761 00d3 01       		.uleb128 0x1
+ 1762 00d4 13       		.uleb128 0x13
+ 1763 00d5 00       		.byte	0
+ 1764 00d6 00       		.byte	0
+ 1765 00d7 14       		.uleb128 0x14
+ 1766 00d8 05       		.uleb128 0x5
+ 1767 00d9 00       		.byte	0
+ 1768 00da 49       		.uleb128 0x49
+ 1769 00db 13       		.uleb128 0x13
+ 1770 00dc 00       		.byte	0
+ 1771 00dd 00       		.byte	0
+ 1772 00de 15       		.uleb128 0x15
+ 1773 00df 13       		.uleb128 0x13
+ 1774 00e0 01       		.byte	0x1
+ 1775 00e1 03       		.uleb128 0x3
+ 1776 00e2 0E       		.uleb128 0xe
+ 1777 00e3 0B       		.uleb128 0xb
+ 1778 00e4 0B       		.uleb128 0xb
+ 1779 00e5 3A       		.uleb128 0x3a
+ 1780 00e6 0B       		.uleb128 0xb
+ 1781 00e7 3B       		.uleb128 0x3b
+ 1782 00e8 05       		.uleb128 0x5
+ 1783 00e9 01       		.uleb128 0x1
+ 1784 00ea 13       		.uleb128 0x13
+ 1785 00eb 00       		.byte	0
+ 1786 00ec 00       		.byte	0
+ 1787 00ed 16       		.uleb128 0x16
+ 1788 00ee 13       		.uleb128 0x13
+ 1789 00ef 01       		.byte	0x1
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 35
+
+
+ 1790 00f0 03       		.uleb128 0x3
+ 1791 00f1 0E       		.uleb128 0xe
+ 1792 00f2 0B       		.uleb128 0xb
+ 1793 00f3 0B       		.uleb128 0xb
+ 1794 00f4 3A       		.uleb128 0x3a
+ 1795 00f5 0B       		.uleb128 0xb
+ 1796 00f6 3B       		.uleb128 0x3b
+ 1797 00f7 0B       		.uleb128 0xb
+ 1798 00f8 01       		.uleb128 0x1
+ 1799 00f9 13       		.uleb128 0x13
+ 1800 00fa 00       		.byte	0
+ 1801 00fb 00       		.byte	0
+ 1802 00fc 17       		.uleb128 0x17
+ 1803 00fd 26       		.uleb128 0x26
+ 1804 00fe 00       		.byte	0
+ 1805 00ff 49       		.uleb128 0x49
+ 1806 0100 13       		.uleb128 0x13
+ 1807 0101 00       		.byte	0
+ 1808 0102 00       		.byte	0
+ 1809 0103 18       		.uleb128 0x18
+ 1810 0104 2E       		.uleb128 0x2e
+ 1811 0105 00       		.byte	0
+ 1812 0106 03       		.uleb128 0x3
+ 1813 0107 0E       		.uleb128 0xe
+ 1814 0108 3A       		.uleb128 0x3a
+ 1815 0109 0B       		.uleb128 0xb
+ 1816 010a 3B       		.uleb128 0x3b
+ 1817 010b 0B       		.uleb128 0xb
+ 1818 010c 27       		.uleb128 0x27
+ 1819 010d 19       		.uleb128 0x19
+ 1820 010e 20       		.uleb128 0x20
+ 1821 010f 0B       		.uleb128 0xb
+ 1822 0110 00       		.byte	0
+ 1823 0111 00       		.byte	0
+ 1824 0112 19       		.uleb128 0x19
+ 1825 0113 2E       		.uleb128 0x2e
+ 1826 0114 01       		.byte	0x1
+ 1827 0115 3F       		.uleb128 0x3f
+ 1828 0116 19       		.uleb128 0x19
+ 1829 0117 03       		.uleb128 0x3
+ 1830 0118 0E       		.uleb128 0xe
+ 1831 0119 3A       		.uleb128 0x3a
+ 1832 011a 0B       		.uleb128 0xb
+ 1833 011b 3B       		.uleb128 0x3b
+ 1834 011c 0B       		.uleb128 0xb
+ 1835 011d 27       		.uleb128 0x27
+ 1836 011e 19       		.uleb128 0x19
+ 1837 011f 49       		.uleb128 0x49
+ 1838 0120 13       		.uleb128 0x13
+ 1839 0121 8701     		.uleb128 0x87
+ 1840 0123 19       		.uleb128 0x19
+ 1841 0124 11       		.uleb128 0x11
+ 1842 0125 01       		.uleb128 0x1
+ 1843 0126 12       		.uleb128 0x12
+ 1844 0127 06       		.uleb128 0x6
+ 1845 0128 40       		.uleb128 0x40
+ 1846 0129 18       		.uleb128 0x18
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 36
+
+
+ 1847 012a 9742     		.uleb128 0x2117
+ 1848 012c 19       		.uleb128 0x19
+ 1849 012d 01       		.uleb128 0x1
+ 1850 012e 13       		.uleb128 0x13
+ 1851 012f 00       		.byte	0
+ 1852 0130 00       		.byte	0
+ 1853 0131 1A       		.uleb128 0x1a
+ 1854 0132 1D       		.uleb128 0x1d
+ 1855 0133 00       		.byte	0
+ 1856 0134 31       		.uleb128 0x31
+ 1857 0135 13       		.uleb128 0x13
+ 1858 0136 11       		.uleb128 0x11
+ 1859 0137 01       		.uleb128 0x1
+ 1860 0138 12       		.uleb128 0x12
+ 1861 0139 06       		.uleb128 0x6
+ 1862 013a 58       		.uleb128 0x58
+ 1863 013b 0B       		.uleb128 0xb
+ 1864 013c 59       		.uleb128 0x59
+ 1865 013d 0B       		.uleb128 0xb
+ 1866 013e 00       		.byte	0
+ 1867 013f 00       		.byte	0
+ 1868 0140 1B       		.uleb128 0x1b
+ 1869 0141 898201   		.uleb128 0x4109
+ 1870 0144 01       		.byte	0x1
+ 1871 0145 11       		.uleb128 0x11
+ 1872 0146 01       		.uleb128 0x1
+ 1873 0147 31       		.uleb128 0x31
+ 1874 0148 13       		.uleb128 0x13
+ 1875 0149 00       		.byte	0
+ 1876 014a 00       		.byte	0
+ 1877 014b 1C       		.uleb128 0x1c
+ 1878 014c 8A8201   		.uleb128 0x410a
+ 1879 014f 00       		.byte	0
+ 1880 0150 02       		.uleb128 0x2
+ 1881 0151 18       		.uleb128 0x18
+ 1882 0152 9142     		.uleb128 0x2111
+ 1883 0154 18       		.uleb128 0x18
+ 1884 0155 00       		.byte	0
+ 1885 0156 00       		.byte	0
+ 1886 0157 1D       		.uleb128 0x1d
+ 1887 0158 34       		.uleb128 0x34
+ 1888 0159 00       		.byte	0
+ 1889 015a 03       		.uleb128 0x3
+ 1890 015b 0E       		.uleb128 0xe
+ 1891 015c 3A       		.uleb128 0x3a
+ 1892 015d 0B       		.uleb128 0xb
+ 1893 015e 3B       		.uleb128 0x3b
+ 1894 015f 0B       		.uleb128 0xb
+ 1895 0160 49       		.uleb128 0x49
+ 1896 0161 13       		.uleb128 0x13
+ 1897 0162 3F       		.uleb128 0x3f
+ 1898 0163 19       		.uleb128 0x19
+ 1899 0164 3C       		.uleb128 0x3c
+ 1900 0165 19       		.uleb128 0x19
+ 1901 0166 00       		.byte	0
+ 1902 0167 00       		.byte	0
+ 1903 0168 1E       		.uleb128 0x1e
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 37
+
+
+ 1904 0169 34       		.uleb128 0x34
+ 1905 016a 00       		.byte	0
+ 1906 016b 03       		.uleb128 0x3
+ 1907 016c 0E       		.uleb128 0xe
+ 1908 016d 3A       		.uleb128 0x3a
+ 1909 016e 0B       		.uleb128 0xb
+ 1910 016f 3B       		.uleb128 0x3b
+ 1911 0170 05       		.uleb128 0x5
+ 1912 0171 49       		.uleb128 0x49
+ 1913 0172 13       		.uleb128 0x13
+ 1914 0173 3F       		.uleb128 0x3f
+ 1915 0174 19       		.uleb128 0x19
+ 1916 0175 3C       		.uleb128 0x3c
+ 1917 0176 19       		.uleb128 0x19
+ 1918 0177 00       		.byte	0
+ 1919 0178 00       		.byte	0
+ 1920 0179 1F       		.uleb128 0x1f
+ 1921 017a 2E       		.uleb128 0x2e
+ 1922 017b 00       		.byte	0
+ 1923 017c 3F       		.uleb128 0x3f
+ 1924 017d 19       		.uleb128 0x19
+ 1925 017e 3C       		.uleb128 0x3c
+ 1926 017f 19       		.uleb128 0x19
+ 1927 0180 6E       		.uleb128 0x6e
+ 1928 0181 0E       		.uleb128 0xe
+ 1929 0182 03       		.uleb128 0x3
+ 1930 0183 0E       		.uleb128 0xe
+ 1931 0184 3A       		.uleb128 0x3a
+ 1932 0185 0B       		.uleb128 0xb
+ 1933 0186 3B       		.uleb128 0x3b
+ 1934 0187 05       		.uleb128 0x5
+ 1935 0188 00       		.byte	0
+ 1936 0189 00       		.byte	0
+ 1937 018a 00       		.byte	0
+ 1938              		.section	.debug_aranges,"",%progbits
+ 1939 0000 1C000000 		.4byte	0x1c
+ 1940 0004 0200     		.2byte	0x2
+ 1941 0006 00000000 		.4byte	.Ldebug_info0
+ 1942 000a 04       		.byte	0x4
+ 1943 000b 00       		.byte	0
+ 1944 000c 0000     		.2byte	0
+ 1945 000e 0000     		.2byte	0
+ 1946 0010 00000000 		.4byte	.LFB721
+ 1947 0014 10000000 		.4byte	.LFE721-.LFB721
+ 1948 0018 00000000 		.4byte	0
+ 1949 001c 00000000 		.4byte	0
+ 1950              		.section	.debug_ranges,"",%progbits
+ 1951              	.Ldebug_ranges0:
+ 1952 0000 00000000 		.4byte	.LFB721
+ 1953 0004 10000000 		.4byte	.LFE721
+ 1954 0008 00000000 		.4byte	0
+ 1955 000c 00000000 		.4byte	0
+ 1956              		.section	.debug_line,"",%progbits
+ 1957              	.Ldebug_line0:
+ 1958 0000 7E030000 		.section	.debug_str,"MS",%progbits,1
+ 1958      02005D03 
+ 1958      00000201 
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 38
+
+
+ 1958      FB0E0D00 
+ 1958      01010101 
+ 1959              	.LASF56:
+ 1960 0000 70726F74 		.ascii	"protBusMasterMask\000"
+ 1960      4275734D 
+ 1960      61737465 
+ 1960      724D6173 
+ 1960      6B00
+ 1961              	.LASF144:
+ 1962 0012 43595F43 		.ascii	"CY_CTDAC_OUTPUT_UNBUFFERED\000"
+ 1962      54444143 
+ 1962      5F4F5554 
+ 1962      5055545F 
+ 1962      554E4255 
+ 1963              	.LASF199:
+ 1964 002d 63795F73 		.ascii	"cy_stc_scb_uart_context_t\000"
+ 1964      74635F73 
+ 1964      63625F75 
+ 1964      6172745F 
+ 1964      636F6E74 
+ 1965              	.LASF192:
+ 1966 0047 72784275 		.ascii	"rxBufSize\000"
+ 1966      6653697A 
+ 1966      6500
+ 1967              	.LASF66:
+ 1968 0051 666C6173 		.ascii	"flashCtlMainWs3Freq\000"
+ 1968      6843746C 
+ 1968      4D61696E 
+ 1968      57733346 
+ 1968      72657100 
+ 1969              	.LASF120:
+ 1970 0065 43595F43 		.ascii	"CY_CTDAC_UPDATE_STROBE_EDGE_IMMEDIATE\000"
+ 1970      54444143 
+ 1970      5F555044 
+ 1970      4154455F 
+ 1970      5354524F 
+ 1971              	.LASF224:
+ 1972 008b 6B696C6C 		.ascii	"killInput\000"
+ 1972      496E7075 
+ 1972      7400
+ 1973              	.LASF106:
+ 1974 0095 6970634C 		.ascii	"ipcLockStatusOffset\000"
+ 1974      6F636B53 
+ 1974      74617475 
+ 1974      734F6666 
+ 1974      73657400 
+ 1975              	.LASF32:
+ 1976 00a9 63727970 		.ascii	"cryptoVersion\000"
+ 1976      746F5665 
+ 1976      7273696F 
+ 1976      6E00
+ 1977              	.LASF50:
+ 1978 00b7 70657269 		.ascii	"periClockNr\000"
+ 1978      436C6F63 
+ 1978      6B4E7200 
+ 1979              	.LASF155:
+ 1980 00c3 6E657874 		.ascii	"nextValue\000"
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 39
+
+
+ 1980      56616C75 
+ 1980      6500
+ 1981              	.LASF240:
+ 1982 00cd 6D61696E 		.ascii	"main_cm0p.c\000"
+ 1982      5F636D30 
+ 1982      702E6300 
+ 1983              	.LASF126:
+ 1984 00d9 43595F43 		.ascii	"CY_CTDAC_DEEPSLEEP_DISABLE\000"
+ 1984      54444143 
+ 1984      5F444545 
+ 1984      50534C45 
+ 1984      45505F44 
+ 1985              	.LASF41:
+ 1986 00f4 63707573 		.ascii	"cpussIpcIrqNr\000"
+ 1986      73497063 
+ 1986      4972714E 
+ 1986      7200
+ 1987              	.LASF160:
+ 1988 0102 64697669 		.ascii	"dividerIntValue\000"
+ 1988      64657249 
+ 1988      6E745661 
+ 1988      6C756500 
+ 1989              	.LASF177:
+ 1990 0112 73617449 		.ascii	"satIntrMask\000"
+ 1990      6E74724D 
+ 1990      61736B00 
+ 1991              	.LASF85:
+ 1992 011e 70657269 		.ascii	"periDiv24_5CtlOffset\000"
+ 1992      44697632 
+ 1992      345F3543 
+ 1992      746C4F66 
+ 1992      66736574 
+ 1993              	.LASF92:
+ 1994 0133 63707573 		.ascii	"cpussCm4ClockCtlOffset\000"
+ 1994      73436D34 
+ 1994      436C6F63 
+ 1994      6B43746C 
+ 1994      4F666673 
+ 1995              	.LASF242:
+ 1996 014a 5F5F656E 		.ascii	"__enable_irq\000"
+ 1996      61626C65 
+ 1996      5F697271 
+ 1996      00
+ 1997              	.LASF21:
+ 1998 0157 63707573 		.ascii	"cpussBase\000"
+ 1998      73426173 
+ 1998      6500
+ 1999              	.LASF70:
+ 2000 0161 64774368 		.ascii	"dwChCtlPrioPos\000"
+ 2000      43746C50 
+ 2000      72696F50 
+ 2000      6F7300
+ 2001              	.LASF129:
+ 2002 0170 43595F43 		.ascii	"CY_CTDAC_OUTPUT_HIGHZ\000"
+ 2002      54444143 
+ 2002      5F4F5554 
+ 2002      5055545F 
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 40
+
+
+ 2002      48494748 
+ 2003              	.LASF142:
+ 2004 0186 63795F65 		.ascii	"cy_en_ctdac_ref_source_t\000"
+ 2004      6E5F6374 
+ 2004      6461635F 
+ 2004      7265665F 
+ 2004      736F7572 
+ 2005              	.LASF146:
+ 2006 019f 72656653 		.ascii	"refSource\000"
+ 2006      6F757263 
+ 2006      6500
+ 2007              	.LASF12:
+ 2008 01a9 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2008      206C6F6E 
+ 2008      6720756E 
+ 2008      7369676E 
+ 2008      65642069 
+ 2009              	.LASF234:
+ 2010 01c0 414E414C 		.ascii	"ANALYZER_ADC_currentConfig\000"
+ 2010      595A4552 
+ 2010      5F414443 
+ 2010      5F637572 
+ 2010      72656E74 
+ 2011              	.LASF115:
+ 2012 01db 43595F53 		.ascii	"CY_SYSCLK_DIV_24_5_BIT\000"
+ 2012      5953434C 
+ 2012      4B5F4449 
+ 2012      565F3234 
+ 2012      5F355F42 
+ 2013              	.LASF58:
+ 2014 01f2 666C6173 		.ascii	"flashRwwRequired\000"
+ 2014      68527777 
+ 2014      52657175 
+ 2014      69726564 
+ 2014      00
+ 2015              	.LASF143:
+ 2016 0203 43595F43 		.ascii	"CY_CTDAC_OUTPUT_BUFFERED\000"
+ 2016      54444143 
+ 2016      5F4F5554 
+ 2016      5055545F 
+ 2016      42554646 
+ 2017              	.LASF187:
+ 2018 021c 72785269 		.ascii	"rxRingBuf\000"
+ 2018      6E674275 
+ 2018      6600
+ 2019              	.LASF98:
+ 2020 0226 63707573 		.ascii	"cpussSysTickCtlOffset\000"
+ 2020      73537973 
+ 2020      5469636B 
+ 2020      43746C4F 
+ 2020      66667365 
+ 2021              	.LASF194:
+ 2022 023c 74784275 		.ascii	"txBuf\000"
+ 2022      6600
+ 2023              	.LASF159:
+ 2024 0242 64697669 		.ascii	"dividerNum\000"
+ 2024      6465724E 
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 41
+
+
+ 2024      756D00
+ 2025              	.LASF135:
+ 2026 024d 43595F43 		.ascii	"CY_CTDAC_DEGLITCHMODE_NONE\000"
+ 2026      54444143 
+ 2026      5F444547 
+ 2026      4C495443 
+ 2026      484D4F44 
+ 2027              	.LASF59:
+ 2028 0268 666C6173 		.ascii	"flashPipeRequired\000"
+ 2028      68506970 
+ 2028      65526571 
+ 2028      75697265 
+ 2028      6400
+ 2029              	.LASF124:
+ 2030 027a 43595F43 		.ascii	"CY_CTDAC_FORMAT_SIGNED\000"
+ 2030      54444143 
+ 2030      5F464F52 
+ 2030      4D41545F 
+ 2030      5349474E 
+ 2031              	.LASF63:
+ 2032 0291 666C6173 		.ascii	"flashCtlMainWs0Freq\000"
+ 2032      6843746C 
+ 2032      4D61696E 
+ 2032      57733046 
+ 2032      72657100 
+ 2033              	.LASF15:
+ 2034 02a5 696E7431 		.ascii	"int16_t\000"
+ 2034      365F7400 
+ 2035              	.LASF183:
+ 2036 02ad 63795F73 		.ascii	"cy_stc_sar_config_t\000"
+ 2036      74635F73 
+ 2036      61725F63 
+ 2036      6F6E6669 
+ 2036      675F7400 
+ 2037              	.LASF11:
+ 2038 02c1 6C6F6E67 		.ascii	"long long int\000"
+ 2038      206C6F6E 
+ 2038      6720696E 
+ 2038      7400
+ 2039              	.LASF2:
+ 2040 02cf 7369676E 		.ascii	"signed char\000"
+ 2040      65642063 
+ 2040      68617200 
+ 2041              	.LASF79:
+ 2042 02db 70657269 		.ascii	"periDivCmdTypeSelPos\000"
+ 2042      44697643 
+ 2042      6D645479 
+ 2042      70655365 
+ 2042      6C506F73 
+ 2043              	.LASF196:
+ 2044 02f0 74784C65 		.ascii	"txLeftToTransmit\000"
+ 2044      6674546F 
+ 2044      5472616E 
+ 2044      736D6974 
+ 2044      00
+ 2045              	.LASF167:
+ 2046 0301 63795F65 		.ascii	"cy_en_sar_range_detect_condition_t\000"
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 42
+
+
+ 2046      6E5F7361 
+ 2046      725F7261 
+ 2046      6E67655F 
+ 2046      64657465 
+ 2047              	.LASF162:
+ 2048 0324 63795F73 		.ascii	"cy_stc_ctdac_config_t\000"
+ 2048      74635F63 
+ 2048      74646163 
+ 2048      5F636F6E 
+ 2048      6669675F 
+ 2049              	.LASF37:
+ 2050 033a 69706356 		.ascii	"ipcVersion\000"
+ 2050      65727369 
+ 2050      6F6E00
+ 2051              	.LASF99:
+ 2052 0345 63707573 		.ascii	"cpussCm0NmiCtlOffset\000"
+ 2052      73436D30 
+ 2052      4E6D6943 
+ 2052      746C4F66 
+ 2052      66736574 
+ 2053              	.LASF47:
+ 2054 035a 73727373 		.ascii	"srssNumClkpath\000"
+ 2054      4E756D43 
+ 2054      6C6B7061 
+ 2054      746800
+ 2055              	.LASF26:
+ 2056 0369 6873696F 		.ascii	"hsiomBase\000"
+ 2056      6D426173 
+ 2056      6500
+ 2057              	.LASF201:
+ 2058 0373 63795F73 		.ascii	"cy_stc_tcpwm_pwm_config\000"
+ 2058      74635F74 
+ 2058      6370776D 
+ 2058      5F70776D 
+ 2058      5F636F6E 
+ 2059              	.LASF163:
+ 2060 038b 43595F53 		.ascii	"CY_SAR_RANGE_COND_BELOW\000"
+ 2060      41525F52 
+ 2060      414E4745 
+ 2060      5F434F4E 
+ 2060      445F4245 
+ 2061              	.LASF117:
+ 2062 03a3 43595F43 		.ascii	"CY_CTDAC_UPDATE_DIRECT_WRITE\000"
+ 2062      54444143 
+ 2062      5F555044 
+ 2062      4154455F 
+ 2062      44495245 
+ 2063              	.LASF125:
+ 2064 03c0 63795F65 		.ascii	"cy_en_ctdac_format_t\000"
+ 2064      6E5F6374 
+ 2064      6461635F 
+ 2064      666F726D 
+ 2064      61745F74 
+ 2065              	.LASF8:
+ 2066 03d5 6C6F6E67 		.ascii	"long int\000"
+ 2066      20696E74 
+ 2066      00
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 43
+
+
+ 2067              	.LASF122:
+ 2068 03de 63795F65 		.ascii	"cy_en_ctdac_update_t\000"
+ 2068      6E5F6374 
+ 2068      6461635F 
+ 2068      75706461 
+ 2068      74655F74 
+ 2069              	.LASF57:
+ 2070 03f3 63727970 		.ascii	"cryptoMemSize\000"
+ 2070      746F4D65 
+ 2070      6D53697A 
+ 2070      6500
+ 2071              	.LASF141:
+ 2072 0401 43595F43 		.ascii	"CY_CTDAC_REFSOURCE_VDDA\000"
+ 2072      54444143 
+ 2072      5F524546 
+ 2072      534F5552 
+ 2072      43455F56 
+ 2073              	.LASF23:
+ 2074 0419 70657269 		.ascii	"periBase\000"
+ 2074      42617365 
+ 2074      00
+ 2075              	.LASF55:
+ 2076 0422 73797350 		.ascii	"sysPmSimoPresent\000"
+ 2076      6D53696D 
+ 2076      6F507265 
+ 2076      73656E74 
+ 2076      00
+ 2077              	.LASF165:
+ 2078 0433 43595F53 		.ascii	"CY_SAR_RANGE_COND_ABOVE\000"
+ 2078      41525F52 
+ 2078      414E4745 
+ 2078      5F434F4E 
+ 2078      445F4142 
+ 2079              	.LASF45:
+ 2080 044b 63707573 		.ascii	"cpussFmIrq\000"
+ 2080      73466D49 
+ 2080      727100
+ 2081              	.LASF110:
+ 2082 0456 646F7562 		.ascii	"double\000"
+ 2082      6C6500
+ 2083              	.LASF133:
+ 2084 045d 43595F43 		.ascii	"CY_CTDAC_OUTPUT_VREF\000"
+ 2084      54444143 
+ 2084      5F4F5554 
+ 2084      5055545F 
+ 2084      56524546 
+ 2085              	.LASF48:
+ 2086 0472 73727373 		.ascii	"srssNumPll\000"
+ 2086      4E756D50 
+ 2086      6C6C00
+ 2087              	.LASF243:
+ 2088 047d 6D61696E 		.ascii	"main\000"
+ 2088      00
+ 2089              	.LASF232:
+ 2090 0482 414E414C 		.ascii	"ANALYZER_ADC_CONFIG_STRUCT\000"
+ 2090      595A4552 
+ 2090      5F414443 
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 44
+
+
+ 2090      5F434F4E 
+ 2090      4649475F 
+ 2091              	.LASF170:
+ 2092 049d 73616D70 		.ascii	"sampleTime01\000"
+ 2092      6C655469 
+ 2092      6D653031 
+ 2092      00
+ 2093              	.LASF6:
+ 2094 04aa 73686F72 		.ascii	"short unsigned int\000"
+ 2094      7420756E 
+ 2094      7369676E 
+ 2094      65642069 
+ 2094      6E7400
+ 2095              	.LASF89:
+ 2096 04bd 6770696F 		.ascii	"gpioPrtCfgOutOffset\000"
+ 2096      50727443 
+ 2096      66674F75 
+ 2096      744F6666 
+ 2096      73657400 
+ 2097              	.LASF22:
+ 2098 04d1 666C6173 		.ascii	"flashcBase\000"
+ 2098      68634261 
+ 2098      736500
+ 2099              	.LASF9:
+ 2100 04dc 5F5F7569 		.ascii	"__uint32_t\000"
+ 2100      6E743332 
+ 2100      5F7400
+ 2101              	.LASF118:
+ 2102 04e7 43595F43 		.ascii	"CY_CTDAC_UPDATE_BUFFERED_WRITE\000"
+ 2102      54444143 
+ 2102      5F555044 
+ 2102      4154455F 
+ 2102      42554646 
+ 2103              	.LASF230:
+ 2104 0506 6877436F 		.ascii	"hwConfigStc\000"
+ 2104      6E666967 
+ 2104      53746300 
+ 2105              	.LASF4:
+ 2106 0512 5F5F696E 		.ascii	"__int16_t\000"
+ 2106      7431365F 
+ 2106      7400
+ 2107              	.LASF193:
+ 2108 051c 72784275 		.ascii	"rxBufIdx\000"
+ 2108      66496478 
+ 2108      00
+ 2109              	.LASF147:
+ 2110 0525 666F726D 		.ascii	"formatMode\000"
+ 2110      61744D6F 
+ 2110      646500
+ 2111              	.LASF154:
+ 2112 0530 76616C75 		.ascii	"value\000"
+ 2112      6500
+ 2113              	.LASF195:
+ 2114 0536 74784275 		.ascii	"txBufSize\000"
+ 2114      6653697A 
+ 2114      6500
+ 2115              	.LASF213:
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 45
+
+
+ 2116 0540 696E7465 		.ascii	"interruptSources\000"
+ 2116      72727570 
+ 2116      74536F75 
+ 2116      72636573 
+ 2116      00
+ 2117              	.LASF90:
+ 2118 0551 6770696F 		.ascii	"gpioPrtCfgSioOffset\000"
+ 2118      50727443 
+ 2118      66675369 
+ 2118      6F4F6666 
+ 2118      73657400 
+ 2119              	.LASF42:
+ 2120 0565 63707573 		.ascii	"cpussDwChNr\000"
+ 2120      73447743 
+ 2120      684E7200 
+ 2121              	.LASF237:
+ 2122 0571 414E414C 		.ascii	"ANALYZER_VDAC_ctdacConfig\000"
+ 2122      595A4552 
+ 2122      5F564441 
+ 2122      435F6374 
+ 2122      64616343 
+ 2123              	.LASF13:
+ 2124 058b 756E7369 		.ascii	"unsigned int\000"
+ 2124      676E6564 
+ 2124      20696E74 
+ 2124      00
+ 2125              	.LASF19:
+ 2126 0598 73697A65 		.ascii	"sizetype\000"
+ 2126      74797065 
+ 2126      00
+ 2127              	.LASF75:
+ 2128 05a1 70657269 		.ascii	"periTrCmdGrSelMsk\000"
+ 2128      5472436D 
+ 2128      64477253 
+ 2128      656C4D73 
+ 2128      6B00
+ 2129              	.LASF64:
+ 2130 05b3 666C6173 		.ascii	"flashCtlMainWs1Freq\000"
+ 2130      6843746C 
+ 2130      4D61696E 
+ 2130      57733146 
+ 2130      72657100 
+ 2131              	.LASF10:
+ 2132 05c7 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2132      20756E73 
+ 2132      69676E65 
+ 2132      6420696E 
+ 2132      7400
+ 2133              	.LASF212:
+ 2134 05d9 656E6162 		.ascii	"enableCompareSwap\000"
+ 2134      6C65436F 
+ 2134      6D706172 
+ 2134      65537761 
+ 2134      7000
+ 2135              	.LASF184:
+ 2136 05eb 63795F63 		.ascii	"cy_cb_scb_uart_handle_events_t\000"
+ 2136      625F7363 
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 46
+
+
+ 2136      625F7561 
+ 2136      72745F68 
+ 2136      616E646C 
+ 2137              	.LASF65:
+ 2138 060a 666C6173 		.ascii	"flashCtlMainWs2Freq\000"
+ 2138      6843746C 
+ 2138      4D61696E 
+ 2138      57733246 
+ 2138      72657100 
+ 2139              	.LASF40:
+ 2140 061e 63707573 		.ascii	"cpussIpcNr\000"
+ 2140      73497063 
+ 2140      4E7200
+ 2141              	.LASF148:
+ 2142 0629 75706461 		.ascii	"updateMode\000"
+ 2142      74654D6F 
+ 2142      646500
+ 2143              	.LASF27:
+ 2144 0634 6770696F 		.ascii	"gpioBase\000"
+ 2144      42617365 
+ 2144      00
+ 2145              	.LASF53:
+ 2146 063d 65704D6F 		.ascii	"epMonitorNr\000"
+ 2146      6E69746F 
+ 2146      724E7200 
+ 2147              	.LASF157:
+ 2148 0649 636F6E66 		.ascii	"configClock\000"
+ 2148      6967436C 
+ 2148      6F636B00 
+ 2149              	.LASF185:
+ 2150 0655 74785374 		.ascii	"txStatus\000"
+ 2150      61747573 
+ 2150      00
+ 2151              	.LASF217:
+ 2152 065e 73776170 		.ascii	"swapInputMode\000"
+ 2152      496E7075 
+ 2152      744D6F64 
+ 2152      6500
+ 2153              	.LASF241:
+ 2154 066c 433A5C55 		.ascii	"C:\\Users\\Ramon\\Desktop\\git\\channel-analyzer-fw"
+ 2154      73657273 
+ 2154      5C52616D 
+ 2154      6F6E5C44 
+ 2154      65736B74 
+ 2155 069a 5C436861 		.ascii	"\\Channel Analyszer\\Channel Analyzer.cydsn\000"
+ 2155      6E6E656C 
+ 2155      20416E61 
+ 2155      6C79737A 
+ 2155      65725C43 
+ 2156              	.LASF76:
+ 2157 06c4 70657269 		.ascii	"periTrGrOffset\000"
+ 2157      54724772 
+ 2157      4F666673 
+ 2157      657400
+ 2158              	.LASF103:
+ 2159 06d3 63707573 		.ascii	"cpussRam1Ctl0\000"
+ 2159      7352616D 
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 47
+
+
+ 2159      3143746C 
+ 2159      3000
+ 2160              	.LASF172:
+ 2161 06e1 72616E67 		.ascii	"rangeThres\000"
+ 2161      65546872 
+ 2161      657300
+ 2162              	.LASF139:
+ 2163 06ec 63795F65 		.ascii	"cy_en_ctdac_deglitch_t\000"
+ 2163      6E5F6374 
+ 2163      6461635F 
+ 2163      6465676C 
+ 2163      69746368 
+ 2164              	.LASF223:
+ 2165 0703 6B696C6C 		.ascii	"killInputMode\000"
+ 2165      496E7075 
+ 2165      744D6F64 
+ 2165      6500
+ 2166              	.LASF197:
+ 2167 0711 63624576 		.ascii	"cbEvents\000"
+ 2167      656E7473 
+ 2167      00
+ 2168              	.LASF236:
+ 2169 071a 414E414C 		.ascii	"ANALIZER_PWM_config\000"
+ 2169      495A4552 
+ 2169      5F50574D 
+ 2169      5F636F6E 
+ 2169      66696700 
+ 2170              	.LASF77:
+ 2171 072e 70657269 		.ascii	"periTrGrSize\000"
+ 2171      54724772 
+ 2171      53697A65 
+ 2171      00
+ 2172              	.LASF244:
+ 2173 073b 43795F53 		.ascii	"Cy_SysEnableCM4\000"
+ 2173      7973456E 
+ 2173      61626C65 
+ 2173      434D3400 
+ 2174              	.LASF114:
+ 2175 074b 43595F53 		.ascii	"CY_SYSCLK_DIV_16_5_BIT\000"
+ 2175      5953434C 
+ 2175      4B5F4449 
+ 2175      565F3136 
+ 2175      5F355F42 
+ 2176              	.LASF35:
+ 2177 0762 6770696F 		.ascii	"gpioVersion\000"
+ 2177      56657273 
+ 2177      696F6E00 
+ 2178              	.LASF16:
+ 2179 076e 75696E74 		.ascii	"uint16_t\000"
+ 2179      31365F74 
+ 2179      00
+ 2180              	.LASF229:
+ 2181 0777 6E756D43 		.ascii	"numChannels\000"
+ 2181      68616E6E 
+ 2181      656C7300 
+ 2182              	.LASF107:
+ 2183 0783 63795F73 		.ascii	"cy_stc_device_t\000"
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 48
+
+
+ 2183      74635F64 
+ 2183      65766963 
+ 2183      655F7400 
+ 2184              	.LASF175:
+ 2185 0793 6368616E 		.ascii	"chanConfig\000"
+ 2185      436F6E66 
+ 2185      696700
+ 2186              	.LASF228:
+ 2187 079e 6368616E 		.ascii	"channelBase\000"
+ 2187      6E656C42 
+ 2187      61736500 
+ 2188              	.LASF95:
+ 2189 07aa 63707573 		.ascii	"cpussCm4PwrCtlOffset\000"
+ 2189      73436D34 
+ 2189      50777243 
+ 2189      746C4F66 
+ 2189      66736574 
+ 2190              	.LASF127:
+ 2191 07bf 43595F43 		.ascii	"CY_CTDAC_DEEPSLEEP_ENABLE\000"
+ 2191      54444143 
+ 2191      5F444545 
+ 2191      50534C45 
+ 2191      45505F45 
+ 2192              	.LASF84:
+ 2193 07d9 70657269 		.ascii	"periDiv16_5CtlOffset\000"
+ 2193      44697631 
+ 2193      365F3543 
+ 2193      746C4F66 
+ 2193      66736574 
+ 2194              	.LASF205:
+ 2195 07ee 64656164 		.ascii	"deadTimeClocks\000"
+ 2195      54696D65 
+ 2195      436C6F63 
+ 2195      6B7300
+ 2196              	.LASF189:
+ 2197 07fd 72785269 		.ascii	"rxRingBufHead\000"
+ 2197      6E674275 
+ 2197      66486561 
+ 2197      6400
+ 2198              	.LASF149:
+ 2199 080b 6465676C 		.ascii	"deglitchMode\000"
+ 2199      69746368 
+ 2199      4D6F6465 
+ 2199      00
+ 2200              	.LASF96:
+ 2201 0818 63707573 		.ascii	"cpussTrimRamCtlOffset\000"
+ 2201      73547269 
+ 2201      6D52616D 
+ 2201      43746C4F 
+ 2201      66667365 
+ 2202              	.LASF222:
+ 2203 082e 73746172 		.ascii	"startInput\000"
+ 2203      74496E70 
+ 2203      757400
+ 2204              	.LASF31:
+ 2205 0839 63707573 		.ascii	"cpussVersion\000"
+ 2205      73566572 
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 49
+
+
+ 2205      73696F6E 
+ 2205      00
+ 2206              	.LASF38:
+ 2207 0846 70657269 		.ascii	"periVersion\000"
+ 2207      56657273 
+ 2207      696F6E00 
+ 2208              	.LASF94:
+ 2209 0852 63707573 		.ascii	"cpussCm0StatusOffset\000"
+ 2209      73436D30 
+ 2209      53746174 
+ 2209      75734F66 
+ 2209      66736574 
+ 2210              	.LASF131:
+ 2211 0867 43595F43 		.ascii	"CY_CTDAC_OUTPUT_VALUE_PLUS1\000"
+ 2211      54444143 
+ 2211      5F4F5554 
+ 2211      5055545F 
+ 2211      56414C55 
+ 2212              	.LASF161:
+ 2213 0883 64697669 		.ascii	"dividerFracValue\000"
+ 2213      64657246 
+ 2213      72616356 
+ 2213      616C7565 
+ 2213      00
+ 2214              	.LASF68:
+ 2215 0894 64774368 		.ascii	"dwChOffset\000"
+ 2215      4F666673 
+ 2215      657400
+ 2216              	.LASF28:
+ 2217 089f 70617373 		.ascii	"passBase\000"
+ 2217      42617365 
+ 2217      00
+ 2218              	.LASF43:
+ 2219 08a8 63707573 		.ascii	"cpussFlashPaSize\000"
+ 2219      73466C61 
+ 2219      73685061 
+ 2219      53697A65 
+ 2219      00
+ 2220              	.LASF171:
+ 2221 08b9 73616D70 		.ascii	"sampleTime23\000"
+ 2221      6C655469 
+ 2221      6D653233 
+ 2221      00
+ 2222              	.LASF81:
+ 2223 08c6 70657269 		.ascii	"periDivCmdPaTypeSelPos\000"
+ 2223      44697643 
+ 2223      6D645061 
+ 2223      54797065 
+ 2223      53656C50 
+ 2224              	.LASF130:
+ 2225 08dd 43595F43 		.ascii	"CY_CTDAC_OUTPUT_VALUE\000"
+ 2225      54444143 
+ 2225      5F4F5554 
+ 2225      5055545F 
+ 2225      56414C55 
+ 2226              	.LASF128:
+ 2227 08f3 63795F65 		.ascii	"cy_en_ctdac_deep_sleep_t\000"
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 50
+
+
+ 2227      6E5F6374 
+ 2227      6461635F 
+ 2227      64656570 
+ 2227      5F736C65 
+ 2228              	.LASF104:
+ 2229 090c 63707573 		.ascii	"cpussRam2Ctl0\000"
+ 2229      7352616D 
+ 2229      3243746C 
+ 2229      3000
+ 2230              	.LASF181:
+ 2231 091a 636F6E66 		.ascii	"configRouting\000"
+ 2231      6967526F 
+ 2231      7574696E 
+ 2231      6700
+ 2232              	.LASF140:
+ 2233 0928 43595F43 		.ascii	"CY_CTDAC_REFSOURCE_EXTERNAL\000"
+ 2233      54444143 
+ 2233      5F524546 
+ 2233      534F5552 
+ 2233      43455F45 
+ 2234              	.LASF112:
+ 2235 0944 43595F53 		.ascii	"CY_SYSCLK_DIV_8_BIT\000"
+ 2235      5953434C 
+ 2235      4B5F4449 
+ 2235      565F385F 
+ 2235      42495400 
+ 2236              	.LASF39:
+ 2237 0958 70726F74 		.ascii	"protVersion\000"
+ 2237      56657273 
+ 2237      696F6E00 
+ 2238              	.LASF72:
+ 2239 0964 64775374 		.ascii	"dwStatusChIdxPos\000"
+ 2239      61747573 
+ 2239      43684964 
+ 2239      78506F73 
+ 2239      00
+ 2240              	.LASF54:
+ 2241 0975 75646250 		.ascii	"udbPresent\000"
+ 2241      72657365 
+ 2241      6E7400
+ 2242              	.LASF186:
+ 2243 0980 72785374 		.ascii	"rxStatus\000"
+ 2243      61747573 
+ 2243      00
+ 2244              	.LASF25:
+ 2245 0989 70726F74 		.ascii	"protBase\000"
+ 2245      42617365 
+ 2245      00
+ 2246              	.LASF34:
+ 2247 0992 666C6173 		.ascii	"flashcVersion\000"
+ 2247      68635665 
+ 2247      7273696F 
+ 2247      6E00
+ 2248              	.LASF30:
+ 2249 09a0 63727970 		.ascii	"cryptoBase\000"
+ 2249      746F4261 
+ 2249      736500
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 51
+
+
+ 2250              	.LASF51:
+ 2251 09ab 736D6966 		.ascii	"smifDeviceNr\000"
+ 2251      44657669 
+ 2251      63654E72 
+ 2251      00
+ 2252              	.LASF105:
+ 2253 09b8 69706353 		.ascii	"ipcStructSize\000"
+ 2253      74727563 
+ 2253      7453697A 
+ 2253      6500
+ 2254              	.LASF178:
+ 2255 09c6 72616E67 		.ascii	"rangeIntrMask\000"
+ 2255      65496E74 
+ 2255      724D6173 
+ 2255      6B00
+ 2256              	.LASF202:
+ 2257 09d4 70776D4D 		.ascii	"pwmMode\000"
+ 2257      6F646500 
+ 2258              	.LASF109:
+ 2259 09dc 666C6F61 		.ascii	"float\000"
+ 2259      7400
+ 2260              	.LASF73:
+ 2261 09e2 64775374 		.ascii	"dwStatusChIdxMsk\000"
+ 2261      61747573 
+ 2261      43684964 
+ 2261      784D736B 
+ 2261      00
+ 2262              	.LASF233:
+ 2263 09f3 63795F64 		.ascii	"cy_device\000"
+ 2263      65766963 
+ 2263      6500
+ 2264              	.LASF101:
+ 2265 09fd 63707573 		.ascii	"cpussRomCtl\000"
+ 2265      73526F6D 
+ 2265      43746C00 
+ 2266              	.LASF134:
+ 2267 0a09 63795F65 		.ascii	"cy_en_ctdac_output_mode_t\000"
+ 2267      6E5F6374 
+ 2267      6461635F 
+ 2267      6F757470 
+ 2267      75745F6D 
+ 2268              	.LASF71:
+ 2269 0a23 64774368 		.ascii	"dwChCtlPreemptablePos\000"
+ 2269      43746C50 
+ 2269      7265656D 
+ 2269      70746162 
+ 2269      6C65506F 
+ 2270              	.LASF216:
+ 2271 0a39 6B696C6C 		.ascii	"killMode\000"
+ 2271      4D6F6465 
+ 2271      00
+ 2272              	.LASF132:
+ 2273 0a42 43595F43 		.ascii	"CY_CTDAC_OUTPUT_VSSA\000"
+ 2273      54444143 
+ 2273      5F4F5554 
+ 2273      5055545F 
+ 2273      56535341 
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 52
+
+
+ 2274              	.LASF174:
+ 2275 0a57 6368616E 		.ascii	"chanEn\000"
+ 2275      456E00
+ 2276              	.LASF24:
+ 2277 0a5e 75646242 		.ascii	"udbBase\000"
+ 2277      61736500 
+ 2278              	.LASF164:
+ 2279 0a66 43595F53 		.ascii	"CY_SAR_RANGE_COND_INSIDE\000"
+ 2279      41525F52 
+ 2279      414E4745 
+ 2279      5F434F4E 
+ 2279      445F494E 
+ 2280              	.LASF111:
+ 2281 0a7f 5F426F6F 		.ascii	"_Bool\000"
+ 2281      6C00
+ 2282              	.LASF17:
+ 2283 0a85 696E7433 		.ascii	"int32_t\000"
+ 2283      325F7400 
+ 2284              	.LASF1:
+ 2285 0a8d 756E7369 		.ascii	"unsigned char\000"
+ 2285      676E6564 
+ 2285      20636861 
+ 2285      7200
+ 2286              	.LASF116:
+ 2287 0a9b 63795F65 		.ascii	"cy_en_divider_types_t\000"
+ 2287      6E5F6469 
+ 2287      76696465 
+ 2287      725F7479 
+ 2287      7065735F 
+ 2288              	.LASF67:
+ 2289 0ab1 666C6173 		.ascii	"flashCtlMainWs4Freq\000"
+ 2289      6843746C 
+ 2289      4D61696E 
+ 2289      57733446 
+ 2289      72657100 
+ 2290              	.LASF158:
+ 2291 0ac5 64697669 		.ascii	"dividerType\000"
+ 2291      64657254 
+ 2291      79706500 
+ 2292              	.LASF0:
+ 2293 0ad1 73686F72 		.ascii	"short int\000"
+ 2293      7420696E 
+ 2293      7400
+ 2294              	.LASF179:
+ 2295 0adb 6D757853 		.ascii	"muxSwitch\000"
+ 2295      77697463 
+ 2295      6800
+ 2296              	.LASF176:
+ 2297 0ae5 696E7472 		.ascii	"intrMask\000"
+ 2297      4D61736B 
+ 2297      00
+ 2298              	.LASF74:
+ 2299 0aee 70657269 		.ascii	"periTrCmdOffset\000"
+ 2299      5472436D 
+ 2299      644F6666 
+ 2299      73657400 
+ 2300              	.LASF119:
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 53
+
+
+ 2301 0afe 43595F43 		.ascii	"CY_CTDAC_UPDATE_STROBE_EDGE_SYNC\000"
+ 2301      54444143 
+ 2301      5F555044 
+ 2301      4154455F 
+ 2301      5354524F 
+ 2302              	.LASF204:
+ 2303 0b1f 70776D41 		.ascii	"pwmAlignment\000"
+ 2303      6C69676E 
+ 2303      6D656E74 
+ 2303      00
+ 2304              	.LASF78:
+ 2305 0b2c 70657269 		.ascii	"periDivCmdDivSelMsk\000"
+ 2305      44697643 
+ 2305      6D644469 
+ 2305      7653656C 
+ 2305      4D736B00 
+ 2306              	.LASF235:
+ 2307 0b40 414E414C 		.ascii	"ANALYZER_ADC_allConfigs\000"
+ 2307      595A4552 
+ 2307      5F414443 
+ 2307      5F616C6C 
+ 2307      436F6E66 
+ 2308              	.LASF209:
+ 2309 0b58 656E6162 		.ascii	"enablePeriodSwap\000"
+ 2309      6C655065 
+ 2309      72696F64 
+ 2309      53776170 
+ 2309      00
+ 2310              	.LASF218:
+ 2311 0b69 73776170 		.ascii	"swapInput\000"
+ 2311      496E7075 
+ 2311      7400
+ 2312              	.LASF49:
+ 2313 0b73 73727373 		.ascii	"srssNumHfroot\000"
+ 2313      4E756D48 
+ 2313      66726F6F 
+ 2313      7400
+ 2314              	.LASF62:
+ 2315 0b81 666C6173 		.ascii	"flashEraseDelay\000"
+ 2315      68457261 
+ 2315      73654465 
+ 2315      6C617900 
+ 2316              	.LASF82:
+ 2317 0b91 70657269 		.ascii	"periDiv8CtlOffset\000"
+ 2317      44697638 
+ 2317      43746C4F 
+ 2317      66667365 
+ 2317      7400
+ 2318              	.LASF18:
+ 2319 0ba3 75696E74 		.ascii	"uint32_t\000"
+ 2319      33325F74 
+ 2319      00
+ 2320              	.LASF100:
+ 2321 0bac 63707573 		.ascii	"cpussCm4NmiCtlOffset\000"
+ 2321      73436D34 
+ 2321      4E6D6943 
+ 2321      746C4F66 
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 54
+
+
+ 2321      66736574 
+ 2322              	.LASF214:
+ 2323 0bc1 696E7665 		.ascii	"invertPWMOut\000"
+ 2323      72745057 
+ 2323      4D4F7574 
+ 2323      00
+ 2324              	.LASF3:
+ 2325 0bce 5F5F7569 		.ascii	"__uint8_t\000"
+ 2325      6E74385F 
+ 2325      7400
+ 2326              	.LASF182:
+ 2327 0bd8 76726566 		.ascii	"vrefMvValue\000"
+ 2327      4D765661 
+ 2327      6C756500 
+ 2328              	.LASF239:
+ 2329 0be4 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2329      43313120 
+ 2329      352E342E 
+ 2329      31203230 
+ 2329      31363036 
+ 2330 0c17 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 2330      20726576 
+ 2330      6973696F 
+ 2330      6E203233 
+ 2330      37373135 
+ 2331 0c4a 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 2331      67202D66 
+ 2331      66756E63 
+ 2331      74696F6E 
+ 2331      2D736563 
+ 2332              	.LASF203:
+ 2333 0c76 636C6F63 		.ascii	"clockPrescaler\000"
+ 2333      6B507265 
+ 2333      7363616C 
+ 2333      657200
+ 2334              	.LASF20:
+ 2335 0c85 6C6F6E67 		.ascii	"long double\000"
+ 2335      20646F75 
+ 2335      626C6500 
+ 2336              	.LASF108:
+ 2337 0c91 63686172 		.ascii	"char\000"
+ 2337      00
+ 2338              	.LASF226:
+ 2339 0c96 636F756E 		.ascii	"countInput\000"
+ 2339      74496E70 
+ 2339      757400
+ 2340              	.LASF152:
+ 2341 0ca1 64656570 		.ascii	"deepSleep\000"
+ 2341      536C6565 
+ 2341      7000
+ 2342              	.LASF102:
+ 2343 0cab 63707573 		.ascii	"cpussRam0Ctl0\000"
+ 2343      7352616D 
+ 2343      3043746C 
+ 2343      3000
+ 2344              	.LASF5:
+ 2345 0cb9 5F5F7569 		.ascii	"__uint16_t\000"
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 55
+
+
+ 2345      6E743136 
+ 2345      5F7400
+ 2346              	.LASF123:
+ 2347 0cc4 43595F43 		.ascii	"CY_CTDAC_FORMAT_UNSIGNED\000"
+ 2347      54444143 
+ 2347      5F464F52 
+ 2347      4D41545F 
+ 2347      554E5349 
+ 2348              	.LASF83:
+ 2349 0cdd 70657269 		.ascii	"periDiv16CtlOffset\000"
+ 2349      44697631 
+ 2349      3643746C 
+ 2349      4F666673 
+ 2349      657400
+ 2350              	.LASF7:
+ 2351 0cf0 5F5F696E 		.ascii	"__int32_t\000"
+ 2351      7433325F 
+ 2351      7400
+ 2352              	.LASF36:
+ 2353 0cfa 6873696F 		.ascii	"hsiomVersion\000"
+ 2353      6D566572 
+ 2353      73696F6E 
+ 2353      00
+ 2354              	.LASF136:
+ 2355 0d07 43595F43 		.ascii	"CY_CTDAC_DEGLITCHMODE_UNBUFFERED\000"
+ 2355      54444143 
+ 2355      5F444547 
+ 2355      4C495443 
+ 2355      484D4F44 
+ 2356              	.LASF61:
+ 2357 0d28 666C6173 		.ascii	"flashProgramDelay\000"
+ 2357      6850726F 
+ 2357      6772616D 
+ 2357      44656C61 
+ 2357      7900
+ 2358              	.LASF138:
+ 2359 0d3a 43595F43 		.ascii	"CY_CTDAC_DEGLITCHMODE_BOTH\000"
+ 2359      54444143 
+ 2359      5F444547 
+ 2359      4C495443 
+ 2359      484D4F44 
+ 2360              	.LASF168:
+ 2361 0d55 6374726C 		.ascii	"ctrl\000"
+ 2361      00
+ 2362              	.LASF188:
+ 2363 0d5a 72785269 		.ascii	"rxRingBufSize\000"
+ 2363      6E674275 
+ 2363      6653697A 
+ 2363      6500
+ 2364              	.LASF156:
+ 2365 0d68 656E6162 		.ascii	"enableInterrupt\000"
+ 2365      6C65496E 
+ 2365      74657272 
+ 2365      75707400 
+ 2366              	.LASF231:
+ 2367 0d78 6D697363 		.ascii	"miscConfig\000"
+ 2367      436F6E66 
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 56
+
+
+ 2367      696700
+ 2368              	.LASF69:
+ 2369 0d83 64774368 		.ascii	"dwChSize\000"
+ 2369      53697A65 
+ 2369      00
+ 2370              	.LASF52:
+ 2371 0d8c 70617373 		.ascii	"passSarChannels\000"
+ 2371      53617243 
+ 2371      68616E6E 
+ 2371      656C7300 
+ 2372              	.LASF150:
+ 2373 0d9c 6F757470 		.ascii	"outputMode\000"
+ 2373      75744D6F 
+ 2373      646500
+ 2374              	.LASF221:
+ 2375 0da7 73746172 		.ascii	"startInputMode\000"
+ 2375      74496E70 
+ 2375      75744D6F 
+ 2375      646500
+ 2376              	.LASF44:
+ 2377 0db6 63707573 		.ascii	"cpussIpc0Irq\000"
+ 2377      73497063 
+ 2377      30497271 
+ 2377      00
+ 2378              	.LASF207:
+ 2379 0dc3 70657269 		.ascii	"period0\000"
+ 2379      6F643000 
+ 2380              	.LASF208:
+ 2381 0dcb 70657269 		.ascii	"period1\000"
+ 2381      6F643100 
+ 2382              	.LASF211:
+ 2383 0dd3 636F6D70 		.ascii	"compare1\000"
+ 2383      61726531 
+ 2383      00
+ 2384              	.LASF91:
+ 2385 0ddc 63707573 		.ascii	"cpussCm0ClockCtlOffset\000"
+ 2385      73436D30 
+ 2385      436C6F63 
+ 2385      6B43746C 
+ 2385      4F666673 
+ 2386              	.LASF87:
+ 2387 0df3 6770696F 		.ascii	"gpioPrtCfgOffset\000"
+ 2387      50727443 
+ 2387      66674F66 
+ 2387      66736574 
+ 2387      00
+ 2388              	.LASF198:
+ 2389 0e04 696E6974 		.ascii	"initKey\000"
+ 2389      4B657900 
+ 2390              	.LASF191:
+ 2391 0e0c 72784275 		.ascii	"rxBuf\000"
+ 2391      6600
+ 2392              	.LASF137:
+ 2393 0e12 43595F43 		.ascii	"CY_CTDAC_DEGLITCHMODE_BUFFERED\000"
+ 2393      54444143 
+ 2393      5F444547 
+ 2393      4C495443 
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 57
+
+
+ 2393      484D4F44 
+ 2394              	.LASF238:
+ 2395 0e31 414E414C 		.ascii	"ANALYZER_UART_context\000"
+ 2395      595A4552 
+ 2395      5F554152 
+ 2395      545F636F 
+ 2395      6E746578 
+ 2396              	.LASF173:
+ 2397 0e47 72616E67 		.ascii	"rangeCond\000"
+ 2397      65436F6E 
+ 2397      6400
+ 2398              	.LASF88:
+ 2399 0e51 6770696F 		.ascii	"gpioPrtCfgInOffset\000"
+ 2399      50727443 
+ 2399      6667496E 
+ 2399      4F666673 
+ 2399      657400
+ 2400              	.LASF121:
+ 2401 0e64 43595F43 		.ascii	"CY_CTDAC_UPDATE_STROBE_LEVEL\000"
+ 2401      54444143 
+ 2401      5F555044 
+ 2401      4154455F 
+ 2401      5354524F 
+ 2402              	.LASF46:
+ 2403 0e81 63707573 		.ascii	"cpussNotConnectedIrq\000"
+ 2403      734E6F74 
+ 2403      436F6E6E 
+ 2403      65637465 
+ 2403      64497271 
+ 2404              	.LASF151:
+ 2405 0e96 6F757470 		.ascii	"outputBuffer\000"
+ 2405      75744275 
+ 2405      66666572 
+ 2405      00
+ 2406              	.LASF215:
+ 2407 0ea3 696E7665 		.ascii	"invertPWMOutN\000"
+ 2407      72745057 
+ 2407      4D4F7574 
+ 2407      4E00
+ 2408              	.LASF60:
+ 2409 0eb1 666C6173 		.ascii	"flashWriteDelay\000"
+ 2409      68577269 
+ 2409      74654465 
+ 2409      6C617900 
+ 2410              	.LASF169:
+ 2411 0ec1 73616D70 		.ascii	"sampleCtrl\000"
+ 2411      6C654374 
+ 2411      726C00
+ 2412              	.LASF14:
+ 2413 0ecc 75696E74 		.ascii	"uint8_t\000"
+ 2413      385F7400 
+ 2414              	.LASF93:
+ 2415 0ed4 63707573 		.ascii	"cpussCm4StatusOffset\000"
+ 2415      73436D34 
+ 2415      53746174 
+ 2415      75734F66 
+ 2415      66736574 
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 58
+
+
+ 2416              	.LASF86:
+ 2417 0ee9 6770696F 		.ascii	"gpioPrtIntrCfgOffset\000"
+ 2417      50727449 
+ 2417      6E747243 
+ 2417      66674F66 
+ 2417      66736574 
+ 2418              	.LASF227:
+ 2419 0efe 63795F73 		.ascii	"cy_stc_tcpwm_pwm_config_t\000"
+ 2419      74635F74 
+ 2419      6370776D 
+ 2419      5F70776D 
+ 2419      5F636F6E 
+ 2420              	.LASF219:
+ 2421 0f18 72656C6F 		.ascii	"reloadInputMode\000"
+ 2421      6164496E 
+ 2421      7075744D 
+ 2421      6F646500 
+ 2422              	.LASF166:
+ 2423 0f28 43595F53 		.ascii	"CY_SAR_RANGE_COND_OUTSIDE\000"
+ 2423      41525F52 
+ 2423      414E4745 
+ 2423      5F434F4E 
+ 2423      445F4F55 
+ 2424              	.LASF190:
+ 2425 0f42 72785269 		.ascii	"rxRingBufTail\000"
+ 2425      6E674275 
+ 2425      66546169 
+ 2425      6C00
+ 2426              	.LASF210:
+ 2427 0f50 636F6D70 		.ascii	"compare0\000"
+ 2427      61726530 
+ 2427      00
+ 2428              	.LASF97:
+ 2429 0f59 63707573 		.ascii	"cpussTrimRomCtlOffset\000"
+ 2429      73547269 
+ 2429      6D526F6D 
+ 2429      43746C4F 
+ 2429      66667365 
+ 2430              	.LASF220:
+ 2431 0f6f 72656C6F 		.ascii	"reloadInput\000"
+ 2431      6164496E 
+ 2431      70757400 
+ 2432              	.LASF113:
+ 2433 0f7b 43595F53 		.ascii	"CY_SYSCLK_DIV_16_BIT\000"
+ 2433      5953434C 
+ 2433      4B5F4449 
+ 2433      565F3136 
+ 2433      5F424954 
+ 2434              	.LASF225:
+ 2435 0f90 636F756E 		.ascii	"countInputMode\000"
+ 2435      74496E70 
+ 2435      75744D6F 
+ 2435      646500
+ 2436              	.LASF180:
+ 2437 0f9f 6D757853 		.ascii	"muxSwitchSqCtrl\000"
+ 2437      77697463 
+ 2437      68537143 
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccGk2Z2c.s 			page 59
+
+
+ 2437      74726C00 
+ 2438              	.LASF33:
+ 2439 0faf 64775665 		.ascii	"dwVersion\000"
+ 2439      7273696F 
+ 2439      6E00
+ 2440              	.LASF29:
+ 2441 0fb9 69706342 		.ascii	"ipcBase\000"
+ 2441      61736500 
+ 2442              	.LASF80:
+ 2443 0fc1 70657269 		.ascii	"periDivCmdPaDivSelPos\000"
+ 2443      44697643 
+ 2443      6D645061 
+ 2443      44697653 
+ 2443      656C506F 
+ 2444              	.LASF200:
+ 2445 0fd7 63795F73 		.ascii	"cy_stc_scb_uart_context\000"
+ 2445      74635F73 
+ 2445      63625F75 
+ 2445      6172745F 
+ 2445      636F6E74 
+ 2446              	.LASF206:
+ 2447 0fef 72756E4D 		.ascii	"runMode\000"
+ 2447      6F646500 
+ 2448              	.LASF145:
+ 2449 0ff7 63795F65 		.ascii	"cy_en_ctdac_output_buffer_t\000"
+ 2449      6E5F6374 
+ 2449      6461635F 
+ 2449      6F757470 
+ 2449      75745F62 
+ 2450              	.LASF153:
+ 2451 1013 6465676C 		.ascii	"deglitchCycles\000"
+ 2451      69746368 
+ 2451      4379636C 
+ 2451      657300
+ 2452              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

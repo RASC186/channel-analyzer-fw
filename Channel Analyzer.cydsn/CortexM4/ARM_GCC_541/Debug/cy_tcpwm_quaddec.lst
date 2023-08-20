@@ -1,0 +1,1823 @@
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.eabi_attribute 27, 1
+   4              		.fpu fpv4-sp-d16
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 1
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.thumb
+  15              		.syntax unified
+  16              		.file	"cy_tcpwm_quaddec.c"
+  17              		.text
+  18              	.Ltext0:
+  19              		.cfi_sections	.debug_frame
+  20              		.section	.text.Cy_TCPWM_QuadDec_Init,"ax",%progbits
+  21              		.align	2
+  22              		.global	Cy_TCPWM_QuadDec_Init
+  23              		.thumb
+  24              		.thumb_func
+  25              		.type	Cy_TCPWM_QuadDec_Init, %function
+  26              	Cy_TCPWM_QuadDec_Init:
+  27              	.LFB154:
+  28              		.file 1 "Generated_Source\\PSoC6\\pdl\\drivers\\peripheral\\tcpwm\\cy_tcpwm_quaddec.c"
+   1:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** /***************************************************************************//**
+   2:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * \file cy_tcpwm_quaddec.c
+   3:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * \version 1.10
+   4:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** *
+   5:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * \brief
+   6:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** *  The source file of the tcpwm driver.
+   7:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** *
+   8:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** ********************************************************************************
+   9:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * \copyright
+  10:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * Copyright 2016-2018, Cypress Semiconductor Corporation.  All rights reserved.
+  11:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * You may use this file only in accordance with the license, terms, conditions,
+  12:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  13:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * the software package with which this file was provided.
+  14:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** *******************************************************************************/
+  15:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** 
+  16:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** #include "cy_tcpwm_quaddec.h"
+  17:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** 
+  18:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** #ifdef CY_IP_MXTCPWM
+  19:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** 
+  20:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** #if defined(__cplusplus)
+  21:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** extern "C" {
+  22:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** #endif
+  23:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** 
+  24:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** 
+  25:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** /*******************************************************************************
+  26:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * Function Name: Cy_TCPWM_QuadDec_Init
+  27:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** ****************************************************************************//**
+  28:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** *
+  29:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * Initializes the counter in the TCPWM block for the QuadDec operation.
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 2
+
+
+  30:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** *
+  31:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * \param base
+  32:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * The pointer to a TCPWM instance.
+  33:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** *
+  34:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * \param cntNum
+  35:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * The Counter instance number in the selected TCPWM.
+  36:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** *
+  37:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * \param config
+  38:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * The pointer to a configuration structure. See \ref cy_stc_tcpwm_quaddec_config_t.
+  39:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** *
+  40:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * \return error / status code. See \ref cy_en_tcpwm_status_t.
+  41:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** *
+  42:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * \funcusage
+  43:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * \snippet tcpwm\1.10\quaddec\snippet\main.c snippet_Cy_TCPWM_QuadDec_Config
+  44:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * \snippet tcpwm\1.10\quaddec\snippet\main.c snippet_Cy_TCPWM_QuadDec_Init
+  45:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** *
+  46:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** *******************************************************************************/
+  47:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** cy_en_tcpwm_status_t Cy_TCPWM_QuadDec_Init(TCPWM_Type *base, uint32_t cntNum, 
+  48:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****                                            cy_stc_tcpwm_quaddec_config_t const *config)
+  49:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** {
+  29              		.loc 1 49 0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+  34              	.LVL0:
+  50:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****     cy_en_tcpwm_status_t status = CY_TCPWM_BAD_PARAM;
+  51:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** 
+  52:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****     if ((NULL != base) && (NULL != config))
+  35              		.loc 1 52 0
+  36 0000 0028     		cmp	r0, #0
+  37 0002 39D0     		beq	.L4
+  49:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****     cy_en_tcpwm_status_t status = CY_TCPWM_BAD_PARAM;
+  38              		.loc 1 49 0 discriminator 1
+  39 0004 30B4     		push	{r4, r5}
+  40              		.cfi_def_cfa_offset 8
+  41              		.cfi_offset 4, -8
+  42              		.cfi_offset 5, -4
+  43 0006 0446     		mov	r4, r0
+  44              		.loc 1 52 0 discriminator 1
+  45 0008 002A     		cmp	r2, #0
+  46 000a 37D0     		beq	.L5
+  53:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****     {
+  54:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****         TCPWM_CNT_CTRL(base, cntNum) = ( _VAL2FLD(TCPWM_CNT_CTRL_QUADRATURE_MODE, config->resolutio
+  47              		.loc 1 54 0
+  48 000c 1368     		ldr	r3, [r2]
+  49 000e 1B05     		lsls	r3, r3, #20
+  50 0010 03F44013 		and	r3, r3, #3145728
+  51 0014 43F04073 		orr	r3, r3, #50331648
+  52 0018 081D     		adds	r0, r1, #4
+  53              	.LVL1:
+  54 001a 8001     		lsls	r0, r0, #6
+  55 001c 2350     		str	r3, [r4, r0]
+  55:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****                             _VAL2FLD(TCPWM_CNT_CTRL_MODE, CY_TCPWM_QUADDEC_CTRL_QUADDEC_MODE));
+  56:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** 
+  57:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****         if (CY_TCPWM_INPUT_CREATOR != config->phiAInput)
+  56              		.loc 1 57 0
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 3
+
+
+  57 001e 9369     		ldr	r3, [r2, #24]
+  58 0020 B3F1FF3F 		cmp	r3, #-1
+  59 0024 13D0     		beq	.L3
+  58:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****         {        
+  59:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****             TCPWM_CNT_TR_CTRL0(base, cntNum) = (_VAL2FLD(TCPWM_CNT_TR_CTRL0_COUNT_SEL, config->phiA
+  60              		.loc 1 59 0
+  61 0026 1B01     		lsls	r3, r3, #4
+  62 0028 DBB2     		uxtb	r3, r3
+  60:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****                                               _VAL2FLD(TCPWM_CNT_TR_CTRL0_START_SEL, config->phiBIn
+  63              		.loc 1 60 0
+  64 002a D569     		ldr	r5, [r2, #28]
+  65 002c 2D04     		lsls	r5, r5, #16
+  66 002e 05F47025 		and	r5, r5, #983040
+  59:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****                                               _VAL2FLD(TCPWM_CNT_TR_CTRL0_START_SEL, config->phiBIn
+  67              		.loc 1 59 0
+  68 0032 2B43     		orrs	r3, r3, r5
+  61:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****                                               _VAL2FLD(TCPWM_CNT_TR_CTRL0_RELOAD_SEL, config->index
+  69              		.loc 1 61 0
+  70 0034 D068     		ldr	r0, [r2, #12]
+  71 0036 0002     		lsls	r0, r0, #8
+  72 0038 00F47060 		and	r0, r0, #3840
+  60:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****                                               _VAL2FLD(TCPWM_CNT_TR_CTRL0_START_SEL, config->phiBIn
+  73              		.loc 1 60 0
+  74 003c 1843     		orrs	r0, r0, r3
+  62:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****                                               _VAL2FLD(TCPWM_CNT_TR_CTRL0_STOP_SEL, config->stopInp
+  75              		.loc 1 62 0
+  76 003e 5369     		ldr	r3, [r2, #20]
+  77 0040 1B03     		lsls	r3, r3, #12
+  78 0042 9BB2     		uxth	r3, r3
+  61:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****                                               _VAL2FLD(TCPWM_CNT_TR_CTRL0_RELOAD_SEL, config->index
+  79              		.loc 1 61 0
+  80 0044 0343     		orrs	r3, r3, r0
+  59:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****                                               _VAL2FLD(TCPWM_CNT_TR_CTRL0_START_SEL, config->phiBIn
+  81              		.loc 1 59 0
+  82 0046 04EB8110 		add	r0, r4, r1, lsl #6
+  83 004a C0F82031 		str	r3, [r0, #288]
+  84              	.L3:
+  63:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****         }
+  64:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****         
+  65:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****         TCPWM_CNT_TR_CTRL1(base, cntNum) = (_VAL2FLD(TCPWM_CNT_TR_CTRL1_CAPTURE_EDGE, CY_TCPWM_INPU
+  66:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****                                           _VAL2FLD(TCPWM_CNT_TR_CTRL1_COUNT_EDGE, CY_TCPWM_INPUT_LE
+  67:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****                                           _VAL2FLD(TCPWM_CNT_TR_CTRL1_START_EDGE, CY_TCPWM_INPUT_LE
+  68:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****                                           _VAL2FLD(TCPWM_CNT_TR_CTRL1_RELOAD_EDGE, config->indexInp
+  85              		.loc 1 68 0
+  86 004e 9368     		ldr	r3, [r2, #8]
+  87 0050 1B01     		lsls	r3, r3, #4
+  88 0052 03F03003 		and	r3, r3, #48
+  69:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****                                           _VAL2FLD(TCPWM_CNT_TR_CTRL1_STOP_EDGE, config->stopInputM
+  89              		.loc 1 69 0
+  90 0056 1069     		ldr	r0, [r2, #16]
+  91 0058 8001     		lsls	r0, r0, #6
+  92 005a C0B2     		uxtb	r0, r0
+  68:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****                                           _VAL2FLD(TCPWM_CNT_TR_CTRL1_STOP_EDGE, config->stopInputM
+  93              		.loc 1 68 0
+  94 005c 0343     		orrs	r3, r3, r0
+  95 005e 43F44373 		orr	r3, r3, #780
+  96 0062 43F00303 		orr	r3, r3, #3
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 4
+
+
+  65:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****                                           _VAL2FLD(TCPWM_CNT_TR_CTRL1_COUNT_EDGE, CY_TCPWM_INPUT_LE
+  97              		.loc 1 65 0
+  98 0066 04EB8114 		add	r4, r4, r1, lsl #6
+  99              	.LVL2:
+ 100 006a C4F82431 		str	r3, [r4, #292]
+  70:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** 
+  71:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****         TCPWM_CNT_INTR_MASK(base, cntNum) = config->interruptSources;
+ 101              		.loc 1 71 0
+ 102 006e 5368     		ldr	r3, [r2, #4]
+ 103 0070 C4F83831 		str	r3, [r4, #312]
+ 104              	.LVL3:
+  72:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** 
+  73:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****         status = CY_TCPWM_SUCCESS;
+ 105              		.loc 1 73 0
+ 106 0074 0020     		movs	r0, #0
+ 107 0076 02E0     		b	.L2
+ 108              	.LVL4:
+ 109              	.L4:
+ 110              		.cfi_def_cfa_offset 0
+ 111              		.cfi_restore 4
+ 112              		.cfi_restore 5
+  50:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** 
+ 113              		.loc 1 50 0
+ 114 0078 0248     		ldr	r0, .L7
+ 115              	.LVL5:
+  74:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****     }
+  75:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** 
+  76:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****     return(status);
+  77:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** }
+ 116              		.loc 1 77 0
+ 117 007a 7047     		bx	lr
+ 118              	.LVL6:
+ 119              	.L5:
+ 120              		.cfi_def_cfa_offset 8
+ 121              		.cfi_offset 4, -8
+ 122              		.cfi_offset 5, -4
+  50:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** 
+ 123              		.loc 1 50 0
+ 124 007c 0148     		ldr	r0, .L7
+ 125              	.LVL7:
+ 126              	.L2:
+ 127              		.loc 1 77 0
+ 128 007e 30BC     		pop	{r4, r5}
+ 129              		.cfi_restore 5
+ 130              		.cfi_restore 4
+ 131              		.cfi_def_cfa_offset 0
+ 132 0080 7047     		bx	lr
+ 133              	.L8:
+ 134 0082 00BF     		.align	2
+ 135              	.L7:
+ 136 0084 0100B600 		.word	11927553
+ 137              		.cfi_endproc
+ 138              	.LFE154:
+ 139              		.size	Cy_TCPWM_QuadDec_Init, .-Cy_TCPWM_QuadDec_Init
+ 140              		.section	.text.Cy_TCPWM_QuadDec_DeInit,"ax",%progbits
+ 141              		.align	2
+ 142              		.global	Cy_TCPWM_QuadDec_DeInit
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 5
+
+
+ 143              		.thumb
+ 144              		.thumb_func
+ 145              		.type	Cy_TCPWM_QuadDec_DeInit, %function
+ 146              	Cy_TCPWM_QuadDec_DeInit:
+ 147              	.LFB155:
+  78:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** 
+  79:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** 
+  80:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** /*******************************************************************************
+  81:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * Function Name: Cy_TCPWM_QuadDec_DeInit
+  82:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** ****************************************************************************//**
+  83:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** *
+  84:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * De-initializes the counter in the TCPWM block, returns register values to 
+  85:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * default.
+  86:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** *
+  87:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * \param base
+  88:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * The pointer to a TCPWM instance.
+  89:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** *
+  90:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * \param cntNum
+  91:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * The Counter instance number in the selected TCPWM.
+  92:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** *
+  93:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * \param config
+  94:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * The pointer to a configuration structure. See \ref cy_stc_tcpwm_quaddec_config_t.
+  95:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** *
+  96:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * \funcusage
+  97:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** * \snippet tcpwm\1.10\quaddec\snippet\main.c snippet_Cy_TCPWM_QuadDec_DeInit
+  98:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** *
+  99:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** *******************************************************************************/
+ 100:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** void Cy_TCPWM_QuadDec_DeInit(TCPWM_Type *base, uint32_t cntNum, cy_stc_tcpwm_quaddec_config_t const
+ 101:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** {
+ 148              		.loc 1 101 0
+ 149              		.cfi_startproc
+ 150              		@ args = 0, pretend = 0, frame = 0
+ 151              		@ frame_needed = 0, uses_anonymous_args = 0
+ 152              		@ link register save eliminated.
+ 153              	.LVL8:
+ 154 0000 30B4     		push	{r4, r5}
+ 155              		.cfi_def_cfa_offset 8
+ 156              		.cfi_offset 4, -8
+ 157              		.cfi_offset 5, -4
+ 102:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****     TCPWM_CNT_CTRL(base, cntNum) = CY_TCPWM_CNT_CTRL_DEFAULT;
+ 158              		.loc 1 102 0
+ 159 0002 0B1D     		adds	r3, r1, #4
+ 160 0004 9B01     		lsls	r3, r3, #6
+ 161 0006 0024     		movs	r4, #0
+ 162 0008 C450     		str	r4, [r0, r3]
+ 103:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****     TCPWM_CNT_COUNTER(base, cntNum) = CY_TCPWM_CNT_COUNTER_DEFAULT;
+ 163              		.loc 1 103 0
+ 164 000a 00EB8113 		add	r3, r0, r1, lsl #6
+ 165 000e C3F80841 		str	r4, [r3, #264]
+ 104:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****     TCPWM_CNT_CC(base, cntNum) = CY_TCPWM_CNT_CC_DEFAULT;
+ 166              		.loc 1 104 0
+ 167 0012 4FF0FF35 		mov	r5, #-1
+ 168 0016 C3F80C51 		str	r5, [r3, #268]
+ 105:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****     TCPWM_CNT_CC_BUFF(base, cntNum) = CY_TCPWM_CNT_CC_BUFF_DEFAULT;
+ 169              		.loc 1 105 0
+ 170 001a C3F81051 		str	r5, [r3, #272]
+ 106:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****     TCPWM_CNT_PERIOD(base, cntNum) = CY_TCPWM_CNT_PERIOD_DEFAULT;
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 6
+
+
+ 171              		.loc 1 106 0
+ 172 001e C3F81451 		str	r5, [r3, #276]
+ 107:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****     TCPWM_CNT_PERIOD_BUFF(base, cntNum) = CY_TCPWM_CNT_PERIOD_BUFF_DEFAULT;
+ 173              		.loc 1 107 0
+ 174 0022 C3F81851 		str	r5, [r3, #280]
+ 108:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****     TCPWM_CNT_TR_CTRL1(base, cntNum) = CY_TCPWM_CNT_TR_CTRL1_DEFAULT;
+ 175              		.loc 1 108 0
+ 176 0026 40F2FF35 		movw	r5, #1023
+ 177 002a C3F82451 		str	r5, [r3, #292]
+ 109:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****     TCPWM_CNT_TR_CTRL2(base, cntNum) = CY_TCPWM_CNT_TR_CTRL2_DEFAULT;
+ 178              		.loc 1 109 0
+ 179 002e 3F25     		movs	r5, #63
+ 180 0030 C3F82851 		str	r5, [r3, #296]
+ 110:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****     TCPWM_CNT_INTR(base, cntNum) = CY_TCPWM_CNT_INTR_DEFAULT;
+ 181              		.loc 1 110 0
+ 182 0034 0325     		movs	r5, #3
+ 183 0036 C3F83051 		str	r5, [r3, #304]
+ 111:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****     TCPWM_CNT_INTR_SET(base, cntNum) = CY_TCPWM_CNT_INTR_SET_DEFAULT;
+ 184              		.loc 1 111 0
+ 185 003a C3F83441 		str	r4, [r3, #308]
+ 112:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****     TCPWM_CNT_INTR_MASK(base, cntNum) = CY_TCPWM_CNT_INTR_MASK_DEFAULT;
+ 186              		.loc 1 112 0
+ 187 003e C3F83841 		str	r4, [r3, #312]
+ 113:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** 
+ 114:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****     if (CY_TCPWM_INPUT_CREATOR != config->phiAInput)
+ 188              		.loc 1 114 0
+ 189 0042 9369     		ldr	r3, [r2, #24]
+ 190 0044 B3F1FF3F 		cmp	r3, #-1
+ 191 0048 04D0     		beq	.L9
+ 115:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****     {        
+ 116:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****         TCPWM_CNT_TR_CTRL0(base, cntNum) = CY_TCPWM_CNT_TR_CTRL0_DEFAULT;
+ 192              		.loc 1 116 0
+ 193 004a 00EB8110 		add	r0, r0, r1, lsl #6
+ 194              	.LVL9:
+ 195 004e 1023     		movs	r3, #16
+ 196 0050 C0F82031 		str	r3, [r0, #288]
+ 197              	.L9:
+ 117:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c ****     }
+ 118:Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm/cy_tcpwm_quaddec.c **** }
+ 198              		.loc 1 118 0
+ 199 0054 30BC     		pop	{r4, r5}
+ 200              		.cfi_restore 5
+ 201              		.cfi_restore 4
+ 202              		.cfi_def_cfa_offset 0
+ 203 0056 7047     		bx	lr
+ 204              		.cfi_endproc
+ 205              	.LFE155:
+ 206              		.size	Cy_TCPWM_QuadDec_DeInit, .-Cy_TCPWM_QuadDec_DeInit
+ 207              		.text
+ 208              	.Letext0:
+ 209              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 210              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 211              		.file 4 "Generated_Source\\PSoC6\\pdl\\devices/psoc6/include/ip/cyip_tcpwm.h"
+ 212              		.file 5 "Generated_Source\\PSoC6\\pdl\\devices/psoc6/include/psoc6_01_config.h"
+ 213              		.file 6 "Generated_Source\\PSoC6\\pdl\\drivers\\peripheral\\tcpwm\\cy_tcpwm.h"
+ 214              		.file 7 "Generated_Source\\PSoC6\\pdl\\drivers\\peripheral\\tcpwm\\cy_tcpwm_quaddec.h"
+ 215              		.file 8 ".\\Core\\Include/cmsis_gcc.h"
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 7
+
+
+ 216              		.file 9 ".\\Core\\Include/core_cm4.h"
+ 217              		.section	.debug_info,"",%progbits
+ 218              	.Ldebug_info0:
+ 219 0000 53040000 		.4byte	0x453
+ 220 0004 0400     		.2byte	0x4
+ 221 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 222 000a 04       		.byte	0x4
+ 223 000b 01       		.uleb128 0x1
+ 224 000c E3000000 		.4byte	.LASF67
+ 225 0010 0C       		.byte	0xc
+ 226 0011 32000000 		.4byte	.LASF68
+ 227 0015 18040000 		.4byte	.LASF69
+ 228 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 229 001d 00000000 		.4byte	0
+ 230 0021 00000000 		.4byte	.Ldebug_line0
+ 231 0025 02       		.uleb128 0x2
+ 232 0026 01       		.byte	0x1
+ 233 0027 06       		.byte	0x6
+ 234 0028 C9020000 		.4byte	.LASF0
+ 235 002c 02       		.uleb128 0x2
+ 236 002d 01       		.byte	0x1
+ 237 002e 08       		.byte	0x8
+ 238 002f AB020000 		.4byte	.LASF1
+ 239 0033 02       		.uleb128 0x2
+ 240 0034 02       		.byte	0x2
+ 241 0035 05       		.byte	0x5
+ 242 0036 79000000 		.4byte	.LASF2
+ 243 003a 02       		.uleb128 0x2
+ 244 003b 02       		.byte	0x2
+ 245 003c 07       		.byte	0x7
+ 246 003d 34030000 		.4byte	.LASF3
+ 247 0041 03       		.uleb128 0x3
+ 248 0042 F7030000 		.4byte	.LASF5
+ 249 0046 02       		.byte	0x2
+ 250 0047 3F       		.byte	0x3f
+ 251 0048 4C000000 		.4byte	0x4c
+ 252 004c 02       		.uleb128 0x2
+ 253 004d 04       		.byte	0x4
+ 254 004e 05       		.byte	0x5
+ 255 004f 5D020000 		.4byte	.LASF4
+ 256 0053 03       		.uleb128 0x3
+ 257 0054 A7010000 		.4byte	.LASF6
+ 258 0058 02       		.byte	0x2
+ 259 0059 41       		.byte	0x41
+ 260 005a 5E000000 		.4byte	0x5e
+ 261 005e 02       		.uleb128 0x2
+ 262 005f 04       		.byte	0x4
+ 263 0060 07       		.byte	0x7
+ 264 0061 B7030000 		.4byte	.LASF7
+ 265 0065 02       		.uleb128 0x2
+ 266 0066 08       		.byte	0x8
+ 267 0067 05       		.byte	0x5
+ 268 0068 3C020000 		.4byte	.LASF8
+ 269 006c 02       		.uleb128 0x2
+ 270 006d 08       		.byte	0x8
+ 271 006e 07       		.byte	0x7
+ 272 006f DE020000 		.4byte	.LASF9
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 8
+
+
+ 273 0073 04       		.uleb128 0x4
+ 274 0074 04       		.byte	0x4
+ 275 0075 05       		.byte	0x5
+ 276 0076 696E7400 		.ascii	"int\000"
+ 277 007a 02       		.uleb128 0x2
+ 278 007b 04       		.byte	0x4
+ 279 007c 07       		.byte	0x7
+ 280 007d 09030000 		.4byte	.LASF10
+ 281 0081 03       		.uleb128 0x3
+ 282 0082 66020000 		.4byte	.LASF11
+ 283 0086 03       		.byte	0x3
+ 284 0087 2C       		.byte	0x2c
+ 285 0088 41000000 		.4byte	0x41
+ 286 008c 03       		.uleb128 0x3
+ 287 008d F5020000 		.4byte	.LASF12
+ 288 0091 03       		.byte	0x3
+ 289 0092 30       		.byte	0x30
+ 290 0093 53000000 		.4byte	0x53
+ 291 0097 02       		.uleb128 0x2
+ 292 0098 08       		.byte	0x8
+ 293 0099 04       		.byte	0x4
+ 294 009a 89020000 		.4byte	.LASF13
+ 295 009e 05       		.uleb128 0x5
+ 296 009f 8C000000 		.4byte	0x8c
+ 297 00a3 06       		.uleb128 0x6
+ 298 00a4 9E000000 		.4byte	0x9e
+ 299 00a8 02       		.uleb128 0x2
+ 300 00a9 04       		.byte	0x4
+ 301 00aa 07       		.byte	0x7
+ 302 00ab 83000000 		.4byte	.LASF14
+ 303 00af 07       		.uleb128 0x7
+ 304 00b0 A3000000 		.4byte	0xa3
+ 305 00b4 BF000000 		.4byte	0xbf
+ 306 00b8 08       		.uleb128 0x8
+ 307 00b9 A8000000 		.4byte	0xa8
+ 308 00bd 37       		.byte	0x37
+ 309 00be 00       		.byte	0
+ 310 00bf 09       		.uleb128 0x9
+ 311 00c0 40       		.byte	0x40
+ 312 00c1 04       		.byte	0x4
+ 313 00c2 22       		.byte	0x22
+ 314 00c3 87010000 		.4byte	0x187
+ 315 00c7 0A       		.uleb128 0xa
+ 316 00c8 B9020000 		.4byte	.LASF15
+ 317 00cc 04       		.byte	0x4
+ 318 00cd 23       		.byte	0x23
+ 319 00ce 9E000000 		.4byte	0x9e
+ 320 00d2 00       		.byte	0
+ 321 00d3 0A       		.uleb128 0xa
+ 322 00d4 68030000 		.4byte	.LASF16
+ 323 00d8 04       		.byte	0x4
+ 324 00d9 24       		.byte	0x24
+ 325 00da A3000000 		.4byte	0xa3
+ 326 00de 04       		.byte	0x4
+ 327 00df 0A       		.uleb128 0xa
+ 328 00e0 70040000 		.4byte	.LASF17
+ 329 00e4 04       		.byte	0x4
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 9
+
+
+ 330 00e5 25       		.byte	0x25
+ 331 00e6 9E000000 		.4byte	0x9e
+ 332 00ea 08       		.byte	0x8
+ 333 00eb 0B       		.uleb128 0xb
+ 334 00ec 434300   		.ascii	"CC\000"
+ 335 00ef 04       		.byte	0x4
+ 336 00f0 26       		.byte	0x26
+ 337 00f1 9E000000 		.4byte	0x9e
+ 338 00f5 0C       		.byte	0xc
+ 339 00f6 0A       		.uleb128 0xa
+ 340 00f7 81020000 		.4byte	.LASF18
+ 341 00fb 04       		.byte	0x4
+ 342 00fc 27       		.byte	0x27
+ 343 00fd 9E000000 		.4byte	0x9e
+ 344 0101 10       		.byte	0x10
+ 345 0102 0A       		.uleb128 0xa
+ 346 0103 B3000000 		.4byte	.LASF19
+ 347 0107 04       		.byte	0x4
+ 348 0108 28       		.byte	0x28
+ 349 0109 9E000000 		.4byte	0x9e
+ 350 010d 14       		.byte	0x14
+ 351 010e 0A       		.uleb128 0xa
+ 352 010f 8C000000 		.4byte	.LASF20
+ 353 0113 04       		.byte	0x4
+ 354 0114 29       		.byte	0x29
+ 355 0115 9E000000 		.4byte	0x9e
+ 356 0119 18       		.byte	0x18
+ 357 011a 0A       		.uleb128 0xa
+ 358 011b 78040000 		.4byte	.LASF21
+ 359 011f 04       		.byte	0x4
+ 360 0120 2A       		.byte	0x2a
+ 361 0121 A3000000 		.4byte	0xa3
+ 362 0125 1C       		.byte	0x1c
+ 363 0126 0A       		.uleb128 0xa
+ 364 0127 CB010000 		.4byte	.LASF22
+ 365 012b 04       		.byte	0x4
+ 366 012c 2B       		.byte	0x2b
+ 367 012d 9E000000 		.4byte	0x9e
+ 368 0131 20       		.byte	0x20
+ 369 0132 0A       		.uleb128 0xa
+ 370 0133 C5000000 		.4byte	.LASF23
+ 371 0137 04       		.byte	0x4
+ 372 0138 2C       		.byte	0x2c
+ 373 0139 9E000000 		.4byte	0x9e
+ 374 013d 24       		.byte	0x24
+ 375 013e 0A       		.uleb128 0xa
+ 376 013f E9010000 		.4byte	.LASF24
+ 377 0143 04       		.byte	0x4
+ 378 0144 2D       		.byte	0x2d
+ 379 0145 9E000000 		.4byte	0x9e
+ 380 0149 28       		.byte	0x28
+ 381 014a 0A       		.uleb128 0xa
+ 382 014b A3030000 		.4byte	.LASF25
+ 383 014f 04       		.byte	0x4
+ 384 0150 2E       		.byte	0x2e
+ 385 0151 A3000000 		.4byte	0xa3
+ 386 0155 2C       		.byte	0x2c
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 10
+
+
+ 387 0156 0A       		.uleb128 0xa
+ 388 0157 9E030000 		.4byte	.LASF26
+ 389 015b 04       		.byte	0x4
+ 390 015c 2F       		.byte	0x2f
+ 391 015d 9E000000 		.4byte	0x9e
+ 392 0161 30       		.byte	0x30
+ 393 0162 0A       		.uleb128 0xa
+ 394 0163 D5020000 		.4byte	.LASF27
+ 395 0167 04       		.byte	0x4
+ 396 0168 30       		.byte	0x30
+ 397 0169 9E000000 		.4byte	0x9e
+ 398 016d 34       		.byte	0x34
+ 399 016e 0A       		.uleb128 0xa
+ 400 016f 2A030000 		.4byte	.LASF28
+ 401 0173 04       		.byte	0x4
+ 402 0174 31       		.byte	0x31
+ 403 0175 9E000000 		.4byte	0x9e
+ 404 0179 38       		.byte	0x38
+ 405 017a 0A       		.uleb128 0xa
+ 406 017b 75020000 		.4byte	.LASF29
+ 407 017f 04       		.byte	0x4
+ 408 0180 32       		.byte	0x32
+ 409 0181 A3000000 		.4byte	0xa3
+ 410 0185 3C       		.byte	0x3c
+ 411 0186 00       		.byte	0
+ 412 0187 03       		.uleb128 0x3
+ 413 0188 98000000 		.4byte	.LASF30
+ 414 018c 04       		.byte	0x4
+ 415 018d 33       		.byte	0x33
+ 416 018e BF000000 		.4byte	0xbf
+ 417 0192 0C       		.uleb128 0xc
+ 418 0193 0009     		.2byte	0x900
+ 419 0195 04       		.byte	0x4
+ 420 0196 38       		.byte	0x38
+ 421 0197 15020000 		.4byte	0x215
+ 422 019b 0A       		.uleb128 0xa
+ 423 019c B9020000 		.4byte	.LASF15
+ 424 01a0 04       		.byte	0x4
+ 425 01a1 39       		.byte	0x39
+ 426 01a2 9E000000 		.4byte	0x9e
+ 427 01a6 00       		.byte	0
+ 428 01a7 0A       		.uleb128 0xa
+ 429 01a8 0F040000 		.4byte	.LASF31
+ 430 01ac 04       		.byte	0x4
+ 431 01ad 3A       		.byte	0x3a
+ 432 01ae 9E000000 		.4byte	0x9e
+ 433 01b2 04       		.byte	0x4
+ 434 01b3 0A       		.uleb128 0xa
+ 435 01b4 AA000000 		.4byte	.LASF32
+ 436 01b8 04       		.byte	0x4
+ 437 01b9 3B       		.byte	0x3b
+ 438 01ba 9E000000 		.4byte	0x9e
+ 439 01be 08       		.byte	0x8
+ 440 01bf 0A       		.uleb128 0xa
+ 441 01c0 FC010000 		.4byte	.LASF33
+ 442 01c4 04       		.byte	0x4
+ 443 01c5 3C       		.byte	0x3c
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 11
+
+
+ 444 01c6 9E000000 		.4byte	0x9e
+ 445 01ca 0C       		.byte	0xc
+ 446 01cb 0A       		.uleb128 0xa
+ 447 01cc BA000000 		.4byte	.LASF34
+ 448 01d0 04       		.byte	0x4
+ 449 01d1 3D       		.byte	0x3d
+ 450 01d2 9E000000 		.4byte	0x9e
+ 451 01d6 10       		.byte	0x10
+ 452 01d7 0A       		.uleb128 0xa
+ 453 01d8 21030000 		.4byte	.LASF35
+ 454 01dc 04       		.byte	0x4
+ 455 01dd 3E       		.byte	0x3e
+ 456 01de 9E000000 		.4byte	0x9e
+ 457 01e2 14       		.byte	0x14
+ 458 01e3 0A       		.uleb128 0xa
+ 459 01e4 19020000 		.4byte	.LASF36
+ 460 01e8 04       		.byte	0x4
+ 461 01e9 3F       		.byte	0x3f
+ 462 01ea 9E000000 		.4byte	0x9e
+ 463 01ee 18       		.byte	0x18
+ 464 01ef 0A       		.uleb128 0xa
+ 465 01f0 BE020000 		.4byte	.LASF37
+ 466 01f4 04       		.byte	0x4
+ 467 01f5 40       		.byte	0x40
+ 468 01f6 A3000000 		.4byte	0xa3
+ 469 01fa 1C       		.byte	0x1c
+ 470 01fb 0A       		.uleb128 0xa
+ 471 01fc 78040000 		.4byte	.LASF21
+ 472 0200 04       		.byte	0x4
+ 473 0201 41       		.byte	0x41
+ 474 0202 1A020000 		.4byte	0x21a
+ 475 0206 20       		.byte	0x20
+ 476 0207 0D       		.uleb128 0xd
+ 477 0208 434E5400 		.ascii	"CNT\000"
+ 478 020c 04       		.byte	0x4
+ 479 020d 42       		.byte	0x42
+ 480 020e 1F020000 		.4byte	0x21f
+ 481 0212 0001     		.2byte	0x100
+ 482 0214 00       		.byte	0
+ 483 0215 05       		.uleb128 0x5
+ 484 0216 AF000000 		.4byte	0xaf
+ 485 021a 06       		.uleb128 0x6
+ 486 021b 15020000 		.4byte	0x215
+ 487 021f 07       		.uleb128 0x7
+ 488 0220 87010000 		.4byte	0x187
+ 489 0224 2F020000 		.4byte	0x22f
+ 490 0228 08       		.uleb128 0x8
+ 491 0229 A8000000 		.4byte	0xa8
+ 492 022d 1F       		.byte	0x1f
+ 493 022e 00       		.byte	0
+ 494 022f 03       		.uleb128 0x3
+ 495 0230 DB010000 		.4byte	.LASF38
+ 496 0234 04       		.byte	0x4
+ 497 0235 43       		.byte	0x43
+ 498 0236 92010000 		.4byte	0x192
+ 499 023a 0E       		.uleb128 0xe
+ 500 023b A8040000 		.4byte	.LASF39
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 12
+
+
+ 501 023f 05       		.byte	0x5
+ 502 0240 4206     		.2byte	0x642
+ 503 0242 2F020000 		.4byte	0x22f
+ 504 0246 02       		.uleb128 0x2
+ 505 0247 01       		.byte	0x1
+ 506 0248 08       		.byte	0x8
+ 507 0249 63030000 		.4byte	.LASF40
+ 508 024d 02       		.uleb128 0x2
+ 509 024e 04       		.byte	0x4
+ 510 024f 04       		.byte	0x4
+ 511 0250 36020000 		.4byte	.LASF41
+ 512 0254 02       		.uleb128 0x2
+ 513 0255 08       		.byte	0x8
+ 514 0256 04       		.byte	0x4
+ 515 0257 C9030000 		.4byte	.LASF42
+ 516 025b 0F       		.uleb128 0xf
+ 517 025c 04       		.byte	0x4
+ 518 025d 7A000000 		.4byte	0x7a
+ 519 0261 06       		.byte	0x6
+ 520 0262 7301     		.2byte	0x173
+ 521 0264 78020000 		.4byte	0x278
+ 522 0268 10       		.uleb128 0x10
+ 523 0269 96010000 		.4byte	.LASF43
+ 524 026d 00       		.byte	0
+ 525 026e 11       		.uleb128 0x11
+ 526 026f 6F030000 		.4byte	.LASF44
+ 527 0273 0100B600 		.4byte	0xb60001
+ 528 0277 00       		.byte	0
+ 529 0278 0E       		.uleb128 0xe
+ 530 0279 81040000 		.4byte	.LASF45
+ 531 027d 06       		.byte	0x6
+ 532 027e 7601     		.2byte	0x176
+ 533 0280 5B020000 		.4byte	0x25b
+ 534 0284 12       		.uleb128 0x12
+ 535 0285 82030000 		.4byte	.LASF70
+ 536 0289 20       		.byte	0x20
+ 537 028a 07       		.byte	0x7
+ 538 028b 2E       		.byte	0x2e
+ 539 028c F1020000 		.4byte	0x2f1
+ 540 0290 0A       		.uleb128 0xa
+ 541 0291 16030000 		.4byte	.LASF46
+ 542 0295 07       		.byte	0x7
+ 543 0296 31       		.byte	0x31
+ 544 0297 8C000000 		.4byte	0x8c
+ 545 029b 00       		.byte	0
+ 546 029c 0A       		.uleb128 0xa
+ 547 029d 08020000 		.4byte	.LASF47
+ 548 02a1 07       		.byte	0x7
+ 549 02a2 33       		.byte	0x33
+ 550 02a3 8C000000 		.4byte	0x8c
+ 551 02a7 04       		.byte	0x4
+ 552 02a8 0A       		.uleb128 0xa
+ 553 02a9 E8030000 		.4byte	.LASF48
+ 554 02ad 07       		.byte	0x7
+ 555 02ae 35       		.byte	0x35
+ 556 02af 8C000000 		.4byte	0x8c
+ 557 02b3 08       		.byte	0x8
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 13
+
+
+ 558 02b4 0A       		.uleb128 0xa
+ 559 02b5 FE020000 		.4byte	.LASF49
+ 560 02b9 07       		.byte	0x7
+ 561 02ba 37       		.byte	0x37
+ 562 02bb 8C000000 		.4byte	0x8c
+ 563 02bf 0C       		.byte	0xc
+ 564 02c0 0A       		.uleb128 0xa
+ 565 02c1 01040000 		.4byte	.LASF50
+ 566 02c5 07       		.byte	0x7
+ 567 02c6 39       		.byte	0x39
+ 568 02c7 8C000000 		.4byte	0x8c
+ 569 02cb 10       		.byte	0x10
+ 570 02cc 0A       		.uleb128 0xa
+ 571 02cd B2010000 		.4byte	.LASF51
+ 572 02d1 07       		.byte	0x7
+ 573 02d2 3B       		.byte	0x3b
+ 574 02d3 8C000000 		.4byte	0x8c
+ 575 02d7 14       		.byte	0x14
+ 576 02d8 0A       		.uleb128 0xa
+ 577 02d9 AD030000 		.4byte	.LASF52
+ 578 02dd 07       		.byte	0x7
+ 579 02de 3D       		.byte	0x3d
+ 580 02df 8C000000 		.4byte	0x8c
+ 581 02e3 18       		.byte	0x18
+ 582 02e4 0A       		.uleb128 0xa
+ 583 02e5 F2010000 		.4byte	.LASF53
+ 584 02e9 07       		.byte	0x7
+ 585 02ea 3F       		.byte	0x3f
+ 586 02eb 8C000000 		.4byte	0x8c
+ 587 02ef 1C       		.byte	0x1c
+ 588 02f0 00       		.byte	0
+ 589 02f1 03       		.uleb128 0x3
+ 590 02f2 14000000 		.4byte	.LASF54
+ 591 02f6 07       		.byte	0x7
+ 592 02f7 41       		.byte	0x41
+ 593 02f8 84020000 		.4byte	0x284
+ 594 02fc 13       		.uleb128 0x13
+ 595 02fd 95020000 		.4byte	.LASF71
+ 596 0301 01       		.byte	0x1
+ 597 0302 2F       		.byte	0x2f
+ 598 0303 78020000 		.4byte	0x278
+ 599 0307 00000000 		.4byte	.LFB154
+ 600 030b 88000000 		.4byte	.LFE154-.LFB154
+ 601 030f 01       		.uleb128 0x1
+ 602 0310 9C       		.byte	0x9c
+ 603 0311 4E030000 		.4byte	0x34e
+ 604 0315 14       		.uleb128 0x14
+ 605 0316 B3040000 		.4byte	.LASF55
+ 606 031a 01       		.byte	0x1
+ 607 031b 2F       		.byte	0x2f
+ 608 031c 4E030000 		.4byte	0x34e
+ 609 0320 00000000 		.4byte	.LLST0
+ 610 0324 15       		.uleb128 0x15
+ 611 0325 6E020000 		.4byte	.LASF56
+ 612 0329 01       		.byte	0x1
+ 613 032a 2F       		.byte	0x2f
+ 614 032b 8C000000 		.4byte	0x8c
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 14
+
+
+ 615 032f 01       		.uleb128 0x1
+ 616 0330 51       		.byte	0x51
+ 617 0331 15       		.uleb128 0x15
+ 618 0332 D4010000 		.4byte	.LASF57
+ 619 0336 01       		.byte	0x1
+ 620 0337 30       		.byte	0x30
+ 621 0338 54030000 		.4byte	0x354
+ 622 033c 01       		.uleb128 0x1
+ 623 033d 52       		.byte	0x52
+ 624 033e 16       		.uleb128 0x16
+ 625 033f 5C030000 		.4byte	.LASF72
+ 626 0343 01       		.byte	0x1
+ 627 0344 32       		.byte	0x32
+ 628 0345 78020000 		.4byte	0x278
+ 629 0349 5E000000 		.4byte	.LLST1
+ 630 034d 00       		.byte	0
+ 631 034e 17       		.uleb128 0x17
+ 632 034f 04       		.byte	0x4
+ 633 0350 3A020000 		.4byte	0x23a
+ 634 0354 17       		.uleb128 0x17
+ 635 0355 04       		.byte	0x4
+ 636 0356 5A030000 		.4byte	0x35a
+ 637 035a 06       		.uleb128 0x6
+ 638 035b F1020000 		.4byte	0x2f1
+ 639 035f 18       		.uleb128 0x18
+ 640 0360 D0030000 		.4byte	.LASF73
+ 641 0364 01       		.byte	0x1
+ 642 0365 64       		.byte	0x64
+ 643 0366 00000000 		.4byte	.LFB155
+ 644 036a 58000000 		.4byte	.LFE155-.LFB155
+ 645 036e 01       		.uleb128 0x1
+ 646 036f 9C       		.byte	0x9c
+ 647 0370 9E030000 		.4byte	0x39e
+ 648 0374 14       		.uleb128 0x14
+ 649 0375 B3040000 		.4byte	.LASF55
+ 650 0379 01       		.byte	0x1
+ 651 037a 64       		.byte	0x64
+ 652 037b 4E030000 		.4byte	0x34e
+ 653 037f B8000000 		.4byte	.LLST2
+ 654 0383 15       		.uleb128 0x15
+ 655 0384 6E020000 		.4byte	.LASF56
+ 656 0388 01       		.byte	0x1
+ 657 0389 64       		.byte	0x64
+ 658 038a 8C000000 		.4byte	0x8c
+ 659 038e 01       		.uleb128 0x1
+ 660 038f 51       		.byte	0x51
+ 661 0390 15       		.uleb128 0x15
+ 662 0391 D4010000 		.4byte	.LASF57
+ 663 0395 01       		.byte	0x1
+ 664 0396 64       		.byte	0x64
+ 665 0397 54030000 		.4byte	0x354
+ 666 039b 01       		.uleb128 0x1
+ 667 039c 52       		.byte	0x52
+ 668 039d 00       		.byte	0
+ 669 039e 03       		.uleb128 0x3
+ 670 039f 00000000 		.4byte	.LASF58
+ 671 03a3 08       		.byte	0x8
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 15
+
+
+ 672 03a4 8B       		.byte	0x8b
+ 673 03a5 2D040000 		.4byte	0x42d
+ 674 03a9 17       		.uleb128 0x17
+ 675 03aa 04       		.byte	0x4
+ 676 03ab AF030000 		.4byte	0x3af
+ 677 03af 06       		.uleb128 0x6
+ 678 03b0 8C000000 		.4byte	0x8c
+ 679 03b4 17       		.uleb128 0x17
+ 680 03b5 04       		.byte	0x4
+ 681 03b6 8C000000 		.4byte	0x8c
+ 682 03ba 19       		.uleb128 0x19
+ 683 03bb 47030000 		.4byte	.LASF59
+ 684 03bf 08       		.byte	0x8
+ 685 03c0 92       		.byte	0x92
+ 686 03c1 C5030000 		.4byte	0x3c5
+ 687 03c5 06       		.uleb128 0x6
+ 688 03c6 9E030000 		.4byte	0x39e
+ 689 03ca 19       		.uleb128 0x19
+ 690 03cb 23020000 		.4byte	.LASF60
+ 691 03cf 08       		.byte	0x8
+ 692 03d0 93       		.byte	0x93
+ 693 03d1 C5030000 		.4byte	0x3c5
+ 694 03d5 03       		.uleb128 0x3
+ 695 03d6 BC010000 		.4byte	.LASF61
+ 696 03da 08       		.byte	0x8
+ 697 03db 90       		.byte	0x90
+ 698 03dc 0C040000 		.4byte	0x40c
+ 699 03e0 19       		.uleb128 0x19
+ 700 03e1 CE000000 		.4byte	.LASF62
+ 701 03e5 08       		.byte	0x8
+ 702 03e6 94       		.byte	0x94
+ 703 03e7 EB030000 		.4byte	0x3eb
+ 704 03eb 06       		.uleb128 0x6
+ 705 03ec D5030000 		.4byte	0x3d5
+ 706 03f0 19       		.uleb128 0x19
+ 707 03f1 4A020000 		.4byte	.LASF63
+ 708 03f5 08       		.byte	0x8
+ 709 03f6 95       		.byte	0x95
+ 710 03f7 EB030000 		.4byte	0x3eb
+ 711 03fb 1A       		.uleb128 0x1a
+ 712 03fc 9B040000 		.4byte	.LASF64
+ 713 0400 09       		.byte	0x9
+ 714 0401 0408     		.2byte	0x804
+ 715 0403 07040000 		.4byte	0x407
+ 716 0407 05       		.uleb128 0x5
+ 717 0408 81000000 		.4byte	0x81
+ 718 040c 09       		.uleb128 0x9
+ 719 040d 08       		.byte	0x8
+ 720 040e 08       		.byte	0x8
+ 721 040f 8D       		.byte	0x8d
+ 722 0410 2D040000 		.4byte	0x42d
+ 723 0414 0A       		.uleb128 0xa
+ 724 0415 0F000000 		.4byte	.LASF65
+ 725 0419 08       		.byte	0x8
+ 726 041a 8E       		.byte	0x8e
+ 727 041b B4030000 		.4byte	0x3b4
+ 728 041f 00       		.byte	0
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 16
+
+
+ 729 0420 0A       		.uleb128 0xa
+ 730 0421 96040000 		.4byte	.LASF66
+ 731 0425 08       		.byte	0x8
+ 732 0426 8F       		.byte	0x8f
+ 733 0427 8C000000 		.4byte	0x8c
+ 734 042b 04       		.byte	0x4
+ 735 042c 00       		.byte	0
+ 736 042d 1B       		.uleb128 0x1b
+ 737 042e 0C       		.byte	0xc
+ 738 042f 08       		.byte	0x8
+ 739 0430 87       		.byte	0x87
+ 740 0431 0B       		.uleb128 0xb
+ 741 0432 73726300 		.ascii	"src\000"
+ 742 0436 08       		.byte	0x8
+ 743 0437 88       		.byte	0x88
+ 744 0438 A9030000 		.4byte	0x3a9
+ 745 043c 00       		.byte	0
+ 746 043d 0A       		.uleb128 0xa
+ 747 043e 0F000000 		.4byte	.LASF65
+ 748 0442 08       		.byte	0x8
+ 749 0443 89       		.byte	0x89
+ 750 0444 B4030000 		.4byte	0x3b4
+ 751 0448 04       		.byte	0x4
+ 752 0449 0A       		.uleb128 0xa
+ 753 044a 96040000 		.4byte	.LASF66
+ 754 044e 08       		.byte	0x8
+ 755 044f 8A       		.byte	0x8a
+ 756 0450 8C000000 		.4byte	0x8c
+ 757 0454 08       		.byte	0x8
+ 758 0455 00       		.byte	0
+ 759 0456 00       		.byte	0
+ 760              		.section	.debug_abbrev,"",%progbits
+ 761              	.Ldebug_abbrev0:
+ 762 0000 01       		.uleb128 0x1
+ 763 0001 11       		.uleb128 0x11
+ 764 0002 01       		.byte	0x1
+ 765 0003 25       		.uleb128 0x25
+ 766 0004 0E       		.uleb128 0xe
+ 767 0005 13       		.uleb128 0x13
+ 768 0006 0B       		.uleb128 0xb
+ 769 0007 03       		.uleb128 0x3
+ 770 0008 0E       		.uleb128 0xe
+ 771 0009 1B       		.uleb128 0x1b
+ 772 000a 0E       		.uleb128 0xe
+ 773 000b 55       		.uleb128 0x55
+ 774 000c 17       		.uleb128 0x17
+ 775 000d 11       		.uleb128 0x11
+ 776 000e 01       		.uleb128 0x1
+ 777 000f 10       		.uleb128 0x10
+ 778 0010 17       		.uleb128 0x17
+ 779 0011 00       		.byte	0
+ 780 0012 00       		.byte	0
+ 781 0013 02       		.uleb128 0x2
+ 782 0014 24       		.uleb128 0x24
+ 783 0015 00       		.byte	0
+ 784 0016 0B       		.uleb128 0xb
+ 785 0017 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 17
+
+
+ 786 0018 3E       		.uleb128 0x3e
+ 787 0019 0B       		.uleb128 0xb
+ 788 001a 03       		.uleb128 0x3
+ 789 001b 0E       		.uleb128 0xe
+ 790 001c 00       		.byte	0
+ 791 001d 00       		.byte	0
+ 792 001e 03       		.uleb128 0x3
+ 793 001f 16       		.uleb128 0x16
+ 794 0020 00       		.byte	0
+ 795 0021 03       		.uleb128 0x3
+ 796 0022 0E       		.uleb128 0xe
+ 797 0023 3A       		.uleb128 0x3a
+ 798 0024 0B       		.uleb128 0xb
+ 799 0025 3B       		.uleb128 0x3b
+ 800 0026 0B       		.uleb128 0xb
+ 801 0027 49       		.uleb128 0x49
+ 802 0028 13       		.uleb128 0x13
+ 803 0029 00       		.byte	0
+ 804 002a 00       		.byte	0
+ 805 002b 04       		.uleb128 0x4
+ 806 002c 24       		.uleb128 0x24
+ 807 002d 00       		.byte	0
+ 808 002e 0B       		.uleb128 0xb
+ 809 002f 0B       		.uleb128 0xb
+ 810 0030 3E       		.uleb128 0x3e
+ 811 0031 0B       		.uleb128 0xb
+ 812 0032 03       		.uleb128 0x3
+ 813 0033 08       		.uleb128 0x8
+ 814 0034 00       		.byte	0
+ 815 0035 00       		.byte	0
+ 816 0036 05       		.uleb128 0x5
+ 817 0037 35       		.uleb128 0x35
+ 818 0038 00       		.byte	0
+ 819 0039 49       		.uleb128 0x49
+ 820 003a 13       		.uleb128 0x13
+ 821 003b 00       		.byte	0
+ 822 003c 00       		.byte	0
+ 823 003d 06       		.uleb128 0x6
+ 824 003e 26       		.uleb128 0x26
+ 825 003f 00       		.byte	0
+ 826 0040 49       		.uleb128 0x49
+ 827 0041 13       		.uleb128 0x13
+ 828 0042 00       		.byte	0
+ 829 0043 00       		.byte	0
+ 830 0044 07       		.uleb128 0x7
+ 831 0045 01       		.uleb128 0x1
+ 832 0046 01       		.byte	0x1
+ 833 0047 49       		.uleb128 0x49
+ 834 0048 13       		.uleb128 0x13
+ 835 0049 01       		.uleb128 0x1
+ 836 004a 13       		.uleb128 0x13
+ 837 004b 00       		.byte	0
+ 838 004c 00       		.byte	0
+ 839 004d 08       		.uleb128 0x8
+ 840 004e 21       		.uleb128 0x21
+ 841 004f 00       		.byte	0
+ 842 0050 49       		.uleb128 0x49
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 18
+
+
+ 843 0051 13       		.uleb128 0x13
+ 844 0052 2F       		.uleb128 0x2f
+ 845 0053 0B       		.uleb128 0xb
+ 846 0054 00       		.byte	0
+ 847 0055 00       		.byte	0
+ 848 0056 09       		.uleb128 0x9
+ 849 0057 13       		.uleb128 0x13
+ 850 0058 01       		.byte	0x1
+ 851 0059 0B       		.uleb128 0xb
+ 852 005a 0B       		.uleb128 0xb
+ 853 005b 3A       		.uleb128 0x3a
+ 854 005c 0B       		.uleb128 0xb
+ 855 005d 3B       		.uleb128 0x3b
+ 856 005e 0B       		.uleb128 0xb
+ 857 005f 01       		.uleb128 0x1
+ 858 0060 13       		.uleb128 0x13
+ 859 0061 00       		.byte	0
+ 860 0062 00       		.byte	0
+ 861 0063 0A       		.uleb128 0xa
+ 862 0064 0D       		.uleb128 0xd
+ 863 0065 00       		.byte	0
+ 864 0066 03       		.uleb128 0x3
+ 865 0067 0E       		.uleb128 0xe
+ 866 0068 3A       		.uleb128 0x3a
+ 867 0069 0B       		.uleb128 0xb
+ 868 006a 3B       		.uleb128 0x3b
+ 869 006b 0B       		.uleb128 0xb
+ 870 006c 49       		.uleb128 0x49
+ 871 006d 13       		.uleb128 0x13
+ 872 006e 38       		.uleb128 0x38
+ 873 006f 0B       		.uleb128 0xb
+ 874 0070 00       		.byte	0
+ 875 0071 00       		.byte	0
+ 876 0072 0B       		.uleb128 0xb
+ 877 0073 0D       		.uleb128 0xd
+ 878 0074 00       		.byte	0
+ 879 0075 03       		.uleb128 0x3
+ 880 0076 08       		.uleb128 0x8
+ 881 0077 3A       		.uleb128 0x3a
+ 882 0078 0B       		.uleb128 0xb
+ 883 0079 3B       		.uleb128 0x3b
+ 884 007a 0B       		.uleb128 0xb
+ 885 007b 49       		.uleb128 0x49
+ 886 007c 13       		.uleb128 0x13
+ 887 007d 38       		.uleb128 0x38
+ 888 007e 0B       		.uleb128 0xb
+ 889 007f 00       		.byte	0
+ 890 0080 00       		.byte	0
+ 891 0081 0C       		.uleb128 0xc
+ 892 0082 13       		.uleb128 0x13
+ 893 0083 01       		.byte	0x1
+ 894 0084 0B       		.uleb128 0xb
+ 895 0085 05       		.uleb128 0x5
+ 896 0086 3A       		.uleb128 0x3a
+ 897 0087 0B       		.uleb128 0xb
+ 898 0088 3B       		.uleb128 0x3b
+ 899 0089 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 19
+
+
+ 900 008a 01       		.uleb128 0x1
+ 901 008b 13       		.uleb128 0x13
+ 902 008c 00       		.byte	0
+ 903 008d 00       		.byte	0
+ 904 008e 0D       		.uleb128 0xd
+ 905 008f 0D       		.uleb128 0xd
+ 906 0090 00       		.byte	0
+ 907 0091 03       		.uleb128 0x3
+ 908 0092 08       		.uleb128 0x8
+ 909 0093 3A       		.uleb128 0x3a
+ 910 0094 0B       		.uleb128 0xb
+ 911 0095 3B       		.uleb128 0x3b
+ 912 0096 0B       		.uleb128 0xb
+ 913 0097 49       		.uleb128 0x49
+ 914 0098 13       		.uleb128 0x13
+ 915 0099 38       		.uleb128 0x38
+ 916 009a 05       		.uleb128 0x5
+ 917 009b 00       		.byte	0
+ 918 009c 00       		.byte	0
+ 919 009d 0E       		.uleb128 0xe
+ 920 009e 16       		.uleb128 0x16
+ 921 009f 00       		.byte	0
+ 922 00a0 03       		.uleb128 0x3
+ 923 00a1 0E       		.uleb128 0xe
+ 924 00a2 3A       		.uleb128 0x3a
+ 925 00a3 0B       		.uleb128 0xb
+ 926 00a4 3B       		.uleb128 0x3b
+ 927 00a5 05       		.uleb128 0x5
+ 928 00a6 49       		.uleb128 0x49
+ 929 00a7 13       		.uleb128 0x13
+ 930 00a8 00       		.byte	0
+ 931 00a9 00       		.byte	0
+ 932 00aa 0F       		.uleb128 0xf
+ 933 00ab 04       		.uleb128 0x4
+ 934 00ac 01       		.byte	0x1
+ 935 00ad 0B       		.uleb128 0xb
+ 936 00ae 0B       		.uleb128 0xb
+ 937 00af 49       		.uleb128 0x49
+ 938 00b0 13       		.uleb128 0x13
+ 939 00b1 3A       		.uleb128 0x3a
+ 940 00b2 0B       		.uleb128 0xb
+ 941 00b3 3B       		.uleb128 0x3b
+ 942 00b4 05       		.uleb128 0x5
+ 943 00b5 01       		.uleb128 0x1
+ 944 00b6 13       		.uleb128 0x13
+ 945 00b7 00       		.byte	0
+ 946 00b8 00       		.byte	0
+ 947 00b9 10       		.uleb128 0x10
+ 948 00ba 28       		.uleb128 0x28
+ 949 00bb 00       		.byte	0
+ 950 00bc 03       		.uleb128 0x3
+ 951 00bd 0E       		.uleb128 0xe
+ 952 00be 1C       		.uleb128 0x1c
+ 953 00bf 0B       		.uleb128 0xb
+ 954 00c0 00       		.byte	0
+ 955 00c1 00       		.byte	0
+ 956 00c2 11       		.uleb128 0x11
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 20
+
+
+ 957 00c3 28       		.uleb128 0x28
+ 958 00c4 00       		.byte	0
+ 959 00c5 03       		.uleb128 0x3
+ 960 00c6 0E       		.uleb128 0xe
+ 961 00c7 1C       		.uleb128 0x1c
+ 962 00c8 06       		.uleb128 0x6
+ 963 00c9 00       		.byte	0
+ 964 00ca 00       		.byte	0
+ 965 00cb 12       		.uleb128 0x12
+ 966 00cc 13       		.uleb128 0x13
+ 967 00cd 01       		.byte	0x1
+ 968 00ce 03       		.uleb128 0x3
+ 969 00cf 0E       		.uleb128 0xe
+ 970 00d0 0B       		.uleb128 0xb
+ 971 00d1 0B       		.uleb128 0xb
+ 972 00d2 3A       		.uleb128 0x3a
+ 973 00d3 0B       		.uleb128 0xb
+ 974 00d4 3B       		.uleb128 0x3b
+ 975 00d5 0B       		.uleb128 0xb
+ 976 00d6 01       		.uleb128 0x1
+ 977 00d7 13       		.uleb128 0x13
+ 978 00d8 00       		.byte	0
+ 979 00d9 00       		.byte	0
+ 980 00da 13       		.uleb128 0x13
+ 981 00db 2E       		.uleb128 0x2e
+ 982 00dc 01       		.byte	0x1
+ 983 00dd 3F       		.uleb128 0x3f
+ 984 00de 19       		.uleb128 0x19
+ 985 00df 03       		.uleb128 0x3
+ 986 00e0 0E       		.uleb128 0xe
+ 987 00e1 3A       		.uleb128 0x3a
+ 988 00e2 0B       		.uleb128 0xb
+ 989 00e3 3B       		.uleb128 0x3b
+ 990 00e4 0B       		.uleb128 0xb
+ 991 00e5 27       		.uleb128 0x27
+ 992 00e6 19       		.uleb128 0x19
+ 993 00e7 49       		.uleb128 0x49
+ 994 00e8 13       		.uleb128 0x13
+ 995 00e9 11       		.uleb128 0x11
+ 996 00ea 01       		.uleb128 0x1
+ 997 00eb 12       		.uleb128 0x12
+ 998 00ec 06       		.uleb128 0x6
+ 999 00ed 40       		.uleb128 0x40
+ 1000 00ee 18       		.uleb128 0x18
+ 1001 00ef 9742     		.uleb128 0x2117
+ 1002 00f1 19       		.uleb128 0x19
+ 1003 00f2 01       		.uleb128 0x1
+ 1004 00f3 13       		.uleb128 0x13
+ 1005 00f4 00       		.byte	0
+ 1006 00f5 00       		.byte	0
+ 1007 00f6 14       		.uleb128 0x14
+ 1008 00f7 05       		.uleb128 0x5
+ 1009 00f8 00       		.byte	0
+ 1010 00f9 03       		.uleb128 0x3
+ 1011 00fa 0E       		.uleb128 0xe
+ 1012 00fb 3A       		.uleb128 0x3a
+ 1013 00fc 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 21
+
+
+ 1014 00fd 3B       		.uleb128 0x3b
+ 1015 00fe 0B       		.uleb128 0xb
+ 1016 00ff 49       		.uleb128 0x49
+ 1017 0100 13       		.uleb128 0x13
+ 1018 0101 02       		.uleb128 0x2
+ 1019 0102 17       		.uleb128 0x17
+ 1020 0103 00       		.byte	0
+ 1021 0104 00       		.byte	0
+ 1022 0105 15       		.uleb128 0x15
+ 1023 0106 05       		.uleb128 0x5
+ 1024 0107 00       		.byte	0
+ 1025 0108 03       		.uleb128 0x3
+ 1026 0109 0E       		.uleb128 0xe
+ 1027 010a 3A       		.uleb128 0x3a
+ 1028 010b 0B       		.uleb128 0xb
+ 1029 010c 3B       		.uleb128 0x3b
+ 1030 010d 0B       		.uleb128 0xb
+ 1031 010e 49       		.uleb128 0x49
+ 1032 010f 13       		.uleb128 0x13
+ 1033 0110 02       		.uleb128 0x2
+ 1034 0111 18       		.uleb128 0x18
+ 1035 0112 00       		.byte	0
+ 1036 0113 00       		.byte	0
+ 1037 0114 16       		.uleb128 0x16
+ 1038 0115 34       		.uleb128 0x34
+ 1039 0116 00       		.byte	0
+ 1040 0117 03       		.uleb128 0x3
+ 1041 0118 0E       		.uleb128 0xe
+ 1042 0119 3A       		.uleb128 0x3a
+ 1043 011a 0B       		.uleb128 0xb
+ 1044 011b 3B       		.uleb128 0x3b
+ 1045 011c 0B       		.uleb128 0xb
+ 1046 011d 49       		.uleb128 0x49
+ 1047 011e 13       		.uleb128 0x13
+ 1048 011f 02       		.uleb128 0x2
+ 1049 0120 17       		.uleb128 0x17
+ 1050 0121 00       		.byte	0
+ 1051 0122 00       		.byte	0
+ 1052 0123 17       		.uleb128 0x17
+ 1053 0124 0F       		.uleb128 0xf
+ 1054 0125 00       		.byte	0
+ 1055 0126 0B       		.uleb128 0xb
+ 1056 0127 0B       		.uleb128 0xb
+ 1057 0128 49       		.uleb128 0x49
+ 1058 0129 13       		.uleb128 0x13
+ 1059 012a 00       		.byte	0
+ 1060 012b 00       		.byte	0
+ 1061 012c 18       		.uleb128 0x18
+ 1062 012d 2E       		.uleb128 0x2e
+ 1063 012e 01       		.byte	0x1
+ 1064 012f 3F       		.uleb128 0x3f
+ 1065 0130 19       		.uleb128 0x19
+ 1066 0131 03       		.uleb128 0x3
+ 1067 0132 0E       		.uleb128 0xe
+ 1068 0133 3A       		.uleb128 0x3a
+ 1069 0134 0B       		.uleb128 0xb
+ 1070 0135 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 22
+
+
+ 1071 0136 0B       		.uleb128 0xb
+ 1072 0137 27       		.uleb128 0x27
+ 1073 0138 19       		.uleb128 0x19
+ 1074 0139 11       		.uleb128 0x11
+ 1075 013a 01       		.uleb128 0x1
+ 1076 013b 12       		.uleb128 0x12
+ 1077 013c 06       		.uleb128 0x6
+ 1078 013d 40       		.uleb128 0x40
+ 1079 013e 18       		.uleb128 0x18
+ 1080 013f 9742     		.uleb128 0x2117
+ 1081 0141 19       		.uleb128 0x19
+ 1082 0142 01       		.uleb128 0x1
+ 1083 0143 13       		.uleb128 0x13
+ 1084 0144 00       		.byte	0
+ 1085 0145 00       		.byte	0
+ 1086 0146 19       		.uleb128 0x19
+ 1087 0147 34       		.uleb128 0x34
+ 1088 0148 00       		.byte	0
+ 1089 0149 03       		.uleb128 0x3
+ 1090 014a 0E       		.uleb128 0xe
+ 1091 014b 3A       		.uleb128 0x3a
+ 1092 014c 0B       		.uleb128 0xb
+ 1093 014d 3B       		.uleb128 0x3b
+ 1094 014e 0B       		.uleb128 0xb
+ 1095 014f 49       		.uleb128 0x49
+ 1096 0150 13       		.uleb128 0x13
+ 1097 0151 3F       		.uleb128 0x3f
+ 1098 0152 19       		.uleb128 0x19
+ 1099 0153 3C       		.uleb128 0x3c
+ 1100 0154 19       		.uleb128 0x19
+ 1101 0155 00       		.byte	0
+ 1102 0156 00       		.byte	0
+ 1103 0157 1A       		.uleb128 0x1a
+ 1104 0158 34       		.uleb128 0x34
+ 1105 0159 00       		.byte	0
+ 1106 015a 03       		.uleb128 0x3
+ 1107 015b 0E       		.uleb128 0xe
+ 1108 015c 3A       		.uleb128 0x3a
+ 1109 015d 0B       		.uleb128 0xb
+ 1110 015e 3B       		.uleb128 0x3b
+ 1111 015f 05       		.uleb128 0x5
+ 1112 0160 49       		.uleb128 0x49
+ 1113 0161 13       		.uleb128 0x13
+ 1114 0162 3F       		.uleb128 0x3f
+ 1115 0163 19       		.uleb128 0x19
+ 1116 0164 3C       		.uleb128 0x3c
+ 1117 0165 19       		.uleb128 0x19
+ 1118 0166 00       		.byte	0
+ 1119 0167 00       		.byte	0
+ 1120 0168 1B       		.uleb128 0x1b
+ 1121 0169 13       		.uleb128 0x13
+ 1122 016a 01       		.byte	0x1
+ 1123 016b 0B       		.uleb128 0xb
+ 1124 016c 0B       		.uleb128 0xb
+ 1125 016d 3A       		.uleb128 0x3a
+ 1126 016e 0B       		.uleb128 0xb
+ 1127 016f 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 23
+
+
+ 1128 0170 0B       		.uleb128 0xb
+ 1129 0171 00       		.byte	0
+ 1130 0172 00       		.byte	0
+ 1131 0173 00       		.byte	0
+ 1132              		.section	.debug_loc,"",%progbits
+ 1133              	.Ldebug_loc0:
+ 1134              	.LLST0:
+ 1135 0000 00000000 		.4byte	.LVL0
+ 1136 0004 1A000000 		.4byte	.LVL1
+ 1137 0008 0100     		.2byte	0x1
+ 1138 000a 50       		.byte	0x50
+ 1139 000b 1A000000 		.4byte	.LVL1
+ 1140 000f 6A000000 		.4byte	.LVL2
+ 1141 0013 0100     		.2byte	0x1
+ 1142 0015 54       		.byte	0x54
+ 1143 0016 6A000000 		.4byte	.LVL2
+ 1144 001a 78000000 		.4byte	.LVL4
+ 1145 001e 0400     		.2byte	0x4
+ 1146 0020 F3       		.byte	0xf3
+ 1147 0021 01       		.uleb128 0x1
+ 1148 0022 50       		.byte	0x50
+ 1149 0023 9F       		.byte	0x9f
+ 1150 0024 78000000 		.4byte	.LVL4
+ 1151 0028 7A000000 		.4byte	.LVL5
+ 1152 002c 0100     		.2byte	0x1
+ 1153 002e 50       		.byte	0x50
+ 1154 002f 7A000000 		.4byte	.LVL5
+ 1155 0033 7C000000 		.4byte	.LVL6
+ 1156 0037 0400     		.2byte	0x4
+ 1157 0039 F3       		.byte	0xf3
+ 1158 003a 01       		.uleb128 0x1
+ 1159 003b 50       		.byte	0x50
+ 1160 003c 9F       		.byte	0x9f
+ 1161 003d 7C000000 		.4byte	.LVL6
+ 1162 0041 7E000000 		.4byte	.LVL7
+ 1163 0045 0100     		.2byte	0x1
+ 1164 0047 50       		.byte	0x50
+ 1165 0048 7E000000 		.4byte	.LVL7
+ 1166 004c 88000000 		.4byte	.LFE154
+ 1167 0050 0400     		.2byte	0x4
+ 1168 0052 F3       		.byte	0xf3
+ 1169 0053 01       		.uleb128 0x1
+ 1170 0054 50       		.byte	0x50
+ 1171 0055 9F       		.byte	0x9f
+ 1172 0056 00000000 		.4byte	0
+ 1173 005a 00000000 		.4byte	0
+ 1174              	.LLST1:
+ 1175 005e 00000000 		.4byte	.LVL0
+ 1176 0062 74000000 		.4byte	.LVL3
+ 1177 0066 0600     		.2byte	0x6
+ 1178 0068 0C       		.byte	0xc
+ 1179 0069 0100B600 		.4byte	0xb60001
+ 1180 006d 9F       		.byte	0x9f
+ 1181 006e 74000000 		.4byte	.LVL3
+ 1182 0072 78000000 		.4byte	.LVL4
+ 1183 0076 0200     		.2byte	0x2
+ 1184 0078 30       		.byte	0x30
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 24
+
+
+ 1185 0079 9F       		.byte	0x9f
+ 1186 007a 78000000 		.4byte	.LVL4
+ 1187 007e 7A000000 		.4byte	.LVL5
+ 1188 0082 0600     		.2byte	0x6
+ 1189 0084 0C       		.byte	0xc
+ 1190 0085 0100B600 		.4byte	0xb60001
+ 1191 0089 9F       		.byte	0x9f
+ 1192 008a 7A000000 		.4byte	.LVL5
+ 1193 008e 7C000000 		.4byte	.LVL6
+ 1194 0092 0100     		.2byte	0x1
+ 1195 0094 50       		.byte	0x50
+ 1196 0095 7C000000 		.4byte	.LVL6
+ 1197 0099 7E000000 		.4byte	.LVL7
+ 1198 009d 0600     		.2byte	0x6
+ 1199 009f 0C       		.byte	0xc
+ 1200 00a0 0100B600 		.4byte	0xb60001
+ 1201 00a4 9F       		.byte	0x9f
+ 1202 00a5 7E000000 		.4byte	.LVL7
+ 1203 00a9 88000000 		.4byte	.LFE154
+ 1204 00ad 0100     		.2byte	0x1
+ 1205 00af 50       		.byte	0x50
+ 1206 00b0 00000000 		.4byte	0
+ 1207 00b4 00000000 		.4byte	0
+ 1208              	.LLST2:
+ 1209 00b8 00000000 		.4byte	.LVL8
+ 1210 00bc 4E000000 		.4byte	.LVL9
+ 1211 00c0 0100     		.2byte	0x1
+ 1212 00c2 50       		.byte	0x50
+ 1213 00c3 4E000000 		.4byte	.LVL9
+ 1214 00c7 58000000 		.4byte	.LFE155
+ 1215 00cb 0400     		.2byte	0x4
+ 1216 00cd F3       		.byte	0xf3
+ 1217 00ce 01       		.uleb128 0x1
+ 1218 00cf 50       		.byte	0x50
+ 1219 00d0 9F       		.byte	0x9f
+ 1220 00d1 00000000 		.4byte	0
+ 1221 00d5 00000000 		.4byte	0
+ 1222              		.section	.debug_aranges,"",%progbits
+ 1223 0000 24000000 		.4byte	0x24
+ 1224 0004 0200     		.2byte	0x2
+ 1225 0006 00000000 		.4byte	.Ldebug_info0
+ 1226 000a 04       		.byte	0x4
+ 1227 000b 00       		.byte	0
+ 1228 000c 0000     		.2byte	0
+ 1229 000e 0000     		.2byte	0
+ 1230 0010 00000000 		.4byte	.LFB154
+ 1231 0014 88000000 		.4byte	.LFE154-.LFB154
+ 1232 0018 00000000 		.4byte	.LFB155
+ 1233 001c 58000000 		.4byte	.LFE155-.LFB155
+ 1234 0020 00000000 		.4byte	0
+ 1235 0024 00000000 		.4byte	0
+ 1236              		.section	.debug_ranges,"",%progbits
+ 1237              	.Ldebug_ranges0:
+ 1238 0000 00000000 		.4byte	.LFB154
+ 1239 0004 88000000 		.4byte	.LFE154
+ 1240 0008 00000000 		.4byte	.LFB155
+ 1241 000c 58000000 		.4byte	.LFE155
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 25
+
+
+ 1242 0010 00000000 		.4byte	0
+ 1243 0014 00000000 		.4byte	0
+ 1244              		.section	.debug_line,"",%progbits
+ 1245              	.Ldebug_line0:
+ 1246 0000 90020000 		.section	.debug_str,"MS",%progbits,1
+ 1246      02003402 
+ 1246      00000201 
+ 1246      FB0E0D00 
+ 1246      01010101 
+ 1247              	.LASF58:
+ 1248 0000 5F5F636F 		.ascii	"__copy_table_t\000"
+ 1248      70795F74 
+ 1248      61626C65 
+ 1248      5F7400
+ 1249              	.LASF65:
+ 1250 000f 64657374 		.ascii	"dest\000"
+ 1250      00
+ 1251              	.LASF54:
+ 1252 0014 63795F73 		.ascii	"cy_stc_tcpwm_quaddec_config_t\000"
+ 1252      74635F74 
+ 1252      6370776D 
+ 1252      5F717561 
+ 1252      64646563 
+ 1253              	.LASF68:
+ 1254 0032 47656E65 		.ascii	"Generated_Source\\PSoC6\\pdl\\drivers\\peripheral\\"
+ 1254      72617465 
+ 1254      645F536F 
+ 1254      75726365 
+ 1254      5C50536F 
+ 1255 0060 74637077 		.ascii	"tcpwm\\cy_tcpwm_quaddec.c\000"
+ 1255      6D5C6379 
+ 1255      5F746370 
+ 1255      776D5F71 
+ 1255      75616464 
+ 1256              	.LASF2:
+ 1257 0079 73686F72 		.ascii	"short int\000"
+ 1257      7420696E 
+ 1257      7400
+ 1258              	.LASF14:
+ 1259 0083 73697A65 		.ascii	"sizetype\000"
+ 1259      74797065 
+ 1259      00
+ 1260              	.LASF20:
+ 1261 008c 50455249 		.ascii	"PERIOD_BUFF\000"
+ 1261      4F445F42 
+ 1261      55464600 
+ 1262              	.LASF30:
+ 1263 0098 54435057 		.ascii	"TCPWM_CNT_V1_Type\000"
+ 1263      4D5F434E 
+ 1263      545F5631 
+ 1263      5F547970 
+ 1263      6500
+ 1264              	.LASF32:
+ 1265 00aa 4354524C 		.ascii	"CTRL_SET\000"
+ 1265      5F534554 
+ 1265      00
+ 1266              	.LASF19:
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 26
+
+
+ 1267 00b3 50455249 		.ascii	"PERIOD\000"
+ 1267      4F4400
+ 1268              	.LASF34:
+ 1269 00ba 434D445F 		.ascii	"CMD_RELOAD\000"
+ 1269      52454C4F 
+ 1269      414400
+ 1270              	.LASF23:
+ 1271 00c5 54525F43 		.ascii	"TR_CTRL1\000"
+ 1271      54524C31 
+ 1271      00
+ 1272              	.LASF62:
+ 1273 00ce 5F5F7A65 		.ascii	"__zero_table_start__\000"
+ 1273      726F5F74 
+ 1273      61626C65 
+ 1273      5F737461 
+ 1273      72745F5F 
+ 1274              	.LASF67:
+ 1275 00e3 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1275      43313120 
+ 1275      352E342E 
+ 1275      31203230 
+ 1275      31363036 
+ 1276 0116 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m4 -mfloat-abi=s"
+ 1276      20726576 
+ 1276      6973696F 
+ 1276      6E203233 
+ 1276      37373135 
+ 1277 0149 6F667466 		.ascii	"oftfp -mfpu=fpv4-sp-d16 -mthumb -g -Og -ffunction-s"
+ 1277      70202D6D 
+ 1277      6670753D 
+ 1277      66707634 
+ 1277      2D73702D 
+ 1278 017c 65637469 		.ascii	"ections -ffat-lto-objects\000"
+ 1278      6F6E7320 
+ 1278      2D666661 
+ 1278      742D6C74 
+ 1278      6F2D6F62 
+ 1279              	.LASF43:
+ 1280 0196 43595F54 		.ascii	"CY_TCPWM_SUCCESS\000"
+ 1280      4350574D 
+ 1280      5F535543 
+ 1280      43455353 
+ 1280      00
+ 1281              	.LASF6:
+ 1282 01a7 5F5F7569 		.ascii	"__uint32_t\000"
+ 1282      6E743332 
+ 1282      5F7400
+ 1283              	.LASF51:
+ 1284 01b2 73746F70 		.ascii	"stopInput\000"
+ 1284      496E7075 
+ 1284      7400
+ 1285              	.LASF61:
+ 1286 01bc 5F5F7A65 		.ascii	"__zero_table_t\000"
+ 1286      726F5F74 
+ 1286      61626C65 
+ 1286      5F7400
+ 1287              	.LASF22:
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 27
+
+
+ 1288 01cb 54525F43 		.ascii	"TR_CTRL0\000"
+ 1288      54524C30 
+ 1288      00
+ 1289              	.LASF57:
+ 1290 01d4 636F6E66 		.ascii	"config\000"
+ 1290      696700
+ 1291              	.LASF38:
+ 1292 01db 54435057 		.ascii	"TCPWM_V1_Type\000"
+ 1292      4D5F5631 
+ 1292      5F547970 
+ 1292      6500
+ 1293              	.LASF24:
+ 1294 01e9 54525F43 		.ascii	"TR_CTRL2\000"
+ 1294      54524C32 
+ 1294      00
+ 1295              	.LASF53:
+ 1296 01f2 70686942 		.ascii	"phiBInput\000"
+ 1296      496E7075 
+ 1296      7400
+ 1297              	.LASF33:
+ 1298 01fc 434D445F 		.ascii	"CMD_CAPTURE\000"
+ 1298      43415054 
+ 1298      55524500 
+ 1299              	.LASF47:
+ 1300 0208 696E7465 		.ascii	"interruptSources\000"
+ 1300      72727570 
+ 1300      74536F75 
+ 1300      72636573 
+ 1300      00
+ 1301              	.LASF36:
+ 1302 0219 434D445F 		.ascii	"CMD_START\000"
+ 1302      53544152 
+ 1302      5400
+ 1303              	.LASF60:
+ 1304 0223 5F5F636F 		.ascii	"__copy_table_end__\000"
+ 1304      70795F74 
+ 1304      61626C65 
+ 1304      5F656E64 
+ 1304      5F5F00
+ 1305              	.LASF41:
+ 1306 0236 666C6F61 		.ascii	"float\000"
+ 1306      7400
+ 1307              	.LASF8:
+ 1308 023c 6C6F6E67 		.ascii	"long long int\000"
+ 1308      206C6F6E 
+ 1308      6720696E 
+ 1308      7400
+ 1309              	.LASF63:
+ 1310 024a 5F5F7A65 		.ascii	"__zero_table_end__\000"
+ 1310      726F5F74 
+ 1310      61626C65 
+ 1310      5F656E64 
+ 1310      5F5F00
+ 1311              	.LASF4:
+ 1312 025d 6C6F6E67 		.ascii	"long int\000"
+ 1312      20696E74 
+ 1312      00
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 28
+
+
+ 1313              	.LASF11:
+ 1314 0266 696E7433 		.ascii	"int32_t\000"
+ 1314      325F7400 
+ 1315              	.LASF56:
+ 1316 026e 636E744E 		.ascii	"cntNum\000"
+ 1316      756D00
+ 1317              	.LASF29:
+ 1318 0275 494E5452 		.ascii	"INTR_MASKED\000"
+ 1318      5F4D4153 
+ 1318      4B454400 
+ 1319              	.LASF18:
+ 1320 0281 43435F42 		.ascii	"CC_BUFF\000"
+ 1320      55464600 
+ 1321              	.LASF13:
+ 1322 0289 6C6F6E67 		.ascii	"long double\000"
+ 1322      20646F75 
+ 1322      626C6500 
+ 1323              	.LASF71:
+ 1324 0295 43795F54 		.ascii	"Cy_TCPWM_QuadDec_Init\000"
+ 1324      4350574D 
+ 1324      5F517561 
+ 1324      64446563 
+ 1324      5F496E69 
+ 1325              	.LASF1:
+ 1326 02ab 756E7369 		.ascii	"unsigned char\000"
+ 1326      676E6564 
+ 1326      20636861 
+ 1326      7200
+ 1327              	.LASF15:
+ 1328 02b9 4354524C 		.ascii	"CTRL\000"
+ 1328      00
+ 1329              	.LASF37:
+ 1330 02be 494E5452 		.ascii	"INTR_CAUSE\000"
+ 1330      5F434155 
+ 1330      534500
+ 1331              	.LASF0:
+ 1332 02c9 7369676E 		.ascii	"signed char\000"
+ 1332      65642063 
+ 1332      68617200 
+ 1333              	.LASF27:
+ 1334 02d5 494E5452 		.ascii	"INTR_SET\000"
+ 1334      5F534554 
+ 1334      00
+ 1335              	.LASF9:
+ 1336 02de 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1336      206C6F6E 
+ 1336      6720756E 
+ 1336      7369676E 
+ 1336      65642069 
+ 1337              	.LASF12:
+ 1338 02f5 75696E74 		.ascii	"uint32_t\000"
+ 1338      33325F74 
+ 1338      00
+ 1339              	.LASF49:
+ 1340 02fe 696E6465 		.ascii	"indexInput\000"
+ 1340      78496E70 
+ 1340      757400
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 29
+
+
+ 1341              	.LASF10:
+ 1342 0309 756E7369 		.ascii	"unsigned int\000"
+ 1342      676E6564 
+ 1342      20696E74 
+ 1342      00
+ 1343              	.LASF46:
+ 1344 0316 7265736F 		.ascii	"resolution\000"
+ 1344      6C757469 
+ 1344      6F6E00
+ 1345              	.LASF35:
+ 1346 0321 434D445F 		.ascii	"CMD_STOP\000"
+ 1346      53544F50 
+ 1346      00
+ 1347              	.LASF28:
+ 1348 032a 494E5452 		.ascii	"INTR_MASK\000"
+ 1348      5F4D4153 
+ 1348      4B00
+ 1349              	.LASF3:
+ 1350 0334 73686F72 		.ascii	"short unsigned int\000"
+ 1350      7420756E 
+ 1350      7369676E 
+ 1350      65642069 
+ 1350      6E7400
+ 1351              	.LASF59:
+ 1352 0347 5F5F636F 		.ascii	"__copy_table_start__\000"
+ 1352      70795F74 
+ 1352      61626C65 
+ 1352      5F737461 
+ 1352      72745F5F 
+ 1353              	.LASF72:
+ 1354 035c 73746174 		.ascii	"status\000"
+ 1354      757300
+ 1355              	.LASF40:
+ 1356 0363 63686172 		.ascii	"char\000"
+ 1356      00
+ 1357              	.LASF16:
+ 1358 0368 53544154 		.ascii	"STATUS\000"
+ 1358      555300
+ 1359              	.LASF44:
+ 1360 036f 43595F54 		.ascii	"CY_TCPWM_BAD_PARAM\000"
+ 1360      4350574D 
+ 1360      5F424144 
+ 1360      5F504152 
+ 1360      414D00
+ 1361              	.LASF70:
+ 1362 0382 63795F73 		.ascii	"cy_stc_tcpwm_quaddec_config\000"
+ 1362      74635F74 
+ 1362      6370776D 
+ 1362      5F717561 
+ 1362      64646563 
+ 1363              	.LASF26:
+ 1364 039e 494E5452 		.ascii	"INTR\000"
+ 1364      00
+ 1365              	.LASF25:
+ 1366 03a3 52455345 		.ascii	"RESERVED1\000"
+ 1366      52564544 
+ 1366      3100
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 30
+
+
+ 1367              	.LASF52:
+ 1368 03ad 70686941 		.ascii	"phiAInput\000"
+ 1368      496E7075 
+ 1368      7400
+ 1369              	.LASF7:
+ 1370 03b7 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1370      20756E73 
+ 1370      69676E65 
+ 1370      6420696E 
+ 1370      7400
+ 1371              	.LASF42:
+ 1372 03c9 646F7562 		.ascii	"double\000"
+ 1372      6C6500
+ 1373              	.LASF73:
+ 1374 03d0 43795F54 		.ascii	"Cy_TCPWM_QuadDec_DeInit\000"
+ 1374      4350574D 
+ 1374      5F517561 
+ 1374      64446563 
+ 1374      5F446549 
+ 1375              	.LASF48:
+ 1376 03e8 696E6465 		.ascii	"indexInputMode\000"
+ 1376      78496E70 
+ 1376      75744D6F 
+ 1376      646500
+ 1377              	.LASF5:
+ 1378 03f7 5F5F696E 		.ascii	"__int32_t\000"
+ 1378      7433325F 
+ 1378      7400
+ 1379              	.LASF50:
+ 1380 0401 73746F70 		.ascii	"stopInputMode\000"
+ 1380      496E7075 
+ 1380      744D6F64 
+ 1380      6500
+ 1381              	.LASF31:
+ 1382 040f 4354524C 		.ascii	"CTRL_CLR\000"
+ 1382      5F434C52 
+ 1382      00
+ 1383              	.LASF69:
+ 1384 0418 433A5C55 		.ascii	"C:\\Users\\Ramon\\Desktop\\git\\channel-analyzer-fw"
+ 1384      73657273 
+ 1384      5C52616D 
+ 1384      6F6E5C44 
+ 1384      65736B74 
+ 1385 0446 5C436861 		.ascii	"\\Channel Analyszer\\Channel Analyzer.cydsn\000"
+ 1385      6E6E656C 
+ 1385      20416E61 
+ 1385      6C79737A 
+ 1385      65725C43 
+ 1386              	.LASF17:
+ 1387 0470 434F554E 		.ascii	"COUNTER\000"
+ 1387      54455200 
+ 1388              	.LASF21:
+ 1389 0478 52455345 		.ascii	"RESERVED\000"
+ 1389      52564544 
+ 1389      00
+ 1390              	.LASF45:
+ 1391 0481 63795F65 		.ascii	"cy_en_tcpwm_status_t\000"
+ARM GAS  C:\Users\Ramon\AppData\Local\Temp\ccIN6vTd.s 			page 31
+
+
+ 1391      6E5F7463 
+ 1391      70776D5F 
+ 1391      73746174 
+ 1391      75735F74 
+ 1392              	.LASF66:
+ 1393 0496 776C656E 		.ascii	"wlen\000"
+ 1393      00
+ 1394              	.LASF64:
+ 1395 049b 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1395      52784275 
+ 1395      66666572 
+ 1395      00
+ 1396              	.LASF39:
+ 1397 04a8 54435057 		.ascii	"TCPWM_Type\000"
+ 1397      4D5F5479 
+ 1397      706500
+ 1398              	.LASF55:
+ 1399 04b3 62617365 		.ascii	"base\000"
+ 1399      00
+ 1400              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

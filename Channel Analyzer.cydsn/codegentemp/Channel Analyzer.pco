@@ -1,0 +1,33 @@
+# Channel Analyzer
+# 2023-08-20 00:35:38Z
+
+dont_use_location SMIF -1 -1 0
+dont_use_location p4usbcell -1 -1 0
+dont_use_location USB -1 -1 0
+dont_use_location usbcell -1 -1 0
+set_location "ClockGenBlock" CLK_GEN -1 -1 0
+set_location "ClockBlock" Clock -1 -1 0
+set_location "CPUSS" CPUSS -1 -1 0
+set_io "CY_CPUSS_SWJ_SWCLK_TCLK(0)" iocell 6 7
+set_io "CY_CPUSS_SWJ_SWDIO_TMS(0)" iocell 6 6
+set_io "INPUT_PIN(0)" iocell 10 2
+set_io "OUTPUT_PIN(0)" iocell 9 6
+set_io "STATUS_LED(0)" iocell 7 1
+set_io "\ANALYZER_UART:tx(0)\" iocell 5 1
+set_io "\ANALYZER_UART:rx(0)\" iocell 5 0
+set_io "OP1_INP(0)" iocell 9 5
+set_io "OP1_INN(0)" iocell 9 4
+set_io "OP0_INP(0)" iocell 9 0
+set_io "OP0_INN(0)" iocell 9 1
+set_io "OP1_OUT(0)" iocell 9 3
+set_io "OP0_OUT(0)" iocell 9 2
+set_location "\ANALYZER_ADC:IRQ\" interrupt -1 -1 138
+set_location "\ANALYZER_ADC:SAR\" SARADC -1 -1 0
+set_location "\ANALIZER_PWM:TCPWM\" TCPWM -1 -1 0
+set_location "\ANALYZER_VDAC:CTDAC\" CTDAC -1 -1 0
+set_location "\VDAC_DMA:DW\" drqcell -1 -1 0
+set_location "\ANALYZER_UART:SCB\" SCB -1 -1 5
+set_location "\ADC_DMA:DW\" drqcell -1 -1 1
+set_location "UART_INTERRUPT" interrupt -1 -1 46
+set_location "\OP0:cy_mxs40_opamp\" OA -1 -1 0
+set_location "\OP1:cy_mxs40_opamp\" OA -1 -1 1

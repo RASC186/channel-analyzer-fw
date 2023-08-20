@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="us-ascii"?>
+
+<fileSet version="1" anchorPath="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp" xsi:schemaLocation="http://cypress.com/xsd/cypathdictionary cypathdictionary.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://cypress.com/xsd/cypathdictionary">
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\cyfitter_cfg.h" value="HEADER;;;;;" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\cyfitter_sysint_cfg.h" value="HEADER;;;;;Pins and Interrupts" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\cyfitter_sysint_cfg.c" value="SOURCE_C;CortexM0p,CortexM4;;;;Pins and Interrupts" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\cyfitter_cfg.c" value="SOURCE_C;CortexM0p;;;;" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\cymetadata.c" value="SOURCE_C;CortexM0p,CortexM4;;;;" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\cydevice_trm.h" value="HEADER;;;;;" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\cydevicegnu_trm.inc" value="HEADER;;;;;" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\cydevicerv_trm.inc" value="HEADER;;;;;" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\cydeviceiar_trm.inc" value="HEADER;;;;;" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\cyfitter.h" value="HEADER;;;;;" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\cyfitter_gpio.h" value="HEADER;;;;;Pins and Interrupts" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\cyfitter_sysint.h" value="HEADER;;;;;Pins and Interrupts" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\cydisabledsheets.h" value="HEADER;;;;;" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\ANALYZER_ADC.c" value="SOURCE_C;CortexM0p,CortexM4;;;;ANALYZER_ADC" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\ANALYZER_ADC.h" value="HEADER;;;;;ANALYZER_ADC" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\ANALYZER_ADC_INT.c" value="SOURCE_C;CortexM0p,CortexM4;;;;ANALYZER_ADC" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\ANALYZER_ADC_INIT.c" value="SOURCE_C;CortexM0p,CortexM4;;;;ANALYZER_ADC" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\ANALYZER_ADC_PM.c" value="SOURCE_C;CortexM0p,CortexM4;;;;ANALYZER_ADC" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\ADC_CLK.h" value="HEADER;;;;;ADC_CLK" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\PWM_CLK.h" value="HEADER;;;;;PWM_CLK" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\VDAC_CLK.h" value="HEADER;;;;;VDAC_CLK" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\ANALIZER_PWM.c" value="SOURCE_C;CortexM0p,CortexM4;;;;ANALIZER_PWM" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\ANALIZER_PWM.h" value="HEADER;;;;;ANALIZER_PWM" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\ANALYZER_VDAC.c" value="SOURCE_C;CortexM0p,CortexM4;;;;ANALYZER_VDAC" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\ANALYZER_VDAC.h" value="HEADER;;;;;ANALYZER_VDAC" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\VDAC_DMA.c" value="SOURCE_C;CortexM0p,CortexM4;;;;VDAC_DMA" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\VDAC_DMA.h" value="HEADER;;;;;VDAC_DMA" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\ANALYZER_UART.c" value="SOURCE_C;CortexM0p,CortexM4;;;;ANALYZER_UART" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\ANALYZER_UART.h" value="HEADER;;;;;ANALYZER_UART" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\UART_CLK.h" value="HEADER;;;;;UART_CLK" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\ADC_DMA.c" value="SOURCE_C;CortexM0p,CortexM4;;;;ADC_DMA" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\ADC_DMA.h" value="HEADER;;;;;ADC_DMA" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\OP0.h" value="HEADER;;;;;OP0" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\OP0.c" value="SOURCE_C;CortexM0p,CortexM4;;;;OP0" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\OP1.h" value="HEADER;;;;;OP1" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\OP1.c" value="SOURCE_C;CortexM0p,CortexM4;;;;OP1" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\project.h" value="OTHER;;;;;" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\cycodeshareimport.ld" value="OTHER;;;;;" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\cycodeshareexport.ld" value="OTHER;;;;;" />
+  <file name="C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\codegentemp\cycodeshareimport.scat" value="OTHER;;;;;" />
+</fileSet>

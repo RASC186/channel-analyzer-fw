@@ -1,0 +1,6 @@
+C:\Users\Ramon\Desktop\git\channel-analyzer-fw\Channel Analyszer\Channel Analyzer.cydsn\Channel Analyzer.cyprj|cd3d17cb-cf79-4d38-9fdf-6d5f26458c80
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|6953003c-332e-4c0f-9a3e-c24125a2b23d
+C:\Users\Ramon\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|2fc0b247-048f-496f-83d9-144e1bda7cdc
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|9d3eb447-07be-40df-831b-59f6c65883b4
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|707555d9-65c5-44a2-a8e5-b843c3a9bd7c
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|ca5424d0-8165-4a13-880e-b56f3ab95725
